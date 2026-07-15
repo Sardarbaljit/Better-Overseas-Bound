@@ -1,0 +1,68 @@
+================================================================
+B.O.B — SERVICE CONFIRMATION (send to the student BEFORE payment)
+================================================================
+Replace every [BRACKETED] value before sending. Delete these
+instruction lines. Sections marked "LEGAL REVIEW" should be
+checked by a qualified professional before first use.
+================================================================
+
+Subject: Your B.O.B service confirmation
+
+Hi [STUDENT FIRST NAME],
+
+Thank you for our conversation. As promised, here is a summary of
+the B.O.B service for you to confirm before any payment is made.
+
+YOUR CONSULTATION
+- Date and time: [DATE], [TIME] ([TIME ZONE])
+- Format: [VIDEO CALL / PHONE CALL / IN PERSON], approx. 45 minutes
+
+YOUR SUPPORT PERIOD
+- Service start date: [START DATE]
+- Follow-up WhatsApp guidance: three consecutive days,
+  from [DAY 1 DATE] to [DAY 3 DATE]
+  (If you chose email as your preferred contact method, the
+  follow-up guidance will be provided by email instead.)
+
+PRICE AND PAYMENT
+- Total price: EUR 30 (one-time, no subscription, no further charges)
+- Payment method: [PAYMENT METHOD, e.g. bank transfer / PayPal]
+- Payment is due: [BEFORE THE CONSULTATION / AS AGREED]
+
+WHAT IS INCLUDED
+- One 45-minute personal consultation
+- One personalised arrival checklist for your situation
+- Three consecutive days of follow-up WhatsApp guidance,
+  beginning on the agreed start date
+
+WHAT IS NOT INCLUDED
+- Payment of any third-party costs (e.g. insurance premiums,
+  deposits, tickets, official fees)
+- Completing official procedures on your behalf
+- Professional legal, tax, immigration, financial or insurance advice
+- Services not listed above
+
+CANCELLATION AND WITHDRAWAL  [LEGAL REVIEW REQUIRED]
+[Insert the cancellation/withdrawal information that applies to
+your situation after professional review. If the student asks for
+the service to begin immediately, collect any required
+confirmation before starting. Do not send this section without
+having it reviewed.]
+
+YOUR DATA
+Details on how your information is handled:
+[LINK TO PRIVACY POLICY, e.g. https://YOUR-SITE/privacy.html]
+
+CONTACT
+Baljit Bhatti
+B.O.B (Better Overseas Bound)
+[BUSINESS EMAIL]
+[WHATSAPP NUMBER]
+Krenmoosstraße 55, 85757 Karlsfeld, Germany
+
+Please reply "Confirmed" if everything above is correct, and I
+will send the payment details.
+
+Kind regards,
+Baljit
+B.O.B — Better Overseas Bound

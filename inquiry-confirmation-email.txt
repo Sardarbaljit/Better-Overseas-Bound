@@ -1,0 +1,27 @@
+============================================================
+B.O.B — INQUIRY CONFIRMATION EMAIL
+Send this shortly after a student submits the inquiry form.
+Replace [First Name] before sending.
+============================================================
+
+Subject: We received your B.O.B inquiry
+
+Hi [First Name],
+
+Thank you for contacting B.O.B.
+
+Your inquiry has been received successfully. No payment has been
+taken.
+
+I will contact you within 24 hours using your preferred contact
+method to understand your needs, confirm whether the service is
+suitable and arrange the next steps.
+
+As a reminder: B.O.B includes one 45-minute personal
+consultation, a personalised arrival checklist and three
+consecutive days of follow-up WhatsApp guidance, for a one-time
+fee of EUR 30.
+
+Kind regards,
+Baljit
+B.O.B — Better Overseas Bound

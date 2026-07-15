@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<!-- SETUP (not visible to visitors): index.html, privacy.html and impressum.html must all be
+     uploaded to the same folder, together with founder-photo.jpg, so links and images work. -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -298,6 +300,16 @@
     body.has-sticky footer{padding-bottom:96px;}
   }
 
+  .prefill-note{
+    background:var(--blue-soft); border:1px solid var(--blue-line); border-radius:12px;
+    padding:11px 14px; font-size:13.5px; color:var(--ink-soft); margin-bottom:18px;
+  }
+  .noscript-note{
+    background:#FFF7E6; border:1px solid #F5D48A; border-radius:12px;
+    padding:14px 16px; font-size:14.5px; margin-bottom:18px;
+  }
+  @media (max-width:900px){ body.menu-open{overflow:hidden;} }
+
   /* ---------- Footer ---------- */
   footer{border-top:1px solid var(--line); padding:40px 0 52px;}
   .foot-inner{display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap;}
@@ -449,6 +461,14 @@
         <p>Not through this website, and not when you submit the form. After you send your details, I contact you first to understand your needs and confirm the service. Payment and the support start date are agreed together before anything begins.</p>
       </details>
       <details>
+        <summary>What happens after I submit the form?</summary>
+        <p>Submitting the form does not create a payment obligation. I first contact you to understand your needs and confirm whether the B.O.B service is suitable. Before payment, you will receive confirmation of the price, consultation, support period, agreed start date and what the service includes.</p>
+      </details>
+      <details>
+        <summary>Can I cancel after booking?</summary>
+        <p>Cancellation and withdrawal information will be provided before payment and before the service begins. If you ask for the service to begin immediately, any required confirmation will be collected first.</p>
+      </details>
+      <details>
         <summary>Which cities do you cover?</summary>
         <p>B.O.B currently focuses on students arriving in Munich, where the founder lives and knows the system firsthand. Coming to another German city? Reach out anyway: much of the guidance (insurance, banking, bureaucracy) applies across Germany, and coverage is expanding.</p>
       </details>
@@ -462,7 +482,7 @@
       </details>
       <details>
         <summary>What happens to my data?</summary>
-        <p>Your information is used only to respond to your inquiry and provide the requested service, and is kept only for as long as necessary for that. Form submissions are delivered by Formspree. Unfinished form entries are stored temporarily in your own browser (sessionStorage) and disappear when you close the tab. Your data is never sold or shared with third parties, and you can request deletion at any time by email. Full details are in the <a href="privacy.html">Privacy Policy</a>.</p>
+        <p>Your information is used only to respond to your inquiry and provide the requested service, and is kept only for as long as necessary for that. Your data is never sold or shared with universities or other organisations for their own marketing purposes. Selected service providers, including Formspree and the website-hosting provider, process limited personal data on behalf of B.O.B where necessary to operate the website, deliver form submissions and respond to your inquiry. Unfinished form entries are stored temporarily in your own browser (sessionStorage) and disappear when you close the tab. You can request deletion at any time by email. Full details are in the <a href="privacy.html">Privacy Policy</a>.</p>
       </details>
       <details>
         <summary>What does B.O.B not do?</summary>
@@ -482,6 +502,15 @@
     </div>
 
     <div class="form-card reveal">
+      <p class="prefill-note" id="prefillNote" hidden>Some details were pre-filled from the link you opened. You can change them at any time.</p>
+      <noscript>
+        <div class="noscript-note">
+          JavaScript is required to use the two-step form. Please contact B.O.B directly by email:
+          <!-- ⚙️ Replace with the final B.O.B business email before launch (keep it identical to the
+               JavaScript constants businessEmailUser / businessEmailDomain further below). -->
+          <b>hello@YOUR-DOMAIN.de</b>
+        </div>
+      </noscript>
       <!--
         ⚙️ FORM ENDPOINT (configured): the line below contains the live Formspree ID (mvzezpwo).
         Only change it if you ever create a new Formspree form.
@@ -493,6 +522,7 @@
         </div>
 
         <input type="hidden" name="Referral Source" id="f-source" value="Direct">
+        <input type="hidden" name="Referral Campaign" id="f-campaign" value="">
         <!-- Honeypot anti-spam field (Formspree): invisible to people, filled only by bots -->
         <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 
@@ -588,6 +618,31 @@
               <input id="f-arrival" name="Expected Arrival Date" type="date">
             </div>
             <div class="field full">
+              <label id="pcm-label">Preferred contact method <span class="req" aria-hidden="true">*</span></label>
+              <div class="check-grid" role="radiogroup" aria-labelledby="pcm-label" aria-describedby="e-pcm">
+                <label class="check-opt"><input type="radio" name="Preferred Contact Method" value="WhatsApp">WhatsApp</label>
+                <label class="check-opt"><input type="radio" name="Preferred Contact Method" value="Email">Email</label>
+                <label class="check-opt"><input type="radio" name="Preferred Contact Method" value="Either is fine">Either is fine</label>
+              </div>
+              <p class="err" id="e-pcm" role="alert"></p>
+            </div>
+            <div class="field">
+              <label for="f-lang">Preferred language <span class="opt">(optional)</span></label>
+              <select id="f-lang" name="Preferred Language">
+                <option value="">Select a language</option>
+                <option>English</option>
+                <option>Hindi</option>
+                <option>Punjabi</option>
+                <option>Marathi</option>
+                <option>Other</option>
+              </select>
+              <p class="hint">English is always available. Other languages depend on availability.</p>
+            </div>
+            <div class="field" id="langOtherWrap" hidden>
+              <label for="f-lang-other">Which language would you prefer?</label>
+              <input id="f-lang-other" name="Preferred Language Other" type="text" autocomplete="off">
+            </div>
+            <div class="field full">
               <label id="svc-label">What do you need help with? <span class="opt">(select all that apply, or none)</span></label>
               <div class="check-grid" role="group" aria-labelledby="svc-label">
                 <label class="check-opt"><input type="checkbox" name="Help Needed" value="Arrival planning">Arrival planning</label>
@@ -596,8 +651,6 @@
                 <label class="check-opt"><input type="checkbox" name="Help Needed" value="Health insurance">Health insurance</label>
                 <label class="check-opt"><input type="checkbox" name="Help Needed" value="SIM card">SIM card</label>
                 <label class="check-opt"><input type="checkbox" name="Help Needed" value="Public transport">Public transport</label>
-                <label class="check-opt"><input type="checkbox" name="Help Needed" value="Shopping and city orientation">Shopping &amp; city orientation</label>
-                <label class="check-opt"><input type="checkbox" name="Help Needed" value="Student life">Student life</label>
                 <label class="check-opt"><input type="checkbox" name="Help Needed" value="Not sure yet">Not sure yet</label>
                 <label class="check-opt"><input type="checkbox" name="Help Needed" value="Other" id="opt-other">Other</label>
               </div>
@@ -612,13 +665,14 @@
             </div>
             <div class="field full consent">
               <label class="check-opt">
-                <input type="checkbox" id="f-consent" name="Privacy Consent" value="Agreed" required aria-required="true" aria-describedby="e-consent">
-                <span>I agree that B.O.B uses my details to contact me about my relocation, as described in the <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>. My data is never shared or sold, and I can request deletion at any time.</span>
+                <input type="checkbox" id="f-consent" name="Privacy Policy Acknowledgement" value="Acknowledged" required aria-required="true" aria-describedby="e-consent">
+                <span>I confirm that I have read the <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a> and understand how my information will be used to respond to my inquiry.</span>
               </label>
               <p class="err" id="e-consent" role="alert"></p>
             </div>
           </div>
           <p class="payment-note">No payment is taken when you submit this form. I will first contact you to understand your needs, confirm the service and agree on the support start date.</p>
+          <p class="err" id="e-submit" role="alert" style="text-align:center; margin-top:12px;"></p>
           <div class="form-nav">
             <button type="button" class="btn btn-ghost btn-lg" id="backBtn">Back</button>
             <button type="submit" class="btn btn-primary btn-lg" id="submitBtn">Submit My Details</button>
@@ -632,7 +686,7 @@
           <svg width="30" height="30" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
         <h3>Thanks! Your details have been received.</h3>
-        <p>Your information was sent successfully. I will contact you within 24 hours to understand your needs, confirm the service and arrange your consultation. Want to say hi right away? Reach out directly:</p>
+        <p>Your inquiry was sent successfully. I will contact you within 24 hours using your preferred contact method to understand your needs, confirm the service and arrange your consultation. Want to say hi right away? Reach out directly:</p>
         <div class="contact-lines" id="okContacts"></div>
         <p class="note">Response within 24 hours, usually much faster.</p>
       </div>
@@ -642,7 +696,7 @@
           <svg width="30" height="30" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 7v6" stroke="#fff" stroke-width="3" stroke-linecap="round"/><circle cx="12" cy="17" r="1.6" fill="#fff"/></svg>
         </div>
         <h3>We couldn't send your details automatically</h3>
-        <p>Nothing was submitted, and your answers are still saved on this page. <b>Please contact B.O.B directly</b> on WhatsApp or by email below, and you'll get a reply within 24 hours.</p>
+        <p>Your information was not submitted. Your answers are still saved in this browser session. Please try again or <b>contact B.O.B directly</b> by WhatsApp or email below. If you prefer not to use WhatsApp, email works just as well.</p>
         <div class="contact-lines" id="errContacts"></div>
         <p class="note"><a href="#" id="retryLink">Or try the form again</a></p>
       </div>
@@ -673,12 +727,20 @@
   addEventListener('scroll', function(){ nav.classList.toggle('scrolled', scrollY > 10); }, {passive:true});
   var menuBtn = document.getElementById('menuBtn');
   var navLinks = document.getElementById('navLinks');
-  menuBtn.addEventListener('click', function(){
-    var open = navLinks.classList.toggle('open');
+  function setMenu(open){
+    navLinks.classList.toggle('open', open);
     menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
+    document.body.classList.toggle('menu-open', open);
+  }
+  menuBtn.addEventListener('click', function(){ setMenu(!navLinks.classList.contains('open')); });
   navLinks.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click', function(){ navLinks.classList.remove('open'); menuBtn.setAttribute('aria-expanded','false'); });
+    a.addEventListener('click', function(){ setMenu(false); });
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && navLinks.classList.contains('open')){ setMenu(false); menuBtn.focus(); }
+  });
+  document.addEventListener('click', function(e){
+    if (navLinks.classList.contains('open') && !navLinks.contains(e.target) && !menuBtn.contains(e.target)) setMenu(false);
   });
 
   // ---------- Scroll reveal ----------
@@ -690,7 +752,11 @@
   // ---------- Contact details (assembled at runtime, kept out of raw HTML source) ----------
   var waDigits = ['49','176','8754','2242'].join('');
   var waPretty = '+49 176 ' + '8754' + '2242';
-  var em = ['Baljit','Bhatti'].join('.') + String.fromCharCode(64) + ['munich-business-school','de'].join('.');
+  // ⚙️ CONFIGURATION: Replace with the final B.O.B business email before launch.
+  // Also update the same address in the <noscript> block above, in privacy.html and in impressum.html.
+  var businessEmailUser = 'hello';
+  var businessEmailDomain = 'YOUR-DOMAIN.de';
+  var em = businessEmailUser + String.fromCharCode(64) + businessEmailDomain;
   function contactLinksHTML(){
     return '<a href="https://wa.me/' + waDigits + '" target="_blank" rel="noopener">WhatsApp: ' + waPretty + '</a>'
          + '<a href="mailto:' + em + '">' + em + '</a>';
@@ -748,7 +814,7 @@
       if (!/^\+?\d{7,15}$/.test(cleaned)){ setError(el, 'Please enter a valid WhatsApp number with your country code (e.g. +49 176 12345678).'); return false; }
     }
     if (el.id === 'f-consent'){
-      if (!el.checked){ setError(el, 'Please agree to the Privacy Policy so we\'re allowed to contact you.'); return false; }
+      if (!el.checked){ setError(el, 'Please confirm that you have read the Privacy Policy before submitting.'); return false; }
     }
     setError(el, null);
     return true;
@@ -793,6 +859,32 @@
   }
   otherCb.addEventListener('change', syncOther);
 
+  // ---------- "Other" preferred language ----------
+  var langSel = document.getElementById('f-lang');
+  var langOtherWrap = document.getElementById('langOtherWrap');
+  var langOtherInput = document.getElementById('f-lang-other');
+  function syncLang(){
+    langOtherWrap.hidden = (langSel.value !== 'Other');
+    if (langSel.value !== 'Other') langOtherInput.value = '';
+  }
+  langSel.addEventListener('change', syncLang);
+
+  // ---------- Preferred contact method (required) ----------
+  function pcmFirst(){ return form.querySelector('input[name="Preferred Contact Method"]'); }
+  function validatePcm(){
+    var checked = form.querySelector('input[name="Preferred Contact Method"]:checked');
+    if (!checked){
+      setError(pcmFirst(), 'Please choose how you would like to be contacted.');
+      pcmFirst().focus();
+      return false;
+    }
+    setError(pcmFirst(), null);
+    return true;
+  }
+  form.querySelectorAll('input[name="Preferred Contact Method"]').forEach(function(r){
+    r.addEventListener('change', function(){ setError(pcmFirst(), null); });
+  });
+
   // ---------- Draft saving (sessionStorage: cleared when the tab closes) ----------
   var DRAFT_KEY = 'bobFormDraft';
   function collectForm(){
@@ -804,6 +896,8 @@
       if (el.type === 'checkbox'){
         if (!d[el.name]) d[el.name] = [];
         if (el.checked) d[el.name].push(el.value);
+      } else if (el.type === 'radio'){
+        if (el.checked) d[el.name] = el.value;
       } else if (el.type !== 'button' && el.type !== 'submit'){
         d[el.name] = el.value;
       }
@@ -823,6 +917,8 @@
       if (el.name.charAt(0) === '_' || el.id === 'f-consent') return;
       if (el.type === 'checkbox'){
         el.checked = Array.isArray(d[el.name]) && d[el.name].indexOf(el.value) !== -1;
+      } else if (el.type === 'radio'){
+        el.checked = (d[el.name] === el.value);
       } else if (el.type !== 'button' && el.type !== 'submit' && el.type !== 'hidden'){
         el.value = d[el.name];
       }
@@ -837,23 +933,38 @@
   function applyUrlPrefill(){
     var q = new URLSearchParams(location.search);
     var map = { university: 'f-uni', city: 'f-city', intake: 'f-intake', country: 'f-country' };
+    var prefilled = false;
     Object.keys(map).forEach(function(param){
       var val = q.get(param);
-      if (val) document.getElementById(map[param]).value = val;
+      if (val){ document.getElementById(map[param]).value = val; prefilled = true; }
     });
     var src = q.get('source');
     if (src) document.getElementById('f-source').value = src;
+    var camp = q.get('campaign');
+    if (camp) document.getElementById('f-campaign').value = camp;
+    if (prefilled) document.getElementById('prefillNote').hidden = false;
   }
   restoreDraft();      // saved entries first...
   applyUrlPrefill();   // ...then URL parameters override the matching fields
   syncOther();         // show the "Other" text field if it was restored as checked
+  syncLang();          // show the "Other" language field if it was restored
 
   // ---------- Submit ----------
+  var formLoadedAt = Date.now();
   form.addEventListener('submit', async function(e){
     e.preventDefault();
+    var eSubmit = document.getElementById('e-submit');
+    eSubmit.textContent = ''; eSubmit.style.display = 'none';
     if (!validateStep1()){ goStep(1); return; }
+    if (!validatePcm()) return;
     if (!validateField(document.getElementById('f-consent'))){
       document.getElementById('f-consent').focus();
+      return;
+    }
+    // Basic anti-spam: forms completed faster than any person could fill them are held back.
+    if (Date.now() - formLoadedAt < 2000){
+      eSubmit.textContent = 'Something went wrong. Please take a moment to review your details and try again.';
+      eSubmit.style.display = 'block';
       return;
     }
     submitBtn.disabled = true;

@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<!-- SETUP (not visible to visitors): this file must be uploaded to the same folder as index.html
+     and privacy.html so that all links between the pages work. -->
+<!-- REMINDER (not visible to visitors): depending on how the business is registered
+     (e.g. Kleingewerbe), additional details such as a VAT ID (USt-IdNr.) may be legally
+     required here. Have this page reviewed before public launch. -->
 <html lang="de">
 <head>
 <meta charset="UTF-8">
@@ -14,8 +19,8 @@
   h2{font-size:19px;font-weight:800;letter-spacing:-0.02em;margin:32px 0 8px;}
   p{color:var(--ink-soft);font-size:15.5px;margin-bottom:12px;}
   a{color:var(--blue);text-decoration:none;}
+  a:focus-visible{outline:3px solid rgba(37,99,235,.5);outline-offset:2px;}
   .back{display:inline-block;margin-bottom:28px;font-weight:600;font-size:14.5px;}
-  .todo{background:#FFF7E6;border:1.5px solid #F5D48A;border-radius:12px;padding:14px 16px;font-size:14px;color:#7A5A0F;margin:6px 0 12px;}
 </style>
 </head>
 <body>
@@ -29,22 +34,33 @@
   Krenmoosstraße 55<br>
   85757 Karlsfeld<br>
   Deutschland</p>
+  <!-- ⚙️ BUSINESS REGISTRATION: once verified, add the relevant details here, for example:
+       Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: DE...
+       or a note on Kleinunternehmer status (§ 19 UStG), trade registration details, etc.
+       Do not publish anything here until it has been confirmed. -->
 
   <h2>Kontakt</h2>
   <p>Telefon/WhatsApp: <span id="ph1">Bitte JavaScript aktivieren</span><br>
-  E-Mail: <span id="em1">Bitte JavaScript aktivieren</span></p>
+  <!-- ⚙️ EMAIL: the address below is assembled by the script at the bottom of this page from
+       placeholder values. Replace them with the final B.O.B business email before launch,
+       keeping them identical to the constants in index.html. -->
+  E-Mail: <span id="em1">hello@YOUR-DOMAIN.de</span></p>
 
   <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
   <p>Baljit Bhatti (Anschrift wie oben)</p>
 
-  <h2>Hinweis</h2>
-  <p>B.O.B ist ein unabhängiger Service und wird nicht von der Munich Business School betrieben. / B.O.B is an independent service and is not operated by Munich Business School.</p>
+  <h2>Unabhängigkeit / Independence</h2>
+  <p>B.O.B ist ein unabhängiger Service und wird nicht von der Munich Business School betrieben. / B.O.B is an independent service and is not operated by or affiliated with Munich Business School.</p>
 
-  <p class="todo">Note for the site owner: depending on how you register the business (Kleingewerbe etc.), additional details such as a VAT ID (USt-IdNr.) may be required. Have this checked before public launch.</p>
+  <h2>Art der Dienstleistung / Nature of the service</h2>
+  <p>B.O.B bietet allgemeine Orientierungs- und Umzugsbegleitung für internationale Studierende. Es handelt sich nicht um Rechts-, Steuer-, Einwanderungs-, Finanz- oder Versicherungsberatung. / B.O.B provides general relocation guidance for international students. It does not provide professional legal, tax, immigration, financial or insurance advice.</p>
 </div>
 <script>
-  document.getElementById('em1').textContent =
-    ['Baljit','Bhatti'].join('.') + String.fromCharCode(64) + ['munich-business-school','de'].join('.');
+  // ⚙️ CONFIGURATION: Replace with the final B.O.B business email before launch.
+  // Keep these identical to the constants in index.html and privacy.html.
+  var businessEmailUser = 'hello';
+  var businessEmailDomain = 'YOUR-DOMAIN.de';
+  document.getElementById('em1').textContent = businessEmailUser + String.fromCharCode(64) + businessEmailDomain;
   document.getElementById('ph1').textContent = '+49 176 ' + '8754' + '2242';
 </script>
 </body>

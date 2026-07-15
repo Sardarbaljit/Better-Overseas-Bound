@@ -677,16 +677,8 @@
               <select id="f-lang" name="Preferred Language">
                 <option value="">Select a language</option>
                 <option>English</option>
-                <option>Hindi</option>
-                <option>Punjabi</option>
-                <option>Marathi</option>
-                <option>Other</option>
               </select>
-              <p class="hint">English is always available. Other languages depend on availability.</p>
-            </div>
-            <div class="field" id="langOtherWrap" hidden>
-              <label for="f-lang-other">Which language would you prefer?</label>
-              <input id="f-lang-other" name="Preferred Language Other" type="text" autocomplete="off">
+              <p class="hint">The service is provided in English.</p>
             </div>
             <div class="field full">
               <label id="svc-label">Services or concerns <span class="opt">(select all that apply, or none)</span></label>
@@ -903,16 +895,6 @@
   }
   otherCb.addEventListener('change', syncOther);
 
-  // ---------- "Other" preferred language ----------
-  var langSel = document.getElementById('f-lang');
-  var langOtherWrap = document.getElementById('langOtherWrap');
-  var langOtherInput = document.getElementById('f-lang-other');
-  function syncLang(){
-    langOtherWrap.hidden = (langSel.value !== 'Other');
-    if (langSel.value !== 'Other') langOtherInput.value = '';
-  }
-  langSel.addEventListener('change', syncLang);
-
   // ---------- Preferred contact method (required) ----------
   function pcmFirst(){ return form.querySelector('input[name="Preferred Contact Method"]'); }
   function validatePcm(){
@@ -991,7 +973,6 @@
   restoreDraft();      // saved entries first...
   applyUrlPrefill();   // ...then URL parameters override the matching fields
   syncOther();         // show the "Other" text field if it was restored as checked
-  syncLang();          // show the "Other" language field if it was restored
 
   // ---------- Submit ----------
   var formLoadedAt = Date.now();

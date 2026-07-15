@@ -5,8 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>B.O.B | Relocation Guidance for International Students in Germany</title>
-<meta name="description" content="B.O.B helps international students relocate and settle into Germany. €30 includes one 45-minute personal consultation, a personalised arrival checklist and three consecutive days of follow-up WhatsApp guidance.">
+<title>B.O.B | Personal Arrival Support for International Students in Munich</title>
+<meta name="description" content="B.O.B provides personal arrival and settling-in support for international students coming to Munich: airport welcome, help reaching your accommodation, and guidance with SIM, bank and health-insurance setup over your first three days.">
 <style>
   :root{
     --ink:#0B1220;
@@ -89,6 +89,7 @@
     }
     .nav-links.open{display:flex;}
     .menu-btn{display:block;}
+    body.menu-open{overflow:hidden;}
   }
 
   /* ---------- Hero ---------- */
@@ -126,7 +127,19 @@
     *{transition-duration:.01ms !important; animation-duration:.01ms !important;}
   }
 
-  /* ---------- Pricing / what's included ---------- */
+  /* ---------- Three-day journey ---------- */
+  .steps{display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-top:42px;}
+  @media (max-width:900px){.steps{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:560px){.steps{grid-template-columns:1fr;}}
+  .step-card{background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:28px 24px; box-shadow:var(--shadow);}
+  .step-num{
+    min-width:34px; height:34px; padding:0 12px; border-radius:10px; display:inline-grid; place-items:center;
+    background:linear-gradient(135deg,#2563EB,#7C3AED); color:#fff; font-weight:700; font-size:13px; margin-bottom:14px;
+  }
+  .step-card h3{font-size:17px; margin-bottom:7px;}
+  .step-card p{color:var(--ink-soft); font-size:14.5px;}
+
+  /* ---------- Pricing ---------- */
   .pricing{background:var(--bg-soft);}
   .price-card{
     max-width:760px; margin:40px auto 0; background:#fff; border:1px solid var(--blue-line);
@@ -141,27 +154,17 @@
   .price-top{text-align:center; margin-bottom:26px;}
   .price{font-size:58px; font-weight:800; letter-spacing:-0.04em; line-height:1;}
   .price small{font-size:16px; font-weight:500; color:var(--ink-soft); letter-spacing:0;}
-  .price-note{color:var(--ink-soft); font-size:15px; margin-top:10px; max-width:52ch; margin-left:auto; margin-right:auto;}
-  .price-list{list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:11px 22px; margin-bottom:22px;}
-  @media (max-width:640px){.price-list{grid-template-columns:1fr;}}
+  .price-note{color:var(--ink-soft); font-size:15px; margin-top:10px; max-width:56ch; margin-left:auto; margin-right:auto;}
+  .price-list{list-style:none; display:grid; grid-template-columns:1fr; gap:11px; margin-bottom:22px;}
   .price-list li{display:flex; gap:10px; align-items:flex-start; font-size:15px;}
   .price-list svg{flex:none; margin-top:4px;}
   .scope-note{
     background:var(--bg-soft); border:1px solid var(--line); border-radius:12px;
-    padding:13px 16px; font-size:13.5px; color:var(--ink-soft); margin-bottom:24px;
+    padding:14px 16px; font-size:13.5px; color:var(--ink-soft); margin-bottom:16px;
   }
-
-  /* ---------- How it works ---------- */
-  .steps{display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-top:42px;}
-  @media (max-width:900px){.steps{grid-template-columns:repeat(2,1fr);}}
-  @media (max-width:560px){.steps{grid-template-columns:1fr;}}
-  .step-card{background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:28px 24px; box-shadow:var(--shadow);}
-  .step-num{
-    width:34px; height:34px; border-radius:10px; display:grid; place-items:center;
-    background:linear-gradient(135deg,#2563EB,#7C3AED); color:#fff; font-weight:700; font-size:14px; margin-bottom:14px;
-  }
-  .step-card h3{font-size:17px; margin-bottom:7px;}
-  .step-card p{color:var(--ink-soft); font-size:14.5px;}
+  .scope-note b{color:var(--ink);}
+  .scope-note ul{list-style:disc; padding-left:20px; margin-top:6px;}
+  .scope-note li{margin-bottom:3px;}
 
   /* ---------- Founder ---------- */
   .founder{background:var(--bg-soft);}
@@ -288,6 +291,15 @@
   .success .note{margin-top:18px; font-size:14px; color:var(--ink-soft); font-weight:500;}
   .success .note a{color:var(--blue);}
 
+  .prefill-note{
+    background:var(--blue-soft); border:1px solid var(--blue-line); border-radius:12px;
+    padding:11px 14px; font-size:13.5px; color:var(--ink-soft); margin-bottom:18px;
+  }
+  .noscript-note{
+    background:#FFF7E6; border:1px solid #F5D48A; border-radius:12px;
+    padding:14px 16px; font-size:14.5px; margin-bottom:18px;
+  }
+
   /* ---------- Sticky mobile CTA ---------- */
   .sticky-cta{
     position:fixed; bottom:14px; left:16px; right:16px; z-index:60; display:none;
@@ -299,16 +311,6 @@
     .sticky-cta.on{display:block;}
     body.has-sticky footer{padding-bottom:96px;}
   }
-
-  .prefill-note{
-    background:var(--blue-soft); border:1px solid var(--blue-line); border-radius:12px;
-    padding:11px 14px; font-size:13.5px; color:var(--ink-soft); margin-bottom:18px;
-  }
-  .noscript-note{
-    background:#FFF7E6; border:1px solid #F5D48A; border-radius:12px;
-    padding:14px 16px; font-size:14.5px; margin-bottom:18px;
-  }
-  @media (max-width:900px){ body.menu-open{overflow:hidden;} }
 
   /* ---------- Footer ---------- */
   footer{border-top:1px solid var(--line); padding:40px 0 52px;}
@@ -326,11 +328,11 @@
     <a class="logo" href="#home"><span class="dot">B</span>B.O.B</a>
     <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
     <div class="nav-links" id="navLinks">
-      <a href="#pricing">What's included</a>
-      <a href="#how">How It Works</a>
+      <a href="#how">The Three Days</a>
+      <a href="#pricing">Pricing</a>
       <a href="#founder">About</a>
       <a href="#faq">FAQ</a>
-      <a href="#contact" class="btn btn-primary nav-cta">Get Started</a>
+      <a href="#contact" class="btn btn-primary nav-cta">Plan My Arrival</a>
     </div>
   </div>
 </nav>
@@ -338,83 +340,90 @@
 <!-- ================= HERO ================= -->
 <header class="hero" id="home">
   <div class="wrap">
-    <span class="eyebrow">For international students moving to Germany</span>
-    <h1>Land in Germany with <span class="grad">someone in your corner</span></h1>
-    <p class="lead">B.O.B (Better Overseas Bound) gives you personal, one-on-one guidance for your first weeks in Germany. Bank account, health insurance, SIM card, transport, city life: one trusted person instead of a hundred open tabs. Flat €30.</p>
+    <span class="eyebrow">Personal arrival and settling-in support · Munich</span>
+    <h1>Your first three days in Munich, <span class="grad">made easier</span></h1>
+    <p class="lead">Arriving in a new country can feel overwhelming, especially when you are carrying luggage, navigating unfamiliar public transport and trying to organise essential services. B.O.B gives international students personal arrival and settling-in support, from Munich Airport to your accommodation and through the first essential setup steps.</p>
     <div class="hero-ctas">
-      <a href="#contact" class="btn btn-primary btn-lg">Get Started for €30</a>
-      <a href="#pricing" class="btn btn-ghost btn-lg">See what's included</a>
+      <a href="#contact" class="btn btn-primary btn-lg">Plan My Arrival</a>
+      <a href="#how" class="btn btn-ghost btn-lg">See How the Three Days Work</a>
     </div>
     <div class="trustbar">
-      <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Built by an international student</span>
-      <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Flat €30, no hidden costs</span>
-      <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Privacy-first</span>
-      <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Starting in Munich</span>
+      <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Personal airport welcome</span>
+      <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>In-person support in Munich</span>
+      <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Built from firsthand international-student experience</span>
+      <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Privacy-first registration</span>
     </div>
   </div>
 </header>
 
-<!-- ================= WHAT €30 INCLUDES ================= -->
-<section class="pricing" id="pricing">
-  <div class="wrap">
-    <div class="center reveal">
-      <span class="eyebrow">One price, one clear scope</span>
-      <h2>What you get for €30</h2>
-      <p class="lead">€30 includes one 45-minute personal consultation, a personalised arrival checklist and three consecutive days of follow-up WhatsApp guidance, beginning on an agreed date.</p>
-    </div>
-    <div class="price-card reveal">
-      <span class="badge">Simple, honest, flat</span>
-      <div class="price-top">
-        <div class="price">€30 <small>one-time</small></div>
-        <p class="price-note">No subscriptions, no upsells, no hidden costs.</p>
-      </div>
-      <ul class="price-list">
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#EFF4FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>One 45-minute personal consultation</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#EFF4FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Personalised step-by-step arrival checklist</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#EFF4FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Anmeldung and bureaucracy guidance</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#EFF4FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Bank account guidance</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#EFF4FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Health insurance guidance</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#EFF4FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>SIM card and phone setup guidance</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#EFF4FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Public transport guidance</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#EFF4FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Shopping and city orientation advice</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#EFF4FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Student life advice</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#EFF4FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Three consecutive days of follow-up WhatsApp guidance</li>
-      </ul>
-      <p class="scope-note">B.O.B provides information, planning and personal guidance. It does not pay third-party costs, complete official procedures on your behalf, or provide professional legal, immigration, financial or insurance advice.</p>
-      <a href="#contact" class="btn btn-primary btn-lg" style="width:100%;">Get Started for €30</a>
-    </div>
-  </div>
-</section>
-
-<!-- ================= HOW IT WORKS ================= -->
+<!-- ================= THE THREE DAYS ================= -->
 <section id="how">
   <div class="wrap">
     <div class="center reveal">
       <span class="eyebrow">How It Works</span>
-      <h2>From first message to feeling at home</h2>
-      <p class="lead">No apps to install, no long contracts. Four simple steps.</p>
+      <h2>Three days, by your side</h2>
+      <p class="lead">A real person meets you at the airport and helps you through your first essential steps, in person.</p>
     </div>
     <div class="steps">
       <div class="step-card reveal">
-        <div class="step-num">1</div>
-        <h3>Reach out</h3>
-        <p>Fill in the short form below with your details. No payment is taken at this stage. You'll hear back within 24 hours.</p>
+        <span class="step-num">Day 1</span>
+        <h3>Airport to accommodation</h3>
+        <p>Meet at Munich Airport, receive help with your luggage, understand the public-transport system and travel to your accommodation with personal assistance.</p>
       </div>
       <div class="step-card reveal">
-        <div class="step-num">2</div>
-        <h3>We talk first</h3>
-        <p>I contact you to understand your needs, confirm the service and agree on your consultation and support start date.</p>
+        <span class="step-num">Day 2</span>
+        <h3>Getting connected</h3>
+        <p>Receive guidance with your SIM card and the immediate practical steps needed to begin settling in.</p>
       </div>
       <div class="step-card reveal">
-        <div class="step-num">3</div>
-        <h3>You arrive prepared</h3>
-        <p>Your 45-minute consultation and personalised arrival checklist mean you land knowing exactly what to do first, second, and third.</p>
+        <span class="step-num">Day 3</span>
+        <h3>Banking and health insurance</h3>
+        <p>Receive personal guidance on bank-account and health-insurance options, required documents and the next steps.</p>
       </div>
       <div class="step-card reveal">
-        <div class="step-num">4</div>
-        <h3>Support that stays</h3>
-        <p>For three consecutive days, beginning on the agreed date, you have direct WhatsApp access to a person who knows your case.</p>
+        <span class="step-num">After</span>
+        <h3>After the three days</h3>
+        <p>You leave with a clearer understanding of Munich, your essential services and what you need to complete next.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRICING ================= -->
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <div class="center reveal">
+      <span class="eyebrow">Introductory pilot price</span>
+      <h2>What it costs</h2>
+      <p class="lead">B.O.B is in its launch stage. The introductory price applies while the service is validated and improved with its first group of students.</p>
+    </div>
+    <div class="price-card reveal">
+      <span class="badge">Launch-stage pilot</span>
+      <div class="price-top">
+        <div class="price">€30 <small>one-time</small></div>
+        <p class="price-note">Introductory pilot price. One fee for all three days of personal support. No subscriptions, no upsells.</p>
+      </div>
+      <ul class="price-list">
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#EFF4FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Personal welcome at Munich Airport and help managing your luggage</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#EFF4FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Public-transport explanation, ticket guidance and an accompanied journey to your accommodation</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#EFF4FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Day 2: personal assistance with SIM card setup and your first practical steps</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#EFF4FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Day 3: personal guidance on bank accounts, health insurance, required documents and next steps</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#EFF4FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Answers to your practical arrival questions throughout the three days</li>
+      </ul>
+      <div class="scope-note">
+        <b>Third-party costs are not included.</b> During the three days you pay your own:
+        <ul>
+          <li>Public-transport tickets</li>
+          <li>SIM card and mobile-plan costs</li>
+          <li>Bank-related charges, if applicable</li>
+          <li>Health-insurance premiums</li>
+          <li>Food and personal purchases</li>
+          <li>Taxi or private-transport costs</li>
+          <li>Other external service charges</li>
+        </ul>
+      </div>
+      <p class="scope-note">B.O.B provides personal guidance and practical assistance. It does not make legal, financial, immigration or insurance decisions for students, sign contracts on their behalf, guarantee approval by banks, insurers or government authorities, pay third-party charges, process visas or university admissions, or complete official procedures in the student's name. Travel is by public transport unless another arrangement has been explicitly agreed; B.O.B is not a taxi or private-transport service.</p>
+      <a href="#contact" class="btn btn-primary btn-lg" style="width:100%;">Plan My Arrival</a>
     </div>
   </div>
 </section>
@@ -430,13 +439,14 @@
       <div class="founder-visual reveal">
         <span class="initials" aria-hidden="true">BB</span>
         <!-- FOUNDER PHOTO: upload a professional photo named founder-photo.jpg next to this file.
-             If the file is missing, the gradient "BB" fallback below is shown automatically. -->
+             If the file is missing, the gradient "BB" fallback is shown automatically. -->
         <img src="founder-photo.jpg" alt="Baljit Bhatti, founder of B.O.B" onerror="this.style.display='none'">
-        <div class="tagline">"I want your transition to be easier than mine was."</div>
+        <div class="tagline">"I want your arrival to be easier than mine was."</div>
       </div>
       <div class="founder-copy reveal">
-        <p>I moved to Germany as an international student myself. I remember exactly how the first weeks felt: information everywhere, but no single trusted person to guide me. Which insurance? Which bank? Which ticket? Every answer took hours to find and verify.</p>
-        <p>B.O.B is a new service, and I say that openly. What you get today is not a big company. It's direct, personal guidance from someone who completed the same international-student journey and earned an MBA from Munich Business School. Every student B.O.B helps also shapes what comes next: a digital platform that makes relocating to Germany easier for students everywhere.</p>
+        <p>I came to Germany as an international student and experienced the arrival challenges personally: the luggage, the ticket machines, the paperwork, and no one beside me who knew the way. Those first days shaped everything that came after.</p>
+        <p>I completed an MBA at Munich Business School, I live in the Munich area, and I created B.O.B to give incoming students the support I wish I had: a real person at the airport, on the train, and next to you while you work through your first essential steps.</p>
+        <p>B.O.B is a new, personal service, and I say that openly. Helping students arrive well today also shapes a longer-term idea: making relocation to Germany easier for students everywhere.</p>
         <div class="name">Baljit Bhatti</div>
         <div class="role">Founder, B.O.B · MBA, Munich Business School</div>
       </div>
@@ -453,16 +463,20 @@
     </div>
     <div class="faq-list reveal">
       <details>
-        <summary>Is €30 really the full price?</summary>
-        <p>Yes. €30 is a one-time flat fee. It includes one 45-minute personal consultation, a personalised arrival checklist and three consecutive days of follow-up WhatsApp guidance, beginning on an agreed date. If you need more support afterwards, just ask. There are never subscriptions, upsells or automatic charges.</p>
-      </details>
-      <details>
-        <summary>When do I pay?</summary>
-        <p>Not through this website, and not when you submit the form. After you send your details, I contact you first to understand your needs and confirm the service. Payment and the support start date are agreed together before anything begins.</p>
+        <summary>What does the service cost?</summary>
+        <p>The introductory pilot price is €30, one-time, for all three days of personal support. It is a launch-stage price while B.O.B validates and improves the service with its first group of students. Third-party costs (transport tickets, SIM and mobile-plan costs, bank charges, insurance premiums, food, taxis and other external charges) are not included and are paid by the student. There are no subscriptions or automatic charges.</p>
       </details>
       <details>
         <summary>What happens after I submit the form?</summary>
-        <p>Submitting the form does not create a payment obligation. I first contact you to understand your needs and confirm whether the B.O.B service is suitable. Before payment, you will receive confirmation of the price, consultation, support period, agreed start date and what the service includes.</p>
+        <p>Submitting the form does not create a payment obligation and does not guarantee availability. After receiving your details, I will confirm whether I am available for your arrival date and explain the next steps. Before payment, you will receive confirmation of the price, the three-day plan, the agreed start date and what the service includes.</p>
+      </details>
+      <details>
+        <summary>What happens if my flight is delayed?</summary>
+        <p>Please update B.O.B as soon as possible. Reasonable flight delays will be accommodated where possible, but significant schedule changes may require a revised meeting time depending on availability.</p>
+      </details>
+      <details>
+        <summary>Can you carry my luggage?</summary>
+        <p>I can help you manage your luggage during the journey, but students must remain able to travel safely with their belongings. Please tell me in advance how many bags you are bringing and whether any are unusually heavy.</p>
       </details>
       <details>
         <summary>Can I cancel after booking?</summary>
@@ -470,11 +484,7 @@
       </details>
       <details>
         <summary>Which cities do you cover?</summary>
-        <p>B.O.B currently focuses on students arriving in Munich, where the founder lives and knows the system firsthand. Coming to another German city? Reach out anyway: much of the guidance (insurance, banking, bureaucracy) applies across Germany, and coverage is expanding.</p>
-      </details>
-      <details>
-        <summary>When should I get in touch?</summary>
-        <p>Ideally before you fly, since the biggest time savings come from arriving prepared. But if you've already landed and feel lost, it's absolutely not too late. Reach out and we'll sort out your situation from wherever you are.</p>
+        <p>The in-person service currently covers arrivals in Munich, where the founder lives. If you are arriving in another German city, B.O.B cannot yet accompany you in person, but you are welcome to get in touch.</p>
       </details>
       <details>
         <summary>How did my university know about B.O.B?</summary>
@@ -482,11 +492,11 @@
       </details>
       <details>
         <summary>What happens to my data?</summary>
-        <p>Your information is used only to respond to your inquiry and provide the requested service, and is kept only for as long as necessary for that. Your data is never sold or shared with universities or other organisations for their own marketing purposes. Selected service providers, including Formspree and the website-hosting provider, process limited personal data on behalf of B.O.B where necessary to operate the website, deliver form submissions and respond to your inquiry. Unfinished form entries are stored temporarily in your own browser (sessionStorage) and disappear when you close the tab. You can request deletion at any time by email. Full details are in the <a href="privacy.html">Privacy Policy</a>.</p>
+        <p>Your information, including your flight and arrival details, is used only to respond to your inquiry and coordinate the requested arrival service, and is kept only for as long as necessary for that. Your data is never sold or shared with universities or other organisations for their own marketing purposes. Selected service providers, including Formspree and the website-hosting provider, process limited personal data on behalf of B.O.B where necessary to operate the website, deliver form submissions and respond to your inquiry. Unfinished form entries are stored temporarily in your own browser (sessionStorage) and disappear when you close the tab. You can request deletion at any time by email. Full details are in the <a href="privacy.html">Privacy Policy</a>.</p>
       </details>
       <details>
         <summary>What does B.O.B not do?</summary>
-        <p>B.O.B provides information, planning and personal guidance. It does not process visas or university applications, complete official procedures on your behalf, pay any third-party costs, or provide professional legal, immigration, financial or insurance advice. It guides you through settling in: bureaucracy, banking, insurance choices, transport and everyday life.</p>
+        <p>B.O.B provides personal guidance and practical assistance, not professional services. It does not make legal, financial, immigration or insurance decisions for students, sign contracts on their behalf, guarantee approval by banks, insurers or government authorities, pay third-party charges, process visas or university admissions, or complete official procedures in the student's name. It is also not a taxi or private-transport service: travel is by public transport unless another arrangement has been explicitly agreed.</p>
       </details>
     </div>
   </div>
@@ -496,9 +506,9 @@
 <section class="contact" id="contact">
   <div class="wrap">
     <div class="center reveal">
-      <span class="eyebrow">Get Started</span>
-      <h2>Tell us about your move</h2>
-      <p class="lead">Two short steps, about two minutes. This is an inquiry form: no payment is taken. You'll hear back within 24 hours.</p>
+      <span class="eyebrow">Plan My Arrival</span>
+      <h2>Tell me about your arrival</h2>
+      <p class="lead">Two short steps, about two minutes. This is an inquiry: no payment is taken, and availability for your date is confirmed afterwards.</p>
     </div>
 
     <div class="form-card reveal">
@@ -506,14 +516,17 @@
       <noscript>
         <div class="noscript-note">
           JavaScript is required to use the two-step form. Please contact B.O.B directly by email:
-          <!-- ⚙️ Replace with the final B.O.B business email before launch (keep it identical to the
-               JavaScript constants businessEmailUser / businessEmailDomain further below). -->
-          <b>hello@YOUR-DOMAIN.de</b>
+          <!-- Keep this address identical to the businessEmail constant in the JavaScript below. -->
+          <b><a href="mailto:Baljit.Bhatti@munich-business-school.de">Baljit.Bhatti@munich-business-school.de</a></b>
         </div>
       </noscript>
       <!--
         ⚙️ FORM ENDPOINT (configured): the line below contains the live Formspree ID (mvzezpwo).
         Only change it if you ever create a new Formspree form.
+        Automatic confirmation emails to students should be configured through Formspree's
+        Autoresponse workflow (Formspree dashboard > your form > Workflow > Autoresponse).
+        The student email field is named "email" so Formspree recognises the reply address.
+        Do not add a browser-based email sender here; it would expose credentials publicly.
       -->
       <form id="bobForm" action="https://formspree.io/f/mvzezpwo" method="POST" novalidate>
         <div class="progress">
@@ -536,7 +549,7 @@
             </div>
             <div class="field">
               <label for="f-email">Email <span class="req" aria-hidden="true">*</span></label>
-              <input id="f-email" name="Email" type="email" required autocomplete="email" placeholder="you@example.com" aria-required="true" aria-describedby="e-email">
+              <input id="f-email" name="email" type="email" required autocomplete="email" placeholder="you@example.com" aria-required="true" aria-describedby="e-email">
               <p class="err" id="e-email" role="alert"></p>
             </div>
             <div class="field">
@@ -568,8 +581,8 @@
               </datalist>
             </div>
             <div class="field full">
-              <label for="f-city">City in Germany <span class="opt">(optional)</span></label>
-              <input id="f-city" name="City in Germany" type="text" list="cityList" autocomplete="address-level2" placeholder="Start typing, e.g. Munich">
+              <label for="f-city">City of study <span class="opt">(optional)</span></label>
+              <input id="f-city" name="City of Study" type="text" list="cityList" autocomplete="address-level2" placeholder="Start typing, e.g. Munich">
               <datalist id="cityList">
                 <option value="Munich"></option><option value="Berlin"></option><option value="Hamburg"></option>
                 <option value="Frankfurt am Main"></option><option value="Cologne"></option><option value="Stuttgart"></option>
@@ -613,9 +626,42 @@
               <label for="f-intake">Study intake <span class="opt">(optional)</span></label>
               <input id="f-intake" name="Study Intake" type="month" placeholder="YYYY-MM">
             </div>
-            <div class="field full">
-              <label for="f-arrival">Expected Arrival Date <span class="opt">(optional)</span></label>
-              <input id="f-arrival" name="Expected Arrival Date" type="date">
+            <div class="field">
+              <label for="f-arrival">Flight arrival date <span class="opt">(optional)</span></label>
+              <input id="f-arrival" name="Flight Arrival Date" type="date" aria-describedby="h-arrival">
+              <p class="hint" id="h-arrival">You can update your flight details later if they change.</p>
+            </div>
+            <div class="field">
+              <label for="f-landing">Scheduled landing time <span class="opt">(optional)</span></label>
+              <input id="f-landing" name="Scheduled Landing Time" type="time">
+            </div>
+            <div class="field">
+              <label for="f-terminal">Arrival terminal <span class="opt">(if known)</span></label>
+              <select id="f-terminal" name="Arrival Terminal">
+                <option value="">Select if known</option>
+                <option>Terminal 1</option>
+                <option>Terminal 2</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-flight">Airline and flight number <span class="opt">(optional)</span></label>
+              <input id="f-flight" name="Airline and Flight Number" type="text" autocomplete="off" placeholder="e.g. Lufthansa LH 761">
+            </div>
+            <div class="field">
+              <label for="f-bags">Number of suitcases <span class="opt">(optional)</span></label>
+              <select id="f-bags" name="Number of Suitcases">
+                <option value="">Select</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4 or more</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-area">Accommodation area or postcode <span class="opt">(optional)</span></label>
+              <input id="f-area" name="Accommodation Area or Postcode" type="text" autocomplete="off" placeholder="e.g. Schwabing or 80797" aria-describedby="h-area">
+              <p class="hint" id="h-area">Just the neighbourhood or postcode. The exact address is confirmed privately later.</p>
             </div>
             <div class="field full">
               <label id="pcm-label">Preferred contact method <span class="req" aria-hidden="true">*</span></label>
@@ -643,13 +689,13 @@
               <input id="f-lang-other" name="Preferred Language Other" type="text" autocomplete="off">
             </div>
             <div class="field full">
-              <label id="svc-label">What do you need help with? <span class="opt">(select all that apply, or none)</span></label>
+              <label id="svc-label">Services or concerns <span class="opt">(select all that apply, or none)</span></label>
               <div class="check-grid" role="group" aria-labelledby="svc-label">
-                <label class="check-opt"><input type="checkbox" name="Help Needed" value="Arrival planning">Arrival planning</label>
-                <label class="check-opt"><input type="checkbox" name="Help Needed" value="Anmeldung guidance">Anmeldung guidance</label>
+                <label class="check-opt"><input type="checkbox" name="Help Needed" value="Airport pickup and journey to accommodation">Airport welcome &amp; journey</label>
+                <label class="check-opt"><input type="checkbox" name="Help Needed" value="Luggage help">Luggage help</label>
+                <label class="check-opt"><input type="checkbox" name="Help Needed" value="SIM card">SIM card</label>
                 <label class="check-opt"><input type="checkbox" name="Help Needed" value="Bank account">Bank account</label>
                 <label class="check-opt"><input type="checkbox" name="Help Needed" value="Health insurance">Health insurance</label>
-                <label class="check-opt"><input type="checkbox" name="Help Needed" value="SIM card">SIM card</label>
                 <label class="check-opt"><input type="checkbox" name="Help Needed" value="Public transport">Public transport</label>
                 <label class="check-opt"><input type="checkbox" name="Help Needed" value="Not sure yet">Not sure yet</label>
                 <label class="check-opt"><input type="checkbox" name="Help Needed" value="Other" id="opt-other">Other</label>
@@ -671,11 +717,11 @@
               <p class="err" id="e-consent" role="alert"></p>
             </div>
           </div>
-          <p class="payment-note">No payment is taken when you submit this form. I will first contact you to understand your needs, confirm the service and agree on the support start date.</p>
+          <p class="payment-note">Submitting this form is an inquiry. It does not guarantee availability and does not create a payment obligation. After receiving your details, I will confirm whether I am available for your arrival date and explain the next steps.</p>
           <p class="err" id="e-submit" role="alert" style="text-align:center; margin-top:12px;"></p>
           <div class="form-nav">
             <button type="button" class="btn btn-ghost btn-lg" id="backBtn">Back</button>
-            <button type="submit" class="btn btn-primary btn-lg" id="submitBtn">Submit My Details</button>
+            <button type="submit" class="btn btn-primary btn-lg" id="submitBtn">Submit My Arrival Details</button>
           </div>
           <p class="form-foot-note">Universities never send us your data. This conversation starts with you.</p>
         </fieldset>
@@ -686,7 +732,7 @@
           <svg width="30" height="30" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
         <h3>Thanks! Your details have been received.</h3>
-        <p>Your inquiry was sent successfully. I will contact you within 24 hours using your preferred contact method to understand your needs, confirm the service and arrange your consultation. Want to say hi right away? Reach out directly:</p>
+        <p>Your inquiry was sent successfully. I will contact you within 24 hours using your preferred contact method to confirm whether I am available for your arrival date and explain the next steps. Want to say hi right away? Reach out directly:</p>
         <div class="contact-lines" id="okContacts"></div>
         <p class="note">Response within 24 hours, usually much faster.</p>
       </div>
@@ -704,11 +750,11 @@
   </div>
 </section>
 
-<a class="sticky-cta" id="stickyCta" href="#contact">Get Started for €30</a>
+<a class="sticky-cta" id="stickyCta" href="#contact">Register My Arrival</a>
 
 <footer>
   <div class="wrap foot-inner">
-    <p>© 2026 B.O.B (Better Overseas Bound) · Munich, Germany<br>Personal relocation guidance for international students.<br>B.O.B is an independent service and is not operated by or affiliated with Munich Business School.</p>
+    <p>© 2026 B.O.B (Better Overseas Bound) · Munich, Germany<br>Personal arrival and settling-in support for international students.<br>B.O.B is an independent service and is not operated by or affiliated with Munich Business School.</p>
     <!-- IMPORTANT: privacy.html and impressum.html must exist and be uploaded alongside this file
          before the website is published. The links below point to them. -->
     <div class="foot-links">
@@ -749,17 +795,15 @@
   }, {threshold:0.12});
   document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
 
-  // ---------- Contact details (assembled at runtime, kept out of raw HTML source) ----------
+  // ---------- Contact details ----------
+  // ⚙️ CONFIGURATION: the single source of the B.O.B contact email. If it ever changes,
+  // update it here and in the <noscript> block above, plus privacy.html and impressum.html.
+  const businessEmail = 'Baljit.Bhatti@munich-business-school.de';
   var waDigits = ['49','176','8754','2242'].join('');
   var waPretty = '+49 176 ' + '8754' + '2242';
-  // ⚙️ CONFIGURATION: Replace with the final B.O.B business email before launch.
-  // Also update the same address in the <noscript> block above, in privacy.html and in impressum.html.
-  var businessEmailUser = 'hello';
-  var businessEmailDomain = 'YOUR-DOMAIN.de';
-  var em = businessEmailUser + String.fromCharCode(64) + businessEmailDomain;
   function contactLinksHTML(){
     return '<a href="https://wa.me/' + waDigits + '" target="_blank" rel="noopener">WhatsApp: ' + waPretty + '</a>'
-         + '<a href="mailto:' + em + '">' + em + '</a>';
+         + '<a href="mailto:' + encodeURIComponent(businessEmail).replace(/%40/,'@') + '">' + businessEmail + '</a>';
   }
 
   // ---------- Two-step form ----------
@@ -892,7 +936,7 @@
     Array.prototype.forEach.call(form.elements, function(el){
       if (!el.name) return;
       if (el.name.charAt(0) === '_') return;        // never save the honeypot
-      if (el.id === 'f-consent') return;            // never save the consent choice
+      if (el.id === 'f-consent') return;            // never save the acknowledgement choice
       if (el.type === 'checkbox'){
         if (!d[el.name]) d[el.name] = [];
         if (el.checked) d[el.name].push(el.value);
@@ -929,7 +973,7 @@
   form.addEventListener('input', queueSave);
   form.addEventListener('change', queueSave);
 
-  // ---------- URL prefill (?university=...&city=...&intake=2026-09&source=...&country=...) ----------
+  // ---------- URL prefill (?university=...&city=...&intake=2026-09&source=...&campaign=...&country=...) ----------
   function applyUrlPrefill(){
     var q = new URLSearchParams(location.search);
     var map = { university: 'f-uni', city: 'f-city', intake: 'f-intake', country: 'f-country' };
@@ -1001,7 +1045,7 @@
     errorBox.classList.remove('show');
     form.style.display = '';
     submitBtn.disabled = false;
-    submitBtn.textContent = 'Submit My Details';
+    submitBtn.textContent = 'Submit My Arrival Details';
     panelShown = false;
     updateSticky();
     goStep(2);

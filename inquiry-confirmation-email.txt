@@ -1,5 +1,5 @@
 ============================================================
-B.O.B — INQUIRY CONFIRMATION EMAIL
+B.O.B - INQUIRY CONFIRMATION EMAIL
 Send this shortly after a student submits the inquiry form.
 Replace [First Name] before sending.
 ============================================================
@@ -11,17 +11,22 @@ Hi [First Name],
 Thank you for contacting B.O.B.
 
 Your inquiry has been received successfully. No payment has been
-taken.
+taken, and submitting the form does not guarantee availability
+yet.
 
 I will contact you within 24 hours using your preferred contact
-method to understand your needs, confirm whether the service is
-suitable and arrange the next steps.
+method to confirm whether I am available for your arrival date
+and explain the next steps.
 
-As a reminder: B.O.B includes one 45-minute personal
-consultation, a personalised arrival checklist and three
-consecutive days of follow-up WhatsApp guidance, for a one-time
-fee of EUR 30.
+As a reminder: B.O.B provides personal arrival and settling-in
+support during your first three days in Munich. That means a
+personal welcome at Munich Airport, help with your luggage and
+the journey to your accommodation by public transport, and
+in-person guidance with your SIM card, bank account and health
+insurance over the following two days.
+
+If your flight details change in the meantime, just let me know.
 
 Kind regards,
 Baljit
-B.O.B — Better Overseas Bound
+B.O.B (Better Overseas Bound)

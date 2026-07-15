@@ -1,46 +1,70 @@
 ================================================================
-B.O.B — SERVICE CONFIRMATION (send to the student BEFORE payment)
+B.O.B - SERVICE CONFIRMATION (send to the student BEFORE payment)
 ================================================================
 Replace every [BRACKETED] value before sending. Delete these
 instruction lines. Sections marked "LEGAL REVIEW" should be
 checked by a qualified professional before first use.
 ================================================================
 
-Subject: Your B.O.B service confirmation
+Subject: Your B.O.B arrival support confirmation
 
 Hi [STUDENT FIRST NAME],
 
-Thank you for our conversation. As promised, here is a summary of
-the B.O.B service for you to confirm before any payment is made.
+Thank you for our conversation. I am available for your arrival
+date. Here is a summary of the B.O.B service for you to confirm
+before any payment is made.
 
-YOUR CONSULTATION
-- Date and time: [DATE], [TIME] ([TIME ZONE])
-- Format: [VIDEO CALL / PHONE CALL / IN PERSON], approx. 45 minutes
+DAY 1 - AIRPORT ARRIVAL SUPPORT
+- Date: [ARRIVAL DATE]
+- Flight: [AIRLINE AND FLIGHT NUMBER], scheduled landing [TIME]
+- Meeting point: Munich Airport, [TERMINAL / EXACT MEETING POINT]
+- Luggage: you told me you are bringing [NUMBER] suitcase(s)
+- Together we will: manage your luggage, go through how Munich's
+  public transport works, choose the right ticket, and travel to
+  your accommodation in [AREA / POSTCODE] by public transport
+- Please send me your exact accommodation address privately
+  before arrival day
 
-YOUR SUPPORT PERIOD
-- Service start date: [START DATE]
-- Follow-up WhatsApp guidance: three consecutive days,
-  from [DAY 1 DATE] to [DAY 3 DATE]
-  (If you chose email as your preferred contact method, the
-  follow-up guidance will be provided by email instead.)
+DAY 2 - GETTING CONNECTED
+- Date: [DAY 2 DATE], meeting at [TIME / PLACE]
+- Personal assistance with your SIM card setup and the immediate
+  practical steps needed to begin settling in
+
+DAY 3 - BANKING AND HEALTH INSURANCE
+- Date: [DAY 3 DATE], meeting at [TIME / PLACE]
+- Personal guidance on bank-account and health-insurance options,
+  the documents required and your next steps
 
 PRICE AND PAYMENT
-- Total price: EUR 30 (one-time, no subscription, no further charges)
+- Total price: EUR 30 (introductory pilot price, one-time,
+  no subscription, no further B.O.B charges)
 - Payment method: [PAYMENT METHOD, e.g. bank transfer / PayPal]
-- Payment is due: [BEFORE THE CONSULTATION / AS AGREED]
+- Payment is due: [BEFORE DAY 1 / AS AGREED]
 
-WHAT IS INCLUDED
-- One 45-minute personal consultation
-- One personalised arrival checklist for your situation
-- Three consecutive days of follow-up WhatsApp guidance,
-  beginning on the agreed start date
+NOT INCLUDED (paid by you directly)
+- Public-transport tickets (yours and any you need during the
+  three days)
+- SIM card and mobile-plan costs
+- Bank-related charges, if applicable
+- Health-insurance premiums
+- Food and personal purchases
+- Taxi or private-transport costs
+- Other external service charges
 
-WHAT IS NOT INCLUDED
-- Payment of any third-party costs (e.g. insurance premiums,
-  deposits, tickets, official fees)
-- Completing official procedures on your behalf
-- Professional legal, tax, immigration, financial or insurance advice
-- Services not listed above
+WHAT B.O.B DOES NOT DO
+B.O.B provides personal guidance and practical assistance. I do
+not make legal, financial, immigration or insurance decisions for
+you, sign contracts on your behalf, guarantee approval by banks,
+insurers or authorities, pay third-party charges, process visas
+or university admissions, or complete official procedures in your
+name. Travel is by public transport unless we have explicitly
+agreed otherwise; B.O.B is not a taxi service.
+
+FLIGHT CHANGES
+Please tell me as soon as possible if your flight changes.
+Reasonable delays will be accommodated where possible; significant
+schedule changes may require a revised meeting time depending on
+availability.
 
 CANCELLATION AND WITHDRAWAL  [LEGAL REVIEW REQUIRED]
 [Insert the cancellation/withdrawal information that applies to
@@ -65,4 +89,4 @@ will send the payment details.
 
 Kind regards,
 Baljit
-B.O.B — Better Overseas Bound
+B.O.B (Better Overseas Bound)

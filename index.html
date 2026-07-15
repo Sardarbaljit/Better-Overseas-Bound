@@ -4,10 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>B.O.B | Relocation Guidance for International Students in Germany</title>
-<meta name="description" content="B.O.B helps international students relocate and settle into Germany with affordable, personalized one-on-one guidance: bank account, health insurance, SIM, transport and more, for a flat €30.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<meta name="description" content="B.O.B helps international students relocate and settle into Germany. €30 includes one 45-minute personal consultation, a personalised arrival checklist and three consecutive days of follow-up WhatsApp guidance.">
 <style>
   :root{
     --ink:#0B1220;
@@ -21,7 +18,6 @@
     --blue-line:#DBE6FF;
     --line:#E7EAF0;
     --red:#B42318;
-    --red-line:#F4B0A9;
     --radius:20px;
     --shadow:0 1px 2px rgba(11,18,32,.04), 0 8px 24px rgba(11,18,32,.06);
     --shadow-lg:0 2px 4px rgba(11,18,32,.05), 0 20px 50px rgba(37,99,235,.10);
@@ -29,7 +25,8 @@
   *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth;}
   body{
-    font-family:'Inter',system-ui,sans-serif;
+    /* Privacy-conscious system font stack: no external font downloads */
+    font-family:Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     color:var(--ink);
     background:var(--bg);
     line-height:1.6;
@@ -49,9 +46,10 @@
   }
   .center{text-align:center;}
   .center .lead{margin:0 auto;}
-  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible{
-    outline:3px solid rgba(37,99,235,.45); outline-offset:2px;
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible{
+    outline:3px solid rgba(37,99,235,.5); outline-offset:2px;
   }
+  legend:focus{outline:3px solid rgba(37,99,235,.5); outline-offset:4px; border-radius:4px;}
 
   /* ---------- Nav ---------- */
   nav{
@@ -109,7 +107,7 @@
   }
   .hero .lead{margin:0 auto 30px; font-size:18px;}
   .hero-ctas{display:flex; gap:14px; justify-content:center; flex-wrap:wrap;}
-  .btn-lg{padding:15px 32px; font-size:16px; border-radius:14px;}
+  .btn-lg{padding:15px 32px; font-size:16px; border-radius:14px; min-height:48px;}
   .trustbar{
     margin:42px auto 0; display:flex; flex-wrap:wrap; justify-content:center; gap:10px 26px;
     color:var(--ink-soft); font-size:14px; font-weight:500;
@@ -141,11 +139,15 @@
   .price-top{text-align:center; margin-bottom:26px;}
   .price{font-size:58px; font-weight:800; letter-spacing:-0.04em; line-height:1;}
   .price small{font-size:16px; font-weight:500; color:var(--ink-soft); letter-spacing:0;}
-  .price-note{color:var(--ink-soft); font-size:15px; margin-top:8px;}
-  .price-list{list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:11px 22px; margin-bottom:28px;}
+  .price-note{color:var(--ink-soft); font-size:15px; margin-top:10px; max-width:52ch; margin-left:auto; margin-right:auto;}
+  .price-list{list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:11px 22px; margin-bottom:22px;}
   @media (max-width:640px){.price-list{grid-template-columns:1fr;}}
   .price-list li{display:flex; gap:10px; align-items:flex-start; font-size:15px;}
   .price-list svg{flex:none; margin-top:4px;}
+  .scope-note{
+    background:var(--bg-soft); border:1px solid var(--line); border-radius:12px;
+    padding:13px 16px; font-size:13.5px; color:var(--ink-soft); margin-bottom:24px;
+  }
 
   /* ---------- How it works ---------- */
   .steps{display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-top:42px;}
@@ -169,9 +171,12 @@
     display:grid; place-items:center; color:#fff; box-shadow:var(--shadow-lg);
   }
   .founder-visual .initials{font-size:68px; font-weight:800; letter-spacing:-0.03em; opacity:.95;}
+  .founder-visual img{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:1;
+  }
   .founder-visual .tagline{
-    position:absolute; bottom:20px; left:20px; right:20px;
-    background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.25); backdrop-filter:blur(6px);
+    position:absolute; bottom:20px; left:20px; right:20px; z-index:2;
+    background:rgba(11,18,32,.35); border:1px solid rgba(255,255,255,.25); backdrop-filter:blur(6px);
     border-radius:13px; padding:10px 14px; font-size:13.5px; text-align:center;
   }
   .founder-copy p{color:var(--ink-soft); font-size:15.5px; margin-bottom:14px;}
@@ -222,11 +227,13 @@
     font-family:inherit; font-size:16px; color:var(--ink);
     border:1.5px solid var(--line); border-radius:11px; padding:12px 14px;
     background:#FBFCFE; transition:border-color .2s, box-shadow .2s; width:100%;
+    min-height:48px;
   }
+  textarea{min-height:100px; resize:vertical;}
   input:focus,select:focus,textarea:focus{
     outline:none; border-color:var(--blue); box-shadow:0 0 0 3px rgba(37,99,235,.14); background:#fff;
   }
-  textarea{resize:vertical; min-height:100px;}
+  .hint{color:var(--ink-faint); font-size:12.5px; font-weight:400;}
   .err{display:none; color:var(--red); font-size:13px; font-weight:500;}
   .field.invalid input, .field.invalid textarea{border-color:var(--red); box-shadow:0 0 0 3px rgba(180,35,24,.08);}
   .field.invalid .err{display:block;}
@@ -234,19 +241,29 @@
   @media (max-width:600px){.check-grid{grid-template-columns:1fr;}}
   .check-opt{
     display:flex; align-items:center; gap:10px; font-size:14.5px; font-weight:500;
-    border:1.5px solid var(--line); border-radius:11px; padding:11px 13px;
+    border:1.5px solid var(--line); border-radius:11px; padding:11px 13px; min-height:44px;
     background:#FBFCFE; cursor:pointer; transition:border-color .2s, background .2s;
   }
   .check-opt:hover{border-color:var(--blue-line);}
   .check-opt:has(input:checked){border-color:var(--blue); background:var(--blue-soft);}
-  .check-opt input{width:auto; accent-color:var(--blue); margin:0; flex:none;}
+  .check-opt input{width:auto; min-height:0; accent-color:var(--blue); margin:0; flex:none;}
   .consent .check-opt{align-items:flex-start; font-weight:400; font-size:13.5px; color:var(--ink-soft); line-height:1.5;}
   .consent .check-opt input{margin-top:3px;}
   .consent a{color:var(--blue);}
-  .form-nav{display:flex; gap:12px; margin-top:24px;}
+  .payment-note{
+    background:var(--blue-soft); border:1px solid var(--blue-line); border-radius:12px;
+    padding:13px 16px; font-size:13.5px; color:var(--ink); margin-top:20px;
+  }
+  .form-nav{display:flex; gap:12px; margin-top:18px;}
+  .form-nav .btn{min-height:48px;}
   .form-nav .btn-primary{flex:1;}
+  @media (max-width:600px){
+    .form-nav{flex-direction:column-reverse;}
+    .form-nav .btn{width:100%;}
+  }
   #submitBtn:disabled, #nextBtn:disabled{opacity:.6; cursor:wait; transform:none;}
   .form-foot-note{margin-top:14px; font-size:12.5px; color:var(--ink-faint); text-align:center;}
+  .hp{display:none !important;}
 
   .success{display:none; text-align:center; padding:16px 4px;}
   .success.show{display:block; animation:pop .5s ease;}
@@ -257,12 +274,12 @@
   }
   .success .check.warn{background:linear-gradient(135deg,#D97706,#F59E0B);}
   .success h3{font-size:23px; margin-bottom:10px;}
-  .success p{color:var(--ink-soft); font-size:15.5px; max-width:46ch; margin:0 auto 22px;}
+  .success p{color:var(--ink-soft); font-size:15.5px; max-width:48ch; margin:0 auto 22px;}
   .contact-lines{display:grid; gap:12px; max-width:400px; margin:0 auto;}
   .contact-lines a{
     display:flex; align-items:center; justify-content:center; gap:10px;
     background:var(--bg-soft); border:1px solid var(--line); border-radius:13px;
-    padding:14px 18px; text-decoration:none; color:var(--ink); font-weight:600; font-size:15px;
+    padding:14px 18px; min-height:48px; text-decoration:none; color:var(--ink); font-weight:600; font-size:15px;
     transition:transform .2s, box-shadow .2s;
   }
   .contact-lines a:hover{transform:translateY(-2px); box-shadow:var(--shadow);}
@@ -272,7 +289,7 @@
   /* ---------- Sticky mobile CTA ---------- */
   .sticky-cta{
     position:fixed; bottom:14px; left:16px; right:16px; z-index:60; display:none;
-    text-align:center; padding:15px; border-radius:14px;
+    text-align:center; padding:14px; min-height:48px; border-radius:14px;
     background:var(--blue); color:#fff; font-weight:700; font-size:16px; text-decoration:none;
     box-shadow:0 10px 30px rgba(37,99,235,.4);
   }
@@ -295,7 +312,7 @@
 <nav id="nav">
   <div class="wrap nav-inner">
     <a class="logo" href="#home"><span class="dot">B</span>B.O.B</a>
-    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
     <div class="nav-links" id="navLinks">
       <a href="#pricing">What's included</a>
       <a href="#how">How It Works</a>
@@ -311,7 +328,7 @@
   <div class="wrap">
     <span class="eyebrow">For international students moving to Germany</span>
     <h1>Land in Germany with <span class="grad">someone in your corner</span></h1>
-    <p class="lead">B.O.B (Better Overseas Bound) gives you personal, one-on-one guidance through your first weeks in Germany. Bank account, health insurance, SIM card, transport, city life: one trusted person instead of a hundred open tabs. Flat €30, everything included.</p>
+    <p class="lead">B.O.B (Better Overseas Bound) gives you personal, one-on-one guidance for your first weeks in Germany. Bank account, health insurance, SIM card, transport, city life: one trusted person instead of a hundred open tabs. Flat €30.</p>
     <div class="hero-ctas">
       <a href="#contact" class="btn btn-primary btn-lg">Get Started for €30</a>
       <a href="#pricing" class="btn btn-ghost btn-lg">See what's included</a>
@@ -329,28 +346,29 @@
 <section class="pricing" id="pricing">
   <div class="wrap">
     <div class="center reveal">
-      <span class="eyebrow">One price, everything included</span>
+      <span class="eyebrow">One price, one clear scope</span>
       <h2>What you get for €30</h2>
-      <p class="lead">Advice about German bureaucracy is scattered across forums, groups, and outdated videos. B.O.B replaces all of it with one trusted person and one flat fee.</p>
+      <p class="lead">€30 includes one 45-minute personal consultation, a personalised arrival checklist and three consecutive days of follow-up WhatsApp guidance, beginning on an agreed date.</p>
     </div>
     <div class="price-card reveal">
       <span class="badge">Simple, honest, flat</span>
       <div class="price-top">
         <div class="price">€30 <small>one-time</small></div>
-        <p class="price-note">One consultation + 3 days of integration assistance. No subscriptions, no upsells, no hidden costs.</p>
+        <p class="price-note">No subscriptions, no upsells, no hidden costs.</p>
       </div>
       <ul class="price-list">
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#EFF4FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>One-on-one consultation to plan your move</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#EFF4FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Personalized step-by-step arrival checklist</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#EFF4FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>One 45-minute personal consultation</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#EFF4FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Personalised step-by-step arrival checklist</li>
         <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#EFF4FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Anmeldung and bureaucracy guidance</li>
         <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#EFF4FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Bank account guidance</li>
         <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#EFF4FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Health insurance guidance</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#EFF4FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>SIM card and phone setup</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#EFF4FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>SIM card and phone setup guidance</li>
         <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#EFF4FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Public transport guidance</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#EFF4FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Shopping and city orientation</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#EFF4FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Shopping and city orientation advice</li>
         <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#EFF4FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Student life advice</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#EFF4FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>3 days of integration assistance on WhatsApp</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#EFF4FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Three consecutive days of follow-up WhatsApp guidance</li>
       </ul>
+      <p class="scope-note">B.O.B provides information, planning and personal guidance. It does not pay third-party costs, complete official procedures on your behalf, or provide professional legal, immigration, financial or insurance advice.</p>
       <a href="#contact" class="btn btn-primary btn-lg" style="width:100%;">Get Started for €30</a>
     </div>
   </div>
@@ -368,22 +386,22 @@
       <div class="step-card reveal">
         <div class="step-num">1</div>
         <h3>Reach out</h3>
-        <p>Fill in the short form below with your arrival details. You'll hear back within 24 hours.</p>
+        <p>Fill in the short form below with your details. No payment is taken at this stage. You'll hear back within 24 hours.</p>
       </div>
       <div class="step-card reveal">
         <div class="step-num">2</div>
-        <h3>We build your plan</h3>
-        <p>In a one-on-one consultation, we go through everything your move needs, tailored to your city, university, and situation.</p>
+        <h3>We talk first</h3>
+        <p>I contact you to understand your needs, confirm the service and agree on your consultation and support start date.</p>
       </div>
       <div class="step-card reveal">
         <div class="step-num">3</div>
         <h3>You arrive prepared</h3>
-        <p>Bank, insurance, SIM, transport: you land knowing exactly what to do first, second, and third.</p>
+        <p>Your 45-minute consultation and personalised arrival checklist mean you land knowing exactly what to do first, second, and third.</p>
       </div>
       <div class="step-card reveal">
         <div class="step-num">4</div>
         <h3>Support that stays</h3>
-        <p>For your first 3 days of integration, you have direct WhatsApp access to a person who knows your case.</p>
+        <p>For three consecutive days, beginning on the agreed date, you have direct WhatsApp access to a person who knows your case.</p>
       </div>
     </div>
   </div>
@@ -398,12 +416,15 @@
     </div>
     <div class="founder-grid">
       <div class="founder-visual reveal">
-        <span class="initials">BB</span>
+        <span class="initials" aria-hidden="true">BB</span>
+        <!-- FOUNDER PHOTO: upload a professional photo named founder-photo.jpg next to this file.
+             If the file is missing, the gradient "BB" fallback below is shown automatically. -->
+        <img src="founder-photo.jpg" alt="Baljit Bhatti, founder of B.O.B" onerror="this.style.display='none'">
         <div class="tagline">"I want your transition to be easier than mine was."</div>
       </div>
       <div class="founder-copy reveal">
         <p>I moved to Germany as an international student myself. I remember exactly how the first weeks felt: information everywhere, but no single trusted person to guide me. Which insurance? Which bank? Which ticket? Every answer took hours to find and verify.</p>
-        <p>B.O.B is a new service, and I say that openly. What you get today is not a big company. It's direct, personal guidance from someone who completed this exact journey and built an MBA in Munich along the way. Every student B.O.B helps also shapes what comes next: a digital platform that makes relocating to Germany easier for students everywhere.</p>
+        <p>B.O.B is a new service, and I say that openly. What you get today is not a big company. It's direct, personal guidance from someone who completed the same international-student journey and earned an MBA from Munich Business School. Every student B.O.B helps also shapes what comes next: a digital platform that makes relocating to Germany easier for students everywhere.</p>
         <div class="name">Baljit Bhatti</div>
         <div class="role">Founder, B.O.B · MBA, Munich Business School</div>
       </div>
@@ -421,7 +442,11 @@
     <div class="faq-list reveal">
       <details>
         <summary>Is €30 really the full price?</summary>
-        <p>Yes. €30 is a one-time, flat fee covering one one-on-one consultation, a personalized arrival checklist, and 3 days of hands-on integration assistance on WhatsApp. If you need more support after that, just ask about extending. There are never subscriptions, upsells, or automatic charges.</p>
+        <p>Yes. €30 is a one-time flat fee. It includes one 45-minute personal consultation, a personalised arrival checklist and three consecutive days of follow-up WhatsApp guidance, beginning on an agreed date. If you need more support afterwards, just ask. There are never subscriptions, upsells or automatic charges.</p>
+      </details>
+      <details>
+        <summary>When do I pay?</summary>
+        <p>Not through this website, and not when you submit the form. After you send your details, I contact you first to understand your needs and confirm the service. Payment and the support start date are agreed together before anything begins.</p>
       </details>
       <details>
         <summary>Which cities do you cover?</summary>
@@ -432,20 +457,16 @@
         <p>Ideally before you fly, since the biggest time savings come from arriving prepared. But if you've already landed and feel lost, it's absolutely not too late. Reach out and we'll sort out your situation from wherever you are.</p>
       </details>
       <details>
-        <summary>How does the guidance actually happen?</summary>
-        <p>After you fill in the form, you'll get a reply within 24 hours to schedule your one-on-one consultation. From there you receive a personal plan for your arrival, and during your 3-day integration period you can message on WhatsApp whenever questions come up.</p>
-      </details>
-      <details>
         <summary>How did my university know about B.O.B?</summary>
         <p>B.O.B is designed to be shared by universities with incoming international students, as a recommendation and nothing more. Your university never shares your data with B.O.B. Every conversation starts because you chose to reach out.</p>
       </details>
       <details>
         <summary>What happens to my data?</summary>
-        <p>Your information is used only to provide the service, nothing else. Form submissions are delivered by Formspree and stored no longer than 12 months. Your data is never sold or shared with third parties, and you can request deletion at any time by email. Full details are in the <a href="privacy.html">Privacy Policy</a>.</p>
+        <p>Your information is used only to respond to your inquiry and provide the requested service, and is kept only for as long as necessary for that. Form submissions are delivered by Formspree. Unfinished form entries are stored temporarily in your own browser (sessionStorage) and disappear when you close the tab. Your data is never sold or shared with third parties, and you can request deletion at any time by email. Full details are in the <a href="privacy.html">Privacy Policy</a>.</p>
       </details>
       <details>
-        <summary>Is B.O.B a visa or admissions agency?</summary>
-        <p>No. B.O.B doesn't process visas or university applications. It focuses on what happens around your move: settling in, bureaucracy, banking, insurance, transport, and everyday life. That's the part no one else guides you through.</p>
+        <summary>What does B.O.B not do?</summary>
+        <p>B.O.B provides information, planning and personal guidance. It does not process visas or university applications, complete official procedures on your behalf, pay any third-party costs, or provide professional legal, immigration, financial or insurance advice. It guides you through settling in: bureaucracy, banking, insurance choices, transport and everyday life.</p>
       </details>
     </div>
   </div>
@@ -457,12 +478,12 @@
     <div class="center reveal">
       <span class="eyebrow">Get Started</span>
       <h2>Tell us about your move</h2>
-      <p class="lead">Two short steps, about two minutes. You'll hear back within 24 hours.</p>
+      <p class="lead">Two short steps, about two minutes. This is an inquiry form: no payment is taken. You'll hear back within 24 hours.</p>
     </div>
 
     <div class="form-card reveal">
       <!--
-        ⚙️ FORM ENDPOINT (configured): the line below already contains your live Formspree ID (mvzezpwo).
+        ⚙️ FORM ENDPOINT (configured): the line below contains the live Formspree ID (mvzezpwo).
         Only change it if you ever create a new Formspree form.
       -->
       <form id="bobForm" action="https://formspree.io/f/mvzezpwo" method="POST" novalidate>
@@ -472,28 +493,49 @@
         </div>
 
         <input type="hidden" name="Referral Source" id="f-source" value="Direct">
+        <!-- Honeypot anti-spam field (Formspree): invisible to people, filled only by bots -->
+        <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 
         <fieldset id="step1">
-          <legend>About you</legend>
+          <legend id="legend1">Step 1: About you</legend>
           <div class="form-grid">
             <div class="field">
-              <label for="f-name">Full Name <span class="req">*</span></label>
-              <input id="f-name" name="Full Name" type="text" required autocomplete="name" placeholder="Your full name" aria-describedby="e-name">
+              <label for="f-name">Full Name <span class="req" aria-hidden="true">*</span></label>
+              <input id="f-name" name="Full Name" type="text" required autocomplete="name" placeholder="Your full name" aria-required="true" aria-describedby="e-name">
               <p class="err" id="e-name" role="alert"></p>
             </div>
             <div class="field">
-              <label for="f-email">Email <span class="req">*</span></label>
-              <input id="f-email" name="Email" type="email" required autocomplete="email" placeholder="you@example.com" aria-describedby="e-email">
+              <label for="f-email">Email <span class="req" aria-hidden="true">*</span></label>
+              <input id="f-email" name="Email" type="email" required autocomplete="email" placeholder="you@example.com" aria-required="true" aria-describedby="e-email">
               <p class="err" id="e-email" role="alert"></p>
             </div>
             <div class="field">
-              <label for="f-wa">WhatsApp Number <span class="req">*</span></label>
-              <input id="f-wa" name="WhatsApp Number" type="tel" required autocomplete="tel" inputmode="tel" placeholder="+91 98765 43210" aria-describedby="e-wa">
+              <label for="f-wa">WhatsApp Number <span class="req" aria-hidden="true">*</span></label>
+              <input id="f-wa" name="WhatsApp Number" type="tel" required autocomplete="tel" inputmode="tel" placeholder="+49 176 12345678" aria-required="true" aria-describedby="h-wa e-wa">
+              <p class="hint" id="h-wa">Include your country code.</p>
               <p class="err" id="e-wa" role="alert"></p>
             </div>
             <div class="field">
               <label for="f-uni">University <span class="opt">(optional)</span></label>
-              <input id="f-uni" name="University" type="text" autocomplete="organization" placeholder="e.g. Munich Business School">
+              <input id="f-uni" name="University" type="text" list="uniList" autocomplete="off" placeholder="Start typing your university">
+              <datalist id="uniList">
+                <option value="Munich Business School"></option>
+                <option value="Technical University of Munich"></option>
+                <option value="Ludwig Maximilian University of Munich"></option>
+                <option value="Munich University of Applied Sciences"></option>
+                <option value="Berlin School of Business and Innovation"></option>
+                <option value="Humboldt University of Berlin"></option>
+                <option value="Free University of Berlin"></option>
+                <option value="Technical University of Berlin"></option>
+                <option value="Frankfurt School of Finance &amp; Management"></option>
+                <option value="Goethe University Frankfurt"></option>
+                <option value="University of Cologne"></option>
+                <option value="RWTH Aachen University"></option>
+                <option value="University of Mannheim"></option>
+                <option value="Heidelberg University"></option>
+                <option value="University of Hamburg"></option>
+                <option value="University of Stuttgart"></option>
+              </datalist>
             </div>
             <div class="field full">
               <label for="f-city">City in Germany <span class="opt">(optional)</span></label>
@@ -518,28 +560,35 @@
         </fieldset>
 
         <fieldset id="step2" hidden>
-          <legend>Your arrival</legend>
+          <legend id="legend2">Step 2: Your arrival</legend>
           <div class="form-grid">
             <div class="field">
-              <label for="f-nat">Nationality <span class="opt">(optional)</span></label>
-              <input id="f-nat" name="Nationality" type="text" autocomplete="country-name" placeholder="e.g. India">
+              <label for="f-country">Country you are travelling from <span class="opt">(optional)</span></label>
+              <input id="f-country" name="Country Travelling From" type="text" list="countryList" autocomplete="off" placeholder="Start typing your country">
+              <datalist id="countryList">
+                <option value="India"></option><option value="China"></option><option value="Pakistan"></option>
+                <option value="Bangladesh"></option><option value="Nepal"></option><option value="Sri Lanka"></option>
+                <option value="Vietnam"></option><option value="Indonesia"></option><option value="Philippines"></option>
+                <option value="Thailand"></option><option value="South Korea"></option><option value="Japan"></option>
+                <option value="Taiwan"></option><option value="Iran"></option><option value="Turkey"></option>
+                <option value="Egypt"></option><option value="Jordan"></option><option value="Lebanon"></option>
+                <option value="Nigeria"></option><option value="Ghana"></option><option value="Kenya"></option>
+                <option value="Ethiopia"></option><option value="Morocco"></option><option value="Tunisia"></option>
+                <option value="Brazil"></option><option value="Mexico"></option><option value="Colombia"></option>
+                <option value="Chile"></option><option value="United States"></option><option value="Canada"></option>
+                <option value="United Kingdom"></option><option value="Ukraine"></option><option value="Serbia"></option>
+              </datalist>
             </div>
             <div class="field">
-              <label for="f-intake">Intake <span class="opt">(optional)</span></label>
-              <input id="f-intake" name="Intake" type="text" list="intakeList" placeholder="e.g. September 2026">
-              <datalist id="intakeList">
-                <option value="September 2026"></option><option value="October 2026"></option>
-                <option value="January 2027"></option><option value="February 2027"></option>
-                <option value="March 2027"></option><option value="April 2027"></option>
-                <option value="September 2027"></option><option value="October 2027"></option>
-              </datalist>
+              <label for="f-intake">Study intake <span class="opt">(optional)</span></label>
+              <input id="f-intake" name="Study Intake" type="month" placeholder="YYYY-MM">
             </div>
             <div class="field full">
               <label for="f-arrival">Expected Arrival Date <span class="opt">(optional)</span></label>
               <input id="f-arrival" name="Expected Arrival Date" type="date">
             </div>
             <div class="field full">
-              <label id="svc-label">What do you need help with? <span class="opt">(select all that apply)</span></label>
+              <label id="svc-label">What do you need help with? <span class="opt">(select all that apply, or none)</span></label>
               <div class="check-grid" role="group" aria-labelledby="svc-label">
                 <label class="check-opt"><input type="checkbox" name="Help Needed" value="Arrival planning">Arrival planning</label>
                 <label class="check-opt"><input type="checkbox" name="Help Needed" value="Anmeldung guidance">Anmeldung guidance</label>
@@ -550,7 +599,12 @@
                 <label class="check-opt"><input type="checkbox" name="Help Needed" value="Shopping and city orientation">Shopping &amp; city orientation</label>
                 <label class="check-opt"><input type="checkbox" name="Help Needed" value="Student life">Student life</label>
                 <label class="check-opt"><input type="checkbox" name="Help Needed" value="Not sure yet">Not sure yet</label>
+                <label class="check-opt"><input type="checkbox" name="Help Needed" value="Other" id="opt-other">Other</label>
               </div>
+            </div>
+            <div class="field full" id="otherWrap" hidden>
+              <label for="f-other">What else do you need help with?</label>
+              <input id="f-other" name="Other Service Details" type="text" autocomplete="off" placeholder="Briefly describe it">
             </div>
             <div class="field full">
               <label for="f-msg">Additional comments <span class="opt">(optional)</span></label>
@@ -558,31 +612,32 @@
             </div>
             <div class="field full consent">
               <label class="check-opt">
-                <input type="checkbox" id="f-consent" name="Privacy Consent" value="Agreed" required aria-describedby="e-consent">
+                <input type="checkbox" id="f-consent" name="Privacy Consent" value="Agreed" required aria-required="true" aria-describedby="e-consent">
                 <span>I agree that B.O.B uses my details to contact me about my relocation, as described in the <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>. My data is never shared or sold, and I can request deletion at any time.</span>
               </label>
               <p class="err" id="e-consent" role="alert"></p>
             </div>
           </div>
+          <p class="payment-note">No payment is taken when you submit this form. I will first contact you to understand your needs, confirm the service and agree on the support start date.</p>
           <div class="form-nav">
             <button type="button" class="btn btn-ghost btn-lg" id="backBtn">Back</button>
-            <button type="submit" class="btn btn-primary btn-lg" id="submitBtn">Submit details and view contact information</button>
+            <button type="submit" class="btn btn-primary btn-lg" id="submitBtn">Submit My Details</button>
           </div>
           <p class="form-foot-note">Universities never send us your data. This conversation starts with you.</p>
         </fieldset>
       </form>
 
-      <div class="success" id="successBox">
+      <div class="success" id="successBox" role="status">
         <div class="check">
           <svg width="30" height="30" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-        <h3>You're on the list!</h3>
-        <p>Thanks! Your details were sent successfully. <b>You'll be contacted within 24 hours.</b> Can't wait, or want to say hi right away? Reach out directly:</p>
+        <h3>Thanks! Your details have been received.</h3>
+        <p>Your information was sent successfully. I will contact you within 24 hours to understand your needs, confirm the service and arrange your consultation. Want to say hi right away? Reach out directly:</p>
         <div class="contact-lines" id="okContacts"></div>
         <p class="note">Response within 24 hours, usually much faster.</p>
       </div>
 
-      <div class="success" id="errorBox">
+      <div class="success" id="errorBox" role="alert">
         <div class="check warn">
           <svg width="30" height="30" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 7v6" stroke="#fff" stroke-width="3" stroke-linecap="round"/><circle cx="12" cy="17" r="1.6" fill="#fff"/></svg>
         </div>
@@ -600,6 +655,8 @@
 <footer>
   <div class="wrap foot-inner">
     <p>© 2026 B.O.B (Better Overseas Bound) · Munich, Germany<br>Personal relocation guidance for international students.<br>B.O.B is an independent service and is not operated by or affiliated with Munich Business School.</p>
+    <!-- IMPORTANT: privacy.html and impressum.html must exist and be uploaded alongside this file
+         before the website is published. The links below point to them. -->
     <div class="foot-links">
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
@@ -652,12 +709,17 @@
   var successBox = document.getElementById('successBox');
   var errorBox = document.getElementById('errorBox');
 
-  function goStep(n){
+  function goStep(n, moveFocus){
     step1.hidden = (n !== 1);
     step2.hidden = (n !== 2);
     stepLabel.textContent = 'Step ' + n + ' of 2';
     pbar.setAttribute('aria-valuenow', String(n));
     pfill.style.width = (n === 1) ? '50%' : '100%';
+    if (moveFocus !== false){
+      var legend = document.getElementById(n === 1 ? 'legend1' : 'legend2');
+      legend.setAttribute('tabindex', '-1');
+      legend.focus();
+    }
     var card = document.querySelector('.form-card');
     if (card && card.getBoundingClientRect().top < 0) card.scrollIntoView({behavior:'smooth', block:'start'});
   }
@@ -671,7 +733,7 @@
     else { f.classList.remove('invalid'); if (e) e.textContent = ''; el.setAttribute('aria-invalid','false'); }
   }
   function validateField(el){
-    var v = el.value.trim();
+    var v = el.value ? el.value.trim() : '';
     if (el.id === 'f-name'){
       if (!v){ setError(el, 'Please enter your full name.'); return false; }
     }
@@ -680,9 +742,10 @@
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)){ setError(el, 'That email address doesn\'t look right. Please check it.'); return false; }
     }
     if (el.id === 'f-wa'){
-      var digits = v.replace(/\D/g, '');
       if (!v){ setError(el, 'Please enter your WhatsApp number.'); return false; }
-      if (digits.length < 7){ setError(el, 'Please enter your full WhatsApp number, including country code (e.g. +91).'); return false; }
+      // Accept spaces, brackets, hyphens and dots; require 7 to 15 digits overall.
+      var cleaned = v.replace(/[\s().\-]/g, '');
+      if (!/^\+?\d{7,15}$/.test(cleaned)){ setError(el, 'Please enter a valid WhatsApp number with your country code (e.g. +49 176 12345678).'); return false; }
     }
     if (el.id === 'f-consent'){
       if (!el.checked){ setError(el, 'Please agree to the Privacy Policy so we\'re allowed to contact you.'); return false; }
@@ -710,12 +773,34 @@
   nextBtn.addEventListener('click', function(){ if (validateStep1()) goStep(2); });
   backBtn.addEventListener('click', function(){ goStep(1); }); // values are kept, nothing is cleared
 
-  // ---------- Draft saving (localStorage) ----------
+  // Enter key: on Step 1, Enter inside an input means "Continue", never a full-form submit.
+  // On Step 2, Enter inside the textarea just adds a new line (default), never submits.
+  form.addEventListener('keydown', function(e){
+    if (e.key !== 'Enter') return;
+    if (!step1.hidden && e.target.tagName === 'INPUT'){
+      e.preventDefault();
+      nextBtn.click();
+    }
+  });
+
+  // ---------- "Other" service option ----------
+  var otherCb = document.getElementById('opt-other');
+  var otherWrap = document.getElementById('otherWrap');
+  var otherInput = document.getElementById('f-other');
+  function syncOther(){
+    otherWrap.hidden = !otherCb.checked;
+    if (!otherCb.checked) otherInput.value = '';
+  }
+  otherCb.addEventListener('change', syncOther);
+
+  // ---------- Draft saving (sessionStorage: cleared when the tab closes) ----------
   var DRAFT_KEY = 'bobFormDraft';
   function collectForm(){
     var d = {};
     Array.prototype.forEach.call(form.elements, function(el){
       if (!el.name) return;
+      if (el.name.charAt(0) === '_') return;        // never save the honeypot
+      if (el.id === 'f-consent') return;            // never save the consent choice
       if (el.type === 'checkbox'){
         if (!d[el.name]) d[el.name] = [];
         if (el.checked) d[el.name].push(el.value);
@@ -726,15 +811,16 @@
     return d;
   }
   function saveDraft(){
-    try { localStorage.setItem(DRAFT_KEY, JSON.stringify(collectForm())); } catch(e){}
+    try { sessionStorage.setItem(DRAFT_KEY, JSON.stringify(collectForm())); } catch(e){}
   }
   function restoreDraft(){
     var raw;
-    try { raw = localStorage.getItem(DRAFT_KEY); } catch(e){ return; }
+    try { raw = sessionStorage.getItem(DRAFT_KEY); } catch(e){ return; }
     if (!raw) return;
     var d; try { d = JSON.parse(raw); } catch(e){ return; }
     Array.prototype.forEach.call(form.elements, function(el){
       if (!el.name || !(el.name in d)) return;
+      if (el.name.charAt(0) === '_' || el.id === 'f-consent') return;
       if (el.type === 'checkbox'){
         el.checked = Array.isArray(d[el.name]) && d[el.name].indexOf(el.value) !== -1;
       } else if (el.type !== 'button' && el.type !== 'submit' && el.type !== 'hidden'){
@@ -743,13 +829,14 @@
     });
   }
   var saveTimer;
-  form.addEventListener('input', function(){ clearTimeout(saveTimer); saveTimer = setTimeout(saveDraft, 250); });
-  form.addEventListener('change', function(){ clearTimeout(saveTimer); saveTimer = setTimeout(saveDraft, 250); });
+  function queueSave(){ clearTimeout(saveTimer); saveTimer = setTimeout(saveDraft, 250); }
+  form.addEventListener('input', queueSave);
+  form.addEventListener('change', queueSave);
 
-  // ---------- URL prefill (?university=...&city=...&intake=...&source=...) ----------
+  // ---------- URL prefill (?university=...&city=...&intake=2026-09&source=...&country=...) ----------
   function applyUrlPrefill(){
     var q = new URLSearchParams(location.search);
-    var map = { university: 'f-uni', city: 'f-city', intake: 'f-intake', nationality: 'f-nat' };
+    var map = { university: 'f-uni', city: 'f-city', intake: 'f-intake', country: 'f-country' };
     Object.keys(map).forEach(function(param){
       var val = q.get(param);
       if (val) document.getElementById(map[param]).value = val;
@@ -758,14 +845,17 @@
     if (src) document.getElementById('f-source').value = src;
   }
   restoreDraft();      // saved entries first...
-  applyUrlPrefill();   // ...then URL parameters take priority
+  applyUrlPrefill();   // ...then URL parameters override the matching fields
+  syncOther();         // show the "Other" text field if it was restored as checked
 
   // ---------- Submit ----------
   form.addEventListener('submit', async function(e){
     e.preventDefault();
-    var consentOk = validateField(document.getElementById('f-consent'));
     if (!validateStep1()){ goStep(1); return; }
-    if (!consentOk){ document.getElementById('f-consent').focus(); return; }
+    if (!validateField(document.getElementById('f-consent'))){
+      document.getElementById('f-consent').focus();
+      return;
+    }
     submitBtn.disabled = true;
     submitBtn.textContent = 'Sending…';
     try {
@@ -775,20 +865,23 @@
         headers: {'Accept': 'application/json'}
       });
       if (!res.ok) throw new Error('Form service error');
-      try { localStorage.removeItem(DRAFT_KEY); } catch(err){} // clear draft ONLY on real success
+      try { sessionStorage.removeItem(DRAFT_KEY); } catch(err){} // clear draft ONLY on confirmed success
       showPanel(successBox, 'okContacts');
     } catch (err) {
-      // Honest failure: nothing was submitted, draft stays saved, show direct contacts.
+      // Honest failure: nothing was submitted, the draft stays saved, show direct contacts.
       showPanel(errorBox, 'errContacts');
     }
   });
 
+  var panelShown = false;
   function showPanel(panel, slotId){
     document.getElementById(slotId).innerHTML = contactLinksHTML();
     form.style.display = 'none';
     successBox.classList.remove('show');
     errorBox.classList.remove('show');
     panel.classList.add('show');
+    panelShown = true;
+    updateSticky();
     panel.scrollIntoView({behavior:'smooth', block:'center'});
   }
 
@@ -797,15 +890,36 @@
     errorBox.classList.remove('show');
     form.style.display = '';
     submitBtn.disabled = false;
-    submitBtn.textContent = 'Submit details and view contact information';
-    form.scrollIntoView({behavior:'smooth', block:'center'});
+    submitBtn.textContent = 'Submit My Details';
+    panelShown = false;
+    updateSticky();
+    goStep(2);
   });
 
-  // ---------- Sticky mobile CTA (hidden while the form is on screen) ----------
+  // ---------- Sticky mobile CTA ----------
+  // Hidden while: the form section is on screen, an input is focused (keyboard
+  // likely open), or the success/error panel is displayed.
   var sticky = document.getElementById('stickyCta');
+  var contactInView = false;
+  var inputFocused = false;
+  function updateSticky(){
+    sticky.classList.toggle('on', !contactInView && !inputFocused && !panelShown);
+  }
   new IntersectionObserver(function(entries){
-    entries.forEach(function(e){ sticky.classList.toggle('on', !e.isIntersecting); });
+    entries.forEach(function(e){ contactInView = e.isIntersecting; });
+    updateSticky();
   }, {threshold:0.05}).observe(document.getElementById('contact'));
+  document.addEventListener('focusin', function(e){
+    if (e.target.matches && e.target.matches('input, textarea, select')){ inputFocused = true; updateSticky(); }
+  });
+  document.addEventListener('focusout', function(){
+    setTimeout(function(){
+      var a = document.activeElement;
+      inputFocused = !!(a && a.matches && a.matches('input, textarea, select'));
+      updateSticky();
+    }, 80);
+  });
+  updateSticky();
 </script>
 </body>
 </html>

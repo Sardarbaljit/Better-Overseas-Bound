@@ -303,6 +303,17 @@
   .contact-lines a:hover{transform:translateY(-2px); box-shadow:var(--shadow);}
   .success .note{margin-top:20px; font-size:14px; color:var(--green); font-weight:600;}
 
+  .check.warn{background:linear-gradient(135deg,#D97706,#F59E0B);}
+  .check-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px 14px;}
+  @media (max-width:600px){.check-grid{grid-template-columns:1fr;}}
+  .check-opt{
+    display:flex; align-items:center; gap:10px; font-size:14.5px; font-weight:500;
+    border:1.5px solid var(--line); border-radius:11px; padding:11px 13px;
+    background:#FBFCFE; cursor:pointer; transition:border-color .2s;
+  }
+  .check-opt:hover{border-color:var(--blue-line);}
+  .check-opt input{width:auto; accent-color:var(--blue); margin:0;}
+
   /* ---------- Footer ---------- */
   footer{border-top:1px solid var(--line); padding:44px 0 56px;}
   .foot-inner{display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap;}
@@ -343,7 +354,7 @@
     <div class="trustbar">
       <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Built by an international student</span>
       <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Flat €30, no hidden costs</span>
-      <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>GDPR-compliant</span>
+      <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Privacy-first</span>
       <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Starting in Munich</span>
     </div>
   </div>
@@ -395,7 +406,7 @@
       <div class="svc reveal"><div class="icon">🛒</div><div><b>Shopping recommendations</b><small>Where to buy essentials without wasting money in week one.</small></div></div>
       <div class="svc reveal"><div class="icon">🗺️</div><div><b>City orientation</b><small>Get to know your new city: the practical version, not the tourist one.</small></div></div>
       <div class="svc reveal"><div class="icon">🎓</div><div><b>Student life advice</b><small>Honest tips on studying, working, and settling in as a student.</small></div></div>
-      <div class="svc reveal"><div class="icon">💚</div><div><b>WhatsApp support</b><small>Questions after arrival? Message directly and get real answers.</small></div></div>
+      <div class="svc reveal"><div class="icon">💚</div><div><b>WhatsApp support</b><small>Direct help on WhatsApp during your 3-day integration period.</small></div></div>
     </div>
   </div>
 </section>
@@ -427,7 +438,7 @@
       <div class="step-card reveal">
         <div class="step-num">4</div>
         <h3>Support that stays</h3>
-        <p>Something unexpected after arrival? You have direct WhatsApp access to a person who knows your case.</p>
+        <p>For your first 3 days of integration, you have direct WhatsApp access to a person who knows your case.</p>
       </div>
     </div>
   </div>
@@ -444,13 +455,13 @@
     <div class="price-card reveal">
       <span class="badge">Simple, honest, flat</span>
       <div class="price">€30 <small>one-time</small></div>
-      <p class="price-note">No subscriptions. No upsells. No hidden costs.</p>
+      <p class="price-note">One consultation + 3 days of integration assistance. No subscriptions, no upsells, no hidden costs.</p>
       <ul class="price-list">
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#EFF4FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Personal one-on-one consultation</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#EFF4FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Step-by-step arrival plan for your situation</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#EFF4FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>One-on-one consultation to plan your move</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#EFF4FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Personalized step-by-step arrival checklist</li>
         <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#EFF4FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Bank, insurance, SIM &amp; transport guidance</li>
         <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#EFF4FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>City orientation &amp; student life advice</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#EFF4FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Direct WhatsApp support after arrival</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#EFF4FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>3 days of integration assistance on WhatsApp</li>
       </ul>
       <a href="#contact" class="btn btn-primary btn-lg" style="width:100%;">Get Started for €30</a>
     </div>
@@ -463,12 +474,12 @@
     <div class="uni-band reveal">
       <span class="eyebrow" style="background:rgba(255,255,255,.1); border-color:rgba(255,255,255,.2); color:#BFD3FF;">For universities</span>
       <h2>A service universities can recommend with confidence</h2>
-      <p class="lead">Universities share B.O.B with their incoming international students as a trusted option, nothing more. The rest is entirely in the student's hands.</p>
+      <p class="lead">B.O.B is designed to be shared by universities with their incoming international students as a trusted option, nothing more. The rest is entirely in the student's hands.</p>
       <div class="uni-points">
-        <div><b>Universities recommend, never enroll</b><span>Institutions simply let incoming students know B.O.B exists. There are no obligations and no commissions on student data.</span></div>
+        <div><b>Recommend, never enroll</b><span>The model is simple: universities let incoming students know B.O.B exists. There are no obligations and no commissions on student data.</span></div>
         <div><b>No student data is ever shared</b><span>Universities never pass on names, emails, or records. Every contact starts with the student, voluntarily.</span></div>
         <div><b>Students choose freely</b><span>Each student decides for themselves whether to reach out. B.O.B only knows about a student when they get in touch directly.</span></div>
-        <div><b>Fully GDPR-compliant</b><span>All personal information is handled under EU data-protection law, used only to deliver the service, and never sold or shared.</span></div>
+        <div><b>Privacy-conscious by design</b><span>Contact always starts with the student. Personal information is used only to deliver the service and is never sold or shared. See the privacy policy for details.</span></div>
       </div>
     </div>
   </div>
@@ -533,7 +544,7 @@
     <div class="faq-list reveal">
       <details>
         <summary>Is €30 really the full price?</summary>
-        <p>Yes. €30 is a one-time, flat fee that covers your consultation, personalized arrival guidance across all the essentials, and WhatsApp support. There are no subscriptions, upsells, or hidden costs.</p>
+        <p>Yes. €30 is a one-time, flat fee covering one one-on-one consultation, a personalized arrival checklist, and 3 days of hands-on integration assistance on WhatsApp. If you need more support after that, just ask about extending. There are never subscriptions, upsells, or automatic charges.</p>
       </details>
       <details>
         <summary>Which cities do you cover?</summary>
@@ -545,15 +556,15 @@
       </details>
       <details>
         <summary>How does the guidance actually happen?</summary>
-        <p>After you fill in the form, you'll get a reply within 24 hours to schedule your one-on-one consultation. From there you receive a personal plan for your arrival, and you can message on WhatsApp whenever questions come up.</p>
+        <p>After you fill in the form, you'll get a reply within 24 hours to schedule your one-on-one consultation. From there you receive a personal plan for your arrival, and during your 3-day integration period you can message on WhatsApp whenever questions come up.</p>
       </details>
       <details>
         <summary>How did my university know about B.O.B?</summary>
-        <p>Some universities let their incoming international students know that B.O.B exists, as a recommendation and nothing more. Your university never shares your data with B.O.B. Every conversation starts because you chose to reach out.</p>
+        <p>B.O.B is designed to be shared by universities with incoming international students, as a recommendation and nothing more. Your university never shares your data with B.O.B. Every conversation starts because you chose to reach out.</p>
       </details>
       <details>
         <summary>What happens to my data?</summary>
-        <p>Your information is used only to provide the service, nothing else. It is never sold or shared with third parties, and everything is handled in line with GDPR, the EU's data-protection law. You can request deletion of your data at any time.</p>
+        <p>Your information is used only to provide the service, nothing else. Form submissions are delivered by Formspree and stored no longer than 12 months. Your data is never sold or shared with third parties, and you can request deletion at any time by email. Full details are in the <a href="privacy.html" style="color:var(--blue);">Privacy Policy</a>.</p>
       </details>
       <details>
         <summary>Is B.O.B a visa or admissions agency?</summary>
@@ -576,11 +587,11 @@
       <!--
         ⚠️ SETUP REQUIRED: replace YOUR_FORM_ID below with your real Formspree form ID.
         1. Create a free account at https://formspree.io
-        2. Click "New form", name it (e.g. "BOB Website"), set the email to Baljit.Bhatti@munich-business-school.de
+        2. Click "New form", name it (e.g. "BOB Website"), and set it to deliver to your own email address
         3. Copy the ID from the endpoint it gives you (looks like https://formspree.io/f/abcdwxyz)
         4. Replace YOUR_FORM_ID in the line below with that ID.
       -->
-      <form id="bobForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+      <form id="bobForm" action="https://formspree.io/f/mvzezpwo" method="POST" novalidate>
         <div class="form-grid">
           <div class="field"><label for="f-name">Full Name <span class="req">*</span></label><input id="f-name" name="Full Name" type="text" required autocomplete="name" placeholder="Your full name"></div>
           <div class="field"><label for="f-email">Email <span class="req">*</span></label><input id="f-email" name="Email" type="email" required autocomplete="email" placeholder="you@example.com"></div>
@@ -598,11 +609,24 @@
           </div>
           <div class="field"><label for="f-arrival">Expected Arrival Date</label><input id="f-arrival" name="Expected Arrival Date" type="date"></div>
           <div class="field full"><label for="f-city">City in Germany</label><input id="f-city" name="City in Germany" type="text" placeholder="e.g. Munich"></div>
+          <div class="field full">
+            <label>What do you need help with? <span style="font-weight:400; color:var(--ink-faint);">(select all that apply)</span></label>
+            <div class="check-grid">
+              <label class="check-opt"><input type="checkbox" name="Help Needed" value="Bank account">Bank account</label>
+              <label class="check-opt"><input type="checkbox" name="Help Needed" value="Health insurance">Health insurance</label>
+              <label class="check-opt"><input type="checkbox" name="Help Needed" value="SIM card">SIM card</label>
+              <label class="check-opt"><input type="checkbox" name="Help Needed" value="Public transport">Public transport</label>
+              <label class="check-opt"><input type="checkbox" name="Help Needed" value="Anmeldung (city registration)">Anmeldung (city registration)</label>
+              <label class="check-opt"><input type="checkbox" name="Help Needed" value="Shopping and city orientation">Shopping &amp; city orientation</label>
+              <label class="check-opt"><input type="checkbox" name="Help Needed" value="General arrival planning">General arrival planning</label>
+              <label class="check-opt"><input type="checkbox" name="Help Needed" value="Other">Other</label>
+            </div>
+          </div>
           <div class="field full"><label for="f-msg">Questions or Concerns</label><textarea id="f-msg" name="Questions or Concerns" placeholder="Anything you're unsure or worried about. Nothing is too small to ask."></textarea></div>
         </div>
         <div class="form-foot">
           <button type="submit" class="btn btn-primary btn-lg" id="submitBtn">Send &amp; Get Started</button>
-          <p class="privacy">Your data is used only to contact you about your relocation and is handled in line with GDPR. It is never shared or sold. Universities never send us your data. This conversation starts with you.</p>
+          <p class="privacy">Your data is used only to contact you about your relocation. It is never shared or sold, and you can request deletion at any time. See the <a href="privacy.html">Privacy Policy</a>. Universities never send us your data. This conversation starts with you.</p>
         </div>
       </form>
 
@@ -611,18 +635,19 @@
           <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
         <h3>You're on the list!</h3>
-        <p>Thanks! Your details are in. <b>You'll be contacted within 24 hours.</b> Can't wait, or want to say hi right away? Reach out directly:</p>
-        <div class="contact-lines">
-          <a href="https://wa.me/4917687542242" target="_blank" rel="noopener">
-            <svg width="19" height="19" viewBox="0 0 24 24" fill="#25D366"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.2 1.1-1.7 1.2-.5 0-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.8 1.4 1.8 2.2 1.2 1.1 2.2 1.4 2.6 1.6.3.2.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.7-.1 1.3z"/></svg>
-            WhatsApp: +49 176 87542242
-          </a>
-          <a href="mailto:Baljit.Bhatti@munich-business-school.de">
-            <svg width="19" height="19" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="3" stroke="#2563EB" stroke-width="2"/><path d="m4 7 8 6 8-6" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Baljit.Bhatti@munich-business-school.de
-          </a>
-        </div>
+        <p>Thanks! Your details were sent successfully. <b>You'll be contacted within 24 hours.</b> Can't wait, or want to say hi right away? Reach out directly:</p>
+        <div class="contact-lines" id="okContacts"></div>
         <p class="note">Response within 24 hours, usually much faster.</p>
+      </div>
+
+      <div class="success" id="errorBox">
+        <div class="check warn">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M12 7v6" stroke="#fff" stroke-width="3" stroke-linecap="round"/><circle cx="12" cy="17" r="1.6" fill="#fff"/></svg>
+        </div>
+        <h3>We couldn't send your details automatically</h3>
+        <p>Nothing was submitted. <b>Please contact B.O.B directly</b> on WhatsApp or by email below, and you'll get a reply within 24 hours.</p>
+        <div class="contact-lines" id="errContacts"></div>
+        <p class="note" style="color:var(--ink-faint);"><a href="#" id="retryLink" style="color:var(--blue);">Or try the form again</a></p>
       </div>
     </div>
   </div>
@@ -630,12 +655,14 @@
 
 <footer>
   <div class="wrap foot-inner">
-    <p>© 2026 B.O.B (Better Overseas Bound) · Munich, Germany<br>Personal relocation guidance for international students. GDPR-compliant.</p>
+    <p>© 2026 B.O.B (Better Overseas Bound) · Munich, Germany<br>Personal relocation guidance for international students.<br>B.O.B is an independent service and is not operated by or affiliated with Munich Business School.</p>
     <div class="foot-links">
       <a href="#why">Why B.O.B</a>
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="impressum.html">Impressum</a>
     </div>
   </div>
 </footer>
@@ -657,40 +684,58 @@
   }, {threshold:0.12});
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-  // Form submit → Formspree via fetch, then show success panel
-  const form = document.getElementById('bobForm');
-  const successBox = document.getElementById('successBox');
-  const submitBtn = document.getElementById('submitBtn');
+  // Contact details are assembled at runtime so they don't sit in the raw HTML
+  // source for spam bots to harvest. (Not bulletproof, but a real deterrent.)
+  var waDigits = ['49','176','8754','2242'].join('');
+  var waPretty = '+49 176 ' + '8754' + '2242';
+  var em = ['Baljit','Bhatti'].join('.') + String.fromCharCode(64) + ['munich-business-school','de'].join('.');
 
-  form.addEventListener('submit', async (e) => {
+  function contactLinksHTML(){
+    return '<a href="https://wa.me/' + waDigits + '" target="_blank" rel="noopener">WhatsApp: ' + waPretty + '</a>'
+         + '<a href="mailto:' + em + '">' + em + '</a>';
+  }
+
+  var form = document.getElementById('bobForm');
+  var successBox = document.getElementById('successBox');
+  var errorBox = document.getElementById('errorBox');
+  var submitBtn = document.getElementById('submitBtn');
+
+  form.addEventListener('submit', async function(e){
     e.preventDefault();
     if (!form.reportValidity()) return;
     submitBtn.disabled = true;
     submitBtn.textContent = 'Sending…';
     try {
-      const res = await fetch(form.action, {
+      var res = await fetch(form.action, {
         method: 'POST',
         body: new FormData(form),
         headers: {'Accept': 'application/json'}
       });
       if (!res.ok) throw new Error('Form service error');
-      showSuccess();
+      showPanel(successBox, 'okContacts');
     } catch (err) {
-      // Fallback: even if Formspree isn't configured yet, never leave the student stranded:
-      // show the direct contact details so they can still reach out.
-      showSuccess(true);
+      // Honest failure: tell the student nothing was submitted and show direct contacts.
+      showPanel(errorBox, 'errContacts');
     }
   });
 
-  function showSuccess(fallback) {
+  function showPanel(panel, slotId){
+    document.getElementById(slotId).innerHTML = contactLinksHTML();
     form.style.display = 'none';
-    successBox.classList.add('show');
-    if (fallback) {
-      successBox.querySelector('p').innerHTML =
-        "Thanks for reaching out! The form couldn't be delivered automatically right now. <b>Please contact us directly below</b> and you'll get a reply within 24 hours.";
-    }
-    successBox.scrollIntoView({behavior:'smooth', block:'center'});
+    successBox.classList.remove('show');
+    errorBox.classList.remove('show');
+    panel.classList.add('show');
+    panel.scrollIntoView({behavior:'smooth', block:'center'});
   }
+
+  document.getElementById('retryLink').addEventListener('click', function(e){
+    e.preventDefault();
+    errorBox.classList.remove('show');
+    form.style.display = '';
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = 'Send &amp; Get Started';
+    form.scrollIntoView({behavior:'smooth', block:'center'});
+  });
 </script>
 </body>
 </html>

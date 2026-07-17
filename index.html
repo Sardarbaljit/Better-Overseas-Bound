@@ -624,7 +624,8 @@
             </div>
             <div class="field">
               <label for="f-intake">Study intake <span class="opt">(optional)</span></label>
-              <input id="f-intake" name="Study Intake" type="month" placeholder="YYYY-MM">
+              <input id="f-intake" name="Study Intake" type="month" placeholder="YYYY-MM" aria-describedby="h-intake">
+              <p class="hint" id="h-intake">The month your course begins. For example, 2026-09 means September 2026.</p>
             </div>
             <div class="field">
               <label for="f-arrival">Flight arrival date <span class="opt">(optional)</span></label>
@@ -645,17 +646,51 @@
               </select>
             </div>
             <div class="field">
-              <label for="f-flight">Airline and flight number <span class="opt">(optional)</span></label>
-              <input id="f-flight" name="Airline and Flight Number" type="text" autocomplete="off" placeholder="e.g. Lufthansa LH 761">
+              <label for="f-airline">Airline <span class="opt">(optional)</span></label>
+              <select id="f-airline" name="Airline">
+                <option value="">Select your airline</option>
+                <option>Lufthansa</option>
+                <option>Air India</option>
+                <option>IndiGo</option>
+                <option>Emirates</option>
+                <option>Qatar Airways</option>
+                <option>Etihad Airways</option>
+                <option>Turkish Airlines</option>
+                <option>Singapore Airlines</option>
+                <option>British Airways</option>
+                <option>Air France</option>
+                <option>KLM</option>
+                <option>SWISS</option>
+                <option>Austrian Airlines</option>
+                <option>Eurowings</option>
+                <option>Condor</option>
+                <option>Other airline</option>
+              </select>
             </div>
             <div class="field">
-              <label for="f-bags">Number of suitcases <span class="opt">(optional)</span></label>
-              <select id="f-bags" name="Number of Suitcases">
+              <label for="f-flight">Flight number <span class="opt">(optional)</span></label>
+              <input id="f-flight" name="Flight Number" type="text" autocomplete="off" placeholder="e.g. LH 761">
+            </div>
+            <div class="field">
+              <label for="f-checkin">Check-in baggage <span class="opt">(optional)</span></label>
+              <select id="f-checkin" name="Check-in Baggage" aria-describedby="h-bags">
                 <option value="">Select</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
+                <option>None</option>
+                <option>1 bag</option>
+                <option>2 bags</option>
+                <option>3 bags</option>
                 <option>4 or more</option>
+              </select>
+              <p class="hint" id="h-bags">Your baggage details help plan the journey from the airport and how much carrying help you will need.</p>
+            </div>
+            <div class="field">
+              <label for="f-cabin">Cabin baggage <span class="opt">(optional)</span></label>
+              <select id="f-cabin" name="Cabin Baggage">
+                <option value="">Select</option>
+                <option>None</option>
+                <option>1 bag</option>
+                <option>2 bags</option>
+                <option>3 or more</option>
               </select>
             </div>
             <div class="field">
@@ -668,7 +703,7 @@
               <div class="check-grid" role="radiogroup" aria-labelledby="pcm-label" aria-describedby="e-pcm">
                 <label class="check-opt"><input type="radio" name="Preferred Contact Method" value="WhatsApp">WhatsApp</label>
                 <label class="check-opt"><input type="radio" name="Preferred Contact Method" value="Email">Email</label>
-                <label class="check-opt"><input type="radio" name="Preferred Contact Method" value="Either is fine">Either is fine</label>
+                <label class="check-opt"><input type="radio" name="Preferred Contact Method" value="Both WhatsApp and Email">Both WhatsApp &amp; Email</label>
               </div>
               <p class="err" id="e-pcm" role="alert"></p>
             </div>
@@ -677,18 +712,22 @@
               <select id="f-lang" name="Preferred Language">
                 <option value="">Select a language</option>
                 <option>English</option>
+                <option>Hindi</option>
+                <option>Punjabi</option>
+                <option>Marathi</option>
+                <option>Other (translation app support)</option>
               </select>
-              <p class="hint">The service is provided in English.</p>
+              <p class="hint">Spoken support is available in English, Hindi, Punjabi and Marathi. For other languages, written communication with a translation app is possible.</p>
             </div>
             <div class="field full">
-              <label id="svc-label">Services or concerns <span class="opt">(select all that apply, or none)</span></label>
+              <label id="svc-label">What would you like help with? <span class="opt">(select all that apply, or none)</span></label>
               <div class="check-grid" role="group" aria-labelledby="svc-label">
-                <label class="check-opt"><input type="checkbox" name="Help Needed" value="Airport pickup and journey to accommodation">Airport welcome &amp; journey</label>
+                <label class="check-opt"><input type="checkbox" name="Help Needed" value="Airport welcome and journey help">Airport welcome &amp; journey help</label>
                 <label class="check-opt"><input type="checkbox" name="Help Needed" value="Luggage help">Luggage help</label>
-                <label class="check-opt"><input type="checkbox" name="Help Needed" value="SIM card">SIM card</label>
-                <label class="check-opt"><input type="checkbox" name="Help Needed" value="Bank account">Bank account</label>
-                <label class="check-opt"><input type="checkbox" name="Help Needed" value="Health insurance">Health insurance</label>
-                <label class="check-opt"><input type="checkbox" name="Help Needed" value="Public transport">Public transport</label>
+                <label class="check-opt"><input type="checkbox" name="Help Needed" value="SIM card help">SIM card help</label>
+                <label class="check-opt"><input type="checkbox" name="Help Needed" value="Bank account help">Bank account help</label>
+                <label class="check-opt"><input type="checkbox" name="Help Needed" value="Health insurance help">Health insurance help</label>
+                <label class="check-opt"><input type="checkbox" name="Help Needed" value="Public transport help">Public transport help</label>
                 <label class="check-opt"><input type="checkbox" name="Help Needed" value="Not sure yet">Not sure yet</label>
                 <label class="check-opt"><input type="checkbox" name="Help Needed" value="Other" id="opt-other">Other</label>
               </div>

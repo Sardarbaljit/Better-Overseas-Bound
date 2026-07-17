@@ -1,92 +1,78 @@
-================================================================
-B.O.B - SERVICE CONFIRMATION (send to the student BEFORE payment)
-================================================================
-Replace every [BRACKETED] value before sending. Delete these
-instruction lines. Sections marked "LEGAL REVIEW" should be
-checked by a qualified professional before first use.
-================================================================
+B.O.B SERVICE CONFIRMATION — TEMPLATE (send BEFORE payment)
+============================================================
+HOW TO USE: fill every [PLACEHOLDER], delete these instructions, and send the
+document to the student by email before any payment is made. The cancellation
+section must be completed with professional advice first — do not improvise it.
+This template is not legal advice and does not guarantee legal compliance.
 
-Subject: Your B.O.B arrival support confirmation
+------------------------------------------------------------
+B.O.B ARRIVAL SUPPORT — SERVICE CONFIRMATION
 
-Hi [STUDENT FIRST NAME],
+Student name:        [STUDENT NAME]
+Inquiry reference:   [REFERENCE, e.g. date of inquiry email]
+Date of this confirmation: [DATE]
 
-Thank you for our conversation. I am available for your arrival
-date. Here is a summary of the B.O.B service for you to confirm
-before any payment is made.
+1. YOUR ARRIVAL
+   Arrival date:              [ARRIVAL DATE]
+   Meeting terminal:          [TERMINAL 1 / TERMINAL 2 / to be confirmed]
+   Meeting point:             [EXACT MEETING POINT, e.g. arrivals area, gate exit]
+   Estimated meeting time:    [TIME, based on the scheduled landing time]
+   Accommodation area:        [NEIGHBOURHOOD / POSTCODE]
 
-DAY 1 - AIRPORT ARRIVAL SUPPORT
-- Date: [ARRIVAL DATE]
-- Flight: [AIRLINE AND FLIGHT NUMBER], scheduled landing [TIME]
-- Meeting point: Munich Airport, [TERMINAL / EXACT MEETING POINT]
-- Luggage: you told me you are bringing [NUMBER] suitcase(s)
-- Together we will: manage your luggage, go through how Munich's
-  public transport works, choose the right ticket, and travel to
-  your accommodation in [AREA / POSTCODE] by public transport
-- Please send me your exact accommodation address privately
-  before arrival day
+2. WHAT THE SERVICE INCLUDES
+   Day 1 ([DATE]): [DAY 1 SCOPE, e.g. airport welcome, luggage help, transport
+   ticket guidance, accompanied public-transport journey to accommodation]
+   Day 2 ([DATE]): [DAY 2 SCOPE, e.g. SIM-card options, documents, practical setup]
+   Day 3 ([DATE]): [DAY 3 SCOPE, e.g. bank-account and health-insurance
+   application routes, documents, practical next steps]
+   Support start date: [START DATE]
+   Support end date:   [END DATE]
 
-DAY 2 - GETTING CONNECTED
-- Date: [DAY 2 DATE], meeting at [TIME / PLACE]
-- Personal assistance with your SIM card setup and the immediate
-  practical steps needed to begin settling in
+3. WHAT THE SERVICE COSTS
+   Total B.O.B fee: [TOTAL FEE, e.g. €30 one-time introductory pilot price]
+   Payment method:  [PAYMENT METHOD, e.g. bank transfer / PayPal]
+   Payment due:     [PAYMENT DUE DATE]
 
-DAY 3 - BANKING AND HEALTH INSURANCE
-- Date: [DAY 3 DATE], meeting at [TIME / PLACE]
-- Personal guidance on bank-account and health-insurance options,
-  the documents required and your next steps
+   Not included (paid by you directly): public-transport tickets, SIM card and
+   mobile-plan costs, bank charges, health-insurance premiums, food and personal
+   purchases, taxi or private-transport costs, and other external charges.
+   [ADJUST THE LIST IF ANYTHING DIFFERS]
 
-PRICE AND PAYMENT
-- Total price: EUR 30 (introductory pilot price, one-time,
-  no subscription, no further B.O.B charges)
-- Payment method: [PAYMENT METHOD, e.g. bank transfer / PayPal]
-- Payment is due: [BEFORE DAY 1 / AS AGREED]
+4. IF SOMETHING CHANGES
+   Flight delays:   [DELAY PROCEDURE, from the operations checklist]
+   Rescheduling:    [RESCHEDULING PROCEDURE]
 
-NOT INCLUDED (paid by you directly)
-- Public-transport tickets (yours and any you need during the
-  three days)
-- SIM card and mobile-plan costs
-- Bank-related charges, if applicable
-- Health-insurance premiums
-- Food and personal purchases
-- Taxi or private-transport costs
-- Other external service charges
+5. CANCELLATION AND WITHDRAWAL
+   [!! PROFESSIONAL REVIEW REQUIRED !!
+   Complete this section only after advice from a qualified professional
+   (consumer / distance-selling rules, withdrawal rights, and what happens
+   if the service starts within the withdrawal period). Do not send this
+   document with this section empty or improvised.]
 
-WHAT B.O.B DOES NOT DO
-B.O.B provides personal guidance and practical assistance. I do
-not make legal, financial, immigration or insurance decisions for
-you, sign contracts on your behalf, guarantee approval by banks,
-insurers or authorities, pay third-party charges, process visas
-or university admissions, or complete official procedures in your
-name. Travel is by public transport unless we have explicitly
-agreed otherwise; B.O.B is not a taxi service.
+6. YOUR RESPONSIBILITIES
+   - Choose your own providers, sign your own agreements, and make your own
+     financial and insurance decisions.
+   - Pay all external costs and complete official processes in your own name.
+   - Remain able to travel safely with your own belongings.
+   - Tell B.O.B promptly about flight changes.
+   [ADJUST AS NEEDED]
 
-FLIGHT CHANGES
-Please tell me as soon as possible if your flight changes.
-Reasonable delays will be accommodated where possible; significant
-schedule changes may require a revised meeting time depending on
-availability.
+7. B.O.B'S RESPONSIBILITIES
+   - Personal, in-person support as described in section 2.
+   - Practical guidance and general information only: B.O.B does not provide
+     professional legal, immigration, tax, financial or insurance advice, and
+     does not guarantee acceptance by any bank, insurer, authority or provider.
+   - Honest communication about availability and timing.
+   [ADJUST AS NEEDED]
 
-CANCELLATION AND WITHDRAWAL  [LEGAL REVIEW REQUIRED]
-[Insert the cancellation/withdrawal information that applies to
-your situation after professional review. If the student asks for
-the service to begin immediately, collect any required
-confirmation before starting. Do not send this section without
-having it reviewed.]
+8. YOUR DATA
+   Details are in the Privacy Policy: [LINK TO PRIVACY POLICY ON THE LIVE SITE]
 
-YOUR DATA
-Details on how your information is handled:
-[LINK TO PRIVACY POLICY, e.g. https://YOUR-SITE/privacy.html]
+9. CONTACT
+   Baljit Bhatti — B.O.B Arrival Support
+   WhatsApp: +49 176 87542242
+   Email: [B.O.B PILOT EMAIL]
 
-CONTACT
-Baljit Bhatti
-B.O.B (Better Overseas Bound)
-[BUSINESS EMAIL]
-[WHATSAPP NUMBER]
-Krenmoosstraße 55, 85757 Karlsfeld, Germany
-
-Please reply "Confirmed" if everything above is correct, and I
-will send the payment details.
-
-Kind regards,
-Baljit
-B.O.B (Better Overseas Bound)
+Please reply to confirm you have read this document. Payment is only due after
+your confirmation.
+------------------------------------------------------------

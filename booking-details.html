@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<!-- SETUP (not visible to visitors): this PRIVATE follow-up page must be uploaded to the same
+     folder as index.html and privacy.html. It is only sent to students directly, after
+     availability and the service have been discussed. It is not linked from the homepage. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Final Arrival Details | B.O.B Arrival Support</title>
+<!-- This page must always stay out of search engines, even after public launch. -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#2563EB">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  :root{
+    --ink:#0B1220; --ink-soft:#4B5568; --ink-faint:#8A93A6;
+    --bg:#FFFFFF; --bg-soft:#F6F8FC;
+    --blue:#2563EB; --blue-dark:#1D4ED8; --blue-soft:#EFF4FF; --blue-line:#DBE6FF;
+    --line:#E7EAF0; --red:#B42318;
+    --shadow-lg:0 2px 4px rgba(11,18,32,.05), 0 20px 50px rgba(37,99,235,.10);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family:Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color:var(--ink); background:var(--bg-soft); line-height:1.6; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:40px 20px 80px;}
+  .logo{font-weight:800; font-size:19px; letter-spacing:-0.02em; text-decoration:none; color:var(--ink); display:inline-flex; align-items:center; gap:9px; margin-bottom:26px;}
+  .logo .dot{width:30px; height:30px; border-radius:9px; display:grid; place-items:center; background:linear-gradient(135deg,#2563EB,#7C3AED); color:#fff; font-size:12px; font-weight:800;}
+  h1{font-size:clamp(26px,5vw,34px); font-weight:800; letter-spacing:-0.03em; line-height:1.15; margin-bottom:10px;}
+  .lead{color:var(--ink-soft); font-size:16px; margin-bottom:18px; max-width:62ch;}
+  .gate-note{
+    background:#FFF7E6; border:1px solid #F5D48A; border-radius:12px;
+    padding:14px 16px; font-size:14.5px; margin-bottom:26px; color:var(--ink);
+  }
+  .form-card{background:#fff; border:1px solid var(--line); border-radius:26px; padding:34px 30px; box-shadow:var(--shadow-lg);}
+  @media (max-width:600px){.form-card{padding:26px 18px;}}
+  .form-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  @media (max-width:600px){.form-grid{grid-template-columns:1fr;}}
+  .field{display:flex; flex-direction:column; gap:6px;}
+  .field.full{grid-column:1 / -1;}
+  label{font-size:13.5px; font-weight:600;}
+  label .req{color:var(--blue);}
+  label .opt{font-weight:400; color:var(--ink-faint);}
+  input,select,textarea{
+    font-family:inherit; font-size:16px; color:var(--ink);
+    border:1.5px solid var(--line); border-radius:11px; padding:12px 14px;
+    background:#FBFCFE; transition:border-color .2s, box-shadow .2s; width:100%; min-height:48px;
+  }
+  textarea{min-height:100px; resize:vertical;}
+  input:focus,select:focus,textarea:focus{outline:none; border-color:var(--blue); box-shadow:0 0 0 3px rgba(37,99,235,.14); background:#fff;}
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible{outline:3px solid rgba(37,99,235,.5); outline-offset:2px;}
+  .hint{color:var(--ink-faint); font-size:12.5px; font-weight:400;}
+  .err{display:none; color:var(--red); font-size:13px; font-weight:500;}
+  .field.invalid input, .field.invalid textarea{border-color:var(--red); box-shadow:0 0 0 3px rgba(180,35,24,.08);}
+  .field.invalid .err{display:block;}
+  .check-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px 14px;}
+  @media (max-width:600px){.check-grid{grid-template-columns:1fr;}}
+  .check-opt{
+    display:flex; align-items:center; gap:10px; font-size:14.5px; font-weight:500;
+    border:1.5px solid var(--line); border-radius:11px; padding:11px 13px; min-height:44px;
+    background:#FBFCFE; cursor:pointer; transition:border-color .2s, background .2s;
+  }
+  .check-opt:hover{border-color:var(--blue-line);}
+  .check-opt:has(input:checked){border-color:var(--blue); background:var(--blue-soft);}
+  .check-opt input{width:auto; min-height:0; accent-color:var(--blue); margin:0; flex:none;}
+  .consent .check-opt{align-items:flex-start; font-weight:400; font-size:13.5px; color:var(--ink-soft); line-height:1.5;}
+  .consent .check-opt input{margin-top:3px;}
+  .consent a{color:var(--blue);}
+  .btn{
+    display:inline-block; text-decoration:none; font-weight:600; font-size:16px;
+    padding:15px 32px; border-radius:14px; transition:all .2s; cursor:pointer; border:none; font-family:inherit;
+    text-align:center; min-height:48px; width:100%;
+  }
+  .btn-primary{background:var(--blue); color:#fff; box-shadow:0 6px 18px rgba(37,99,235,.28);}
+  .btn-primary:hover{background:var(--blue-dark);}
+  .btn-primary:disabled{opacity:.6; cursor:wait;}
+  .payment-note{
+    background:var(--blue-soft); border:1px solid var(--blue-line); border-radius:12px;
+    padding:13px 16px; font-size:13.5px; color:var(--ink); margin-top:20px;
+  }
+  .success{display:none; text-align:center; padding:16px 4px;}
+  .success.show{display:block;}
+  .success .check{width:64px; height:64px; margin:0 auto 20px; border-radius:50%; background:linear-gradient(135deg,#0E9F6E,#34D399); display:grid; place-items:center;}
+  .success .check.warn{background:linear-gradient(135deg,#D97706,#F59E0B);}
+  .success h3{font-size:23px; margin-bottom:10px; font-weight:800; letter-spacing:-0.02em;}
+  .success p{color:var(--ink-soft); font-size:15.5px; max-width:48ch; margin:0 auto 22px;}
+  .contact-lines{display:grid; gap:12px; max-width:400px; margin:0 auto;}
+  .contact-lines a{
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    background:var(--bg-soft); border:1px solid var(--line); border-radius:13px;
+    padding:14px 18px; min-height:48px; text-decoration:none; color:var(--ink); font-weight:600; font-size:15px;
+  }
+  .note a{color:var(--blue);}
+  .noscript-note{background:#FFF7E6; border:1px solid #F5D48A; border-radius:12px; padding:14px 16px; font-size:14.5px; margin-bottom:18px;}
+  footer{margin-top:36px; text-align:center; font-size:13px; color:var(--ink-faint);}
+  footer a{color:var(--ink-soft); text-decoration:none; margin:0 8px;}
+  @media (prefers-reduced-motion:reduce){*{transition-duration:.01ms !important; animation-duration:.01ms !important;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="logo" href="index.html"><span class="dot">B</span>B.O.B</a>
+  <h1>Final arrival details</h1>
+  <p class="lead">This short private form collects the exact details needed to plan your airport meeting and Day 1 journey.</p>
+  <div class="gate-note"><b>Please note:</b> Complete this form only after B.O.B has confirmed availability and asked you to provide your final arrival details.</div>
+
+  <div class="form-card">
+    <noscript>
+      <div class="noscript-note">
+        JavaScript is required to use this form. Please send your final details to B.O.B directly by email:
+        <!-- ⚙️ Replace this with the dedicated B.O.B pilot email before launch.
+             Keep this address identical to the businessEmail constant in the JavaScript below. -->
+        <b><a href="mailto:REPLACE_WITH_PILOT_EMAIL">REPLACE_WITH_PILOT_EMAIL</a></b>
+      </div>
+    </noscript>
+    <!--
+      ⚙️ FORM ENDPOINT: this uses the same live Formspree form as the homepage (mvzezpwo).
+      The hidden "Form Type" field below marks these submissions as Confirmed Booking Details
+      so they are easy to tell apart in the Formspree inbox. If you ever prefer a fully
+      separate Formspree form for booking details, create it in the Formspree dashboard
+      first and only then change the action URL here. Do not invent an endpoint.
+    -->
+    <form id="bookingForm" action="https://formspree.io/f/mvzezpwo" method="POST" novalidate>
+      <input type="hidden" name="Form Type" value="Confirmed Booking Details">
+      <!-- Honeypot anti-spam field (Formspree): invisible to people, filled only by bots -->
+      <input type="text" name="_gotcha" style="display:none !important;" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="form-grid">
+        <div class="field">
+          <label for="b-name">Full Name <span class="req" aria-hidden="true">*</span></label>
+          <input id="b-name" name="Full Name" type="text" required autocomplete="name" placeholder="Your full name" aria-required="true" aria-describedby="e-name">
+          <p class="err" id="e-name" role="alert"></p>
+        </div>
+        <div class="field">
+          <label for="b-email">Email <span class="req" aria-hidden="true">*</span></label>
+          <input id="b-email" name="email" type="email" required autocomplete="email" placeholder="you@example.com" aria-required="true" aria-describedby="e-email">
+          <p class="err" id="e-email" role="alert"></p>
+        </div>
+        <div class="field">
+          <label for="b-wa">WhatsApp Number <span class="req" aria-hidden="true">*</span></label>
+          <input id="b-wa" name="WhatsApp Number" type="tel" required autocomplete="tel" inputmode="tel" placeholder="+49 176 12345678" aria-required="true" aria-describedby="h-wa e-wa">
+          <p class="hint" id="h-wa">Include your country code.</p>
+          <p class="err" id="e-wa" role="alert"></p>
+        </div>
+        <div class="field">
+          <label for="b-date">Confirmed arrival date <span class="req" aria-hidden="true">*</span></label>
+          <input id="b-date" name="Confirmed Arrival Date" type="date" required aria-required="true" aria-describedby="e-date">
+          <p class="err" id="e-date" role="alert"></p>
+        </div>
+        <div class="field">
+          <label for="b-landing">Scheduled landing time <span class="opt">(optional)</span></label>
+          <input id="b-landing" name="Scheduled Landing Time" type="time">
+        </div>
+        <div class="field">
+          <label for="b-airline">Airline <span class="opt">(optional)</span></label>
+          <input id="b-airline" name="Airline" type="text" autocomplete="off" placeholder="e.g. Lufthansa">
+        </div>
+        <div class="field">
+          <label for="b-flight">Flight number <span class="opt">(optional)</span></label>
+          <input id="b-flight" name="Flight Number" type="text" autocomplete="off" placeholder="e.g. LH 761">
+        </div>
+        <div class="field">
+          <label for="b-terminal">Terminal <span class="opt">(if known)</span></label>
+          <select id="b-terminal" name="Arrival Terminal">
+            <option value="">Select if known</option>
+            <option>Terminal 1</option>
+            <option>Terminal 2</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="b-cabin">Number of cabin bags <span class="opt">(optional)</span></label>
+          <select id="b-cabin" name="Cabin Bags">
+            <option value="">Select</option>
+            <option>None</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3 or more</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="b-checked">Number of checked bags <span class="opt">(optional)</span></label>
+          <select id="b-checked" name="Checked Bags">
+            <option value="">Select</option>
+            <option>None</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4 or more</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label for="b-heavy">Is any bag unusually large or heavy? <span class="opt">(optional)</span></label>
+          <select id="b-heavy" name="Unusually Heavy Bag">
+            <option value="">Select</option>
+            <option>No</option>
+            <option>Yes (please describe below in comments)</option>
+            <option>Not sure</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="b-area">Accommodation neighbourhood <span class="opt">(optional)</span></label>
+          <input id="b-area" name="Accommodation Neighbourhood" type="text" autocomplete="off" placeholder="e.g. Schwabing">
+        </div>
+        <div class="field">
+          <label for="b-address">Exact accommodation address <span class="opt">(optional)</span></label>
+          <input id="b-address" name="Exact Accommodation Address" type="text" autocomplete="street-address" placeholder="Street, number, postcode, city" aria-describedby="h-address">
+          <p class="hint" id="h-address">Used only to plan the Day 1 journey. See the <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.</p>
+        </div>
+        <div class="field full">
+          <label for="b-emergency">Emergency contact <span class="opt">(optional)</span></label>
+          <input id="b-emergency" name="Emergency Contact" type="text" autocomplete="off" placeholder="Name, relationship and phone number" aria-describedby="h-emergency">
+          <p class="hint" id="h-emergency">A parent or family member we may inform if something unexpected happens during your journey. Optional.</p>
+        </div>
+        <div class="field full">
+          <label for="b-meeting">Agreed Day 1 meeting details <span class="opt">(as discussed)</span></label>
+          <input id="b-meeting" name="Agreed Day 1 Meeting Details" type="text" autocomplete="off" placeholder="e.g. Terminal 2 arrivals area, as agreed on WhatsApp">
+        </div>
+        <div class="field full">
+          <label id="pcm-label">Preferred contact method <span class="req" aria-hidden="true">*</span></label>
+          <div class="check-grid" role="radiogroup" aria-labelledby="pcm-label" aria-describedby="e-pcm">
+            <label class="check-opt"><input type="radio" name="Preferred Contact Method" value="WhatsApp">WhatsApp</label>
+            <label class="check-opt"><input type="radio" name="Preferred Contact Method" value="Email">Email</label>
+            <label class="check-opt"><input type="radio" name="Preferred Contact Method" value="Both WhatsApp and Email">Both WhatsApp &amp; Email</label>
+          </div>
+          <p class="err" id="e-pcm" role="alert"></p>
+        </div>
+        <div class="field full">
+          <label for="b-msg">Relevant comments <span class="opt">(optional)</span></label>
+          <textarea id="b-msg" name="Relevant Comments" placeholder="Anything that helps plan your arrival, e.g. a heavy bag, mobility needs, or a travel companion."></textarea>
+        </div>
+        <div class="field full consent">
+          <label class="check-opt">
+            <input type="checkbox" id="b-consent" name="Privacy Policy Acknowledgement" value="Acknowledged" required aria-required="true" aria-describedby="e-consent">
+            <span>I confirm that I have read the <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a> and understand how my information will be used to plan and deliver the agreed arrival service.</span>
+          </label>
+          <p class="err" id="e-consent" role="alert"></p>
+        </div>
+      </div>
+      <p class="payment-note">This form is for students whose availability has already been confirmed. It does not create a new payment obligation; the service scope, price and cancellation information are confirmed separately before payment.</p>
+      <p class="err" id="e-submit" role="alert" style="text-align:center; margin-top:12px;"></p>
+      <div style="margin-top:18px;">
+        <button type="submit" class="btn btn-primary" id="submitBtn">Send My Final Arrival Details</button>
+      </div>
+    </form>
+
+    <div class="success" id="successBox" role="status">
+      <div class="check">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h3>Thanks! Your final details have been received.</h3>
+      <p>I will confirm the airport meeting point and time with you before your arrival, using your preferred contact method.</p>
+      <div class="contact-lines" id="okContacts"></div>
+    </div>
+
+    <div class="success" id="errorBox" role="alert">
+      <div class="check warn">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 7v6" stroke="#fff" stroke-width="3" stroke-linecap="round"/><circle cx="12" cy="17" r="1.6" fill="#fff"/></svg>
+      </div>
+      <h3>We couldn't send your details automatically.</h3>
+      <p>Your information was not submitted. Your answers remain saved for the current browser session. Please try again or contact B.O.B directly by WhatsApp or email.</p>
+      <div class="contact-lines" id="errContacts"></div>
+      <p class="note"><a href="#" id="retryLink">Or try the form again</a></p>
+    </div>
+  </div>
+
+  <footer>
+    <a href="index.html">B.O.B home</a> · <a href="privacy.html">Privacy Policy</a> · <a href="impressum.html">Impressum</a>
+  </footer>
+</div>
+
+<script>
+  // ⚙️ CONFIGURATION: Replace this with the dedicated B.O.B pilot email before launch.
+  // Keep it identical to the businessEmail constant in index.html and the <noscript> block above.
+  const businessEmail = 'REPLACE_WITH_PILOT_EMAIL';
+  var waDigits = ['49','176','8754','2242'].join('');
+  var waPretty = '+49 176 ' + '8754' + '2242';
+  function contactLinksHTML(){
+    return '<a href="https://wa.me/' + waDigits + '" target="_blank" rel="noopener">WhatsApp: ' + waPretty + '</a>'
+         + '<a href="mailto:' + encodeURIComponent(businessEmail).replace(/%40/,'@') + '">' + businessEmail + '</a>';
+  }
+
+  var form = document.getElementById('bookingForm');
+  var submitBtn = document.getElementById('submitBtn');
+  var successBox = document.getElementById('successBox');
+  var errorBox = document.getElementById('errorBox');
+
+  function fieldWrap(el){ return el.closest('.field'); }
+  function setError(el, msg){
+    var f = fieldWrap(el); if (!f) return;
+    var e = f.querySelector('.err');
+    if (msg){ f.classList.add('invalid'); if (e) e.textContent = msg; el.setAttribute('aria-invalid','true'); }
+    else { f.classList.remove('invalid'); if (e) e.textContent = ''; el.setAttribute('aria-invalid','false'); }
+  }
+  function validateField(el){
+    var v = el.value ? el.value.trim() : '';
+    if (el.id === 'b-name' && !v){ setError(el, 'Please enter your full name.'); return false; }
+    if (el.id === 'b-email'){
+      if (!v){ setError(el, 'Please enter your email address.'); return false; }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)){ setError(el, 'That email address doesn\'t look right. Please check it.'); return false; }
+    }
+    if (el.id === 'b-wa'){
+      if (!v){ setError(el, 'Please enter your WhatsApp number.'); return false; }
+      var cleaned = v.replace(/[\s().\-]/g, '');
+      if (!/^\+?\d{7,15}$/.test(cleaned)){ setError(el, 'Please enter a valid WhatsApp number with your country code (e.g. +49 176 12345678).'); return false; }
+    }
+    if (el.id === 'b-date' && !v){ setError(el, 'Please enter your confirmed arrival date.'); return false; }
+    if (el.id === 'b-consent' && !el.checked){ setError(el, 'Please confirm that you have read the Privacy Policy before submitting.'); return false; }
+    setError(el, null);
+    return true;
+  }
+  ['b-name','b-email','b-wa','b-date'].forEach(function(id){
+    var el = document.getElementById(id);
+    el.addEventListener('blur', function(){ validateField(el); });
+    el.addEventListener('input', function(){ if (fieldWrap(el).classList.contains('invalid')) validateField(el); });
+  });
+  document.getElementById('b-consent').addEventListener('change', function(){ validateField(this); });
+
+  function pcmFirst(){ return form.querySelector('input[name="Preferred Contact Method"]'); }
+  function validatePcm(){
+    var checked = form.querySelector('input[name="Preferred Contact Method"]:checked');
+    if (!checked){ setError(pcmFirst(), 'Please choose how you would like to be contacted.'); pcmFirst().focus(); return false; }
+    setError(pcmFirst(), null);
+    return true;
+  }
+  form.querySelectorAll('input[name="Preferred Contact Method"]').forEach(function(r){
+    r.addEventListener('change', function(){ setError(pcmFirst(), null); });
+  });
+
+  // ---------- Draft saving (sessionStorage: cleared when the tab closes) ----------
+  var DRAFT_KEY = 'bobBookingDraft';
+  function collectForm(){
+    var d = {};
+    Array.prototype.forEach.call(form.elements, function(el){
+      if (!el.name) return;
+      if (el.name.charAt(0) === '_') return;        // never save the honeypot
+      if (el.id === 'b-consent') return;            // never save the acknowledgement choice
+      if (el.type === 'checkbox'){
+        if (!d[el.name]) d[el.name] = [];
+        if (el.checked) d[el.name].push(el.value);
+      } else if (el.type === 'radio'){
+        if (el.checked) d[el.name] = el.value;
+      } else if (el.type !== 'button' && el.type !== 'submit' && el.type !== 'hidden'){
+        d[el.name] = el.value;
+      }
+    });
+    return d;
+  }
+  function saveDraft(){
+    try { sessionStorage.setItem(DRAFT_KEY, JSON.stringify(collectForm())); } catch(e){}
+  }
+  function restoreDraft(){
+    var raw;
+    try { raw = sessionStorage.getItem(DRAFT_KEY); } catch(e){ return; }
+    if (!raw) return;
+    var d; try { d = JSON.parse(raw); } catch(e){ return; }
+    Array.prototype.forEach.call(form.elements, function(el){
+      if (!el.name || !(el.name in d)) return;
+      if (el.name.charAt(0) === '_' || el.id === 'b-consent') return;
+      if (el.type === 'checkbox'){
+        el.checked = Array.isArray(d[el.name]) && d[el.name].indexOf(el.value) !== -1;
+      } else if (el.type === 'radio'){
+        el.checked = (d[el.name] === el.value);
+      } else if (el.type !== 'button' && el.type !== 'submit' && el.type !== 'hidden'){
+        el.value = d[el.name];
+      }
+    });
+  }
+  var saveTimer;
+  function queueSave(){ clearTimeout(saveTimer); saveTimer = setTimeout(saveDraft, 250); }
+  form.addEventListener('input', queueSave);
+  form.addEventListener('change', queueSave);
+  restoreDraft();
+
+  // ---------- Submit ----------
+  var formLoadedAt = Date.now();
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    var eSubmit = document.getElementById('e-submit');
+    eSubmit.textContent = ''; eSubmit.style.display = 'none';
+    var ok = true, firstBad = null;
+    ['b-name','b-email','b-wa','b-date'].forEach(function(id){
+      var el = document.getElementById(id);
+      if (!validateField(el)){ ok = false; if (!firstBad) firstBad = el; }
+    });
+    if (!ok){ if (firstBad) firstBad.focus(); return; }
+    if (!validatePcm()) return;
+    if (!validateField(document.getElementById('b-consent'))){
+      document.getElementById('b-consent').focus();
+      return;
+    }
+    if (Date.now() - formLoadedAt < 2000){
+      eSubmit.textContent = 'Something went wrong. Please take a moment to review your details and try again.';
+      eSubmit.style.display = 'block';
+      return;
+    }
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+    try {
+      var res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: {'Accept': 'application/json'}
+      });
+      if (!res.ok) throw new Error('Form service error');
+      try { sessionStorage.removeItem(DRAFT_KEY); } catch(err){} // clear draft ONLY on confirmed success
+      showPanel(successBox, 'okContacts');
+    } catch (err) {
+      // Honest failure: nothing was submitted, the draft stays saved, show direct contacts.
+      showPanel(errorBox, 'errContacts');
+    }
+  });
+
+  function showPanel(panel, slotId){
+    document.getElementById(slotId).innerHTML = contactLinksHTML();
+    form.style.display = 'none';
+    successBox.classList.remove('show');
+    errorBox.classList.remove('show');
+    panel.classList.add('show');
+    panel.scrollIntoView({behavior:'smooth', block:'center'});
+  }
+
+  document.getElementById('retryLink').addEventListener('click', function(e){
+    e.preventDefault();
+    errorBox.classList.remove('show');
+    form.style.display = '';
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Send My Final Arrival Details';
+  });
+</script>
+</body>
+</html>

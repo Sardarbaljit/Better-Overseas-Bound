@@ -1,0 +1,44 @@
+FORMSPREE AUTORESPONSE TEMPLATE — B.O.B ARRIVAL SUPPORT
+========================================================
+
+WHAT THIS IS
+This is the automatic confirmation email that students should receive after
+submitting the inquiry form. It cannot be sent by the website itself: it must
+be configured inside the Formspree dashboard.
+
+SETUP INSTRUCTIONS
+1. Log in at formspree.io and open your form (ID: mvzezpwo).
+2. Go to the form's Workflow (or Autoresponse / Rules) settings.
+3. Enable the autoresponse feature. Formspree recognises the student's address
+   automatically because the form field is named exactly "email".
+4. Paste the subject and body below.
+5. Send ONE real test submission (write "TEST" in the comments), confirm the
+   automatic reply arrives, check the spam folder too, then delete the test
+   from the Formspree dashboard.
+
+IMPORTANT
+- Do not claim anywhere that the autoresponse is active until it has been
+  configured and tested.
+- Availability of the autoresponse feature can depend on the Formspree plan.
+  If it is not available on the current plan, reply manually within 24 hours
+  instead, as promised on the website.
+
+----------------------------------------------------------------------
+Subject: We received your B.O.B arrival inquiry
+
+Hi [First Name],
+
+Thank you for contacting B.O.B Arrival Support.
+
+Your inquiry has been received successfully. No payment has been taken, and your arrival date is not yet confirmed.
+
+I will contact you within 24 hours using your preferred contact method to understand your arrival plans, check availability and explain the next steps.
+
+Please do not send sensitive documents or your full accommodation address by email at this stage.
+
+Kind regards,
+
+Baljit
+B.O.B Arrival Support
+Personal arrival and settling-in support in Munich
+----------------------------------------------------------------------

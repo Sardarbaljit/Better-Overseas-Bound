@@ -1,0 +1,63 @@
+B.O.B LAUNCH CHECKLIST — PILOT
+================================
+Files that belong in the SAME folder (root of the GitHub repo / Vercel project):
+index.html, booking-details.html, privacy.html, impressum.html, favicon.svg,
+social-preview.png, founder-photo.jpg (when ready).
+All .txt files and the .csv are private working documents, NOT for upload.
+
+BEFORE GOING LIVE
+1.  Add founder-photo.jpg beside index.html (the BB fallback shows until then).
+2.  Create the dedicated B.O.B pilot email address.
+3.  Replace REPLACE_WITH_PILOT_EMAIL in ALL of these places:
+    - index.html: the businessEmail constant AND the <noscript> block
+    - booking-details.html: the businessEmail constant AND the <noscript> block
+    - privacy.html: section 1
+    - impressum.html: Kontakt section
+4.  Confirm the postal address in privacy.html and impressum.html
+    (currently Krenmoosstraße 55, 85757 Karlsfeld).
+5.  Export social-preview-source.svg as a 1200x630 PNG named social-preview.png
+    (or use the provided social-preview.png), upload it, then set the absolute
+    URL in the og:image and twitter:image tags in index.html.
+6.  Upload all public files to the same Vercel project (GitHub: Add file →
+    Upload files → Commit; Vercel redeploys automatically).
+
+FORMSPREE
+7.  Configure the autoresponse in the Formspree dashboard using
+    formspree-autoresponse-template.txt. Do not claim it is active until tested.
+8.  Send ONE real test submission on the inquiry form (write "TEST" in the
+    comments), verify it arrives in your inbox and the Formspree dashboard,
+    check the automatic reply (including the spam folder), then delete the
+    test in the dashboard. Free plan is limited (~50 submissions/month).
+9.  Test the booking-details form the same way, once, and confirm the hidden
+    "Form Type: Confirmed Booking Details" field appears in the submission.
+10. Test the success state and the failure state (e.g. submit once with the
+    network disconnected) on both forms.
+
+TRACKING AND MOBILE
+11. Open the site with
+    ?source=TEST&campaign=TEST-1&university=Munich%20Business%20School&city=Munich&intake=2026-09
+    — fields should pre-fill, the "pre-filled" notice should appear, and the
+    submission should include Referral Source and Referral Campaign.
+12. Test on iPhone Safari, Android Chrome and desktop: both form steps, back
+    button, refresh mid-form (draft should survive), the mobile menu (open,
+    Escape, tap outside), the sticky CTA, and everything at 200% zoom.
+13. View every deployed page once more and confirm no visible placeholders
+    remain (especially REPLACE_WITH_PILOT_EMAIL).
+
+LEGAL AND BUSINESS (before accepting bookings)
+14. Have the Privacy Policy and Impressum professionally reviewed. Neither
+    file is legal advice.
+15. Verify your permission to carry out self-employed work in Germany
+    (relevant to your residence status).
+16. Complete any required business registration (Gewerbeanmeldung /
+    Kleinunternehmer decision), then add verified details to the commented
+    slot in impressum.html.
+17. Decide the service's operating limits using
+    service-operations-checklist.txt.
+18. Confirm payment and cancellation procedures with the professional
+    reviewer, then complete section 5 of service-confirmation-template.txt.
+
+SEARCH ENGINES
+19. index.html currently carries noindex, nofollow for the private pilot.
+    Remove it from index.html ONLY when the public launch is ready.
+    booking-details.html must keep noindex, nofollow permanently.

@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <!-- SETUP (not visible to visitors): index.html, privacy.html and impressum.html must all be
-     uploaded to the same folder, together with founder-photo.jpg, so links and images work. -->
+     uploaded to the same folder so links and images work. -->
+<!-- Upload favicon.svg, social-preview.png and founder-photo.jpg beside index.html. -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>B.O.B Arrival Support | Your First Three Days in Munich</title>
 <meta name="description" content="B.O.B Arrival Support provides personal airport arrival and settling-in support for international students coming to Munich: airport welcome, help reaching your accommodation, and guidance with SIM, bank and health-insurance setup over your first three days.">
-<!-- PILOT MODE: Remove "noindex, nofollow" only when the public launch is ready. -->
+<!-- Remove noindex, nofollow only when the public launch and legal review are complete. -->
 <meta name="robots" content="noindex, nofollow">
-<!-- Link-sharing metadata. ⚙️ After deployment, replace the two image values with the
-     absolute URL of your live site, e.g. https://YOUR-SITE.vercel.app/social-preview.png -->
+<link rel="canonical" href="https://betteroverseasbound.de">
+<meta property="og:url" content="https://betteroverseasbound.de">
 <meta property="og:title" content="B.O.B Arrival Support | Your First Three Days in Munich">
 <meta property="og:description" content="Personal airport arrival and settling-in support for international students coming to Munich.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="social-preview.png">
+<meta property="og:image" content="https://betteroverseasbound.de/social-preview.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="B.O.B Arrival Support | Your First Three Days in Munich">
 <meta name="twitter:description" content="Personal airport arrival and settling-in support for international students coming to Munich.">
-<meta name="twitter:image" content="social-preview.png">
+<meta name="twitter:image" content="https://betteroverseasbound.de/social-preview.png">
 <meta name="theme-color" content="#2563EB">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <style>
@@ -544,9 +545,9 @@
       <noscript>
         <div class="noscript-note">
           JavaScript is required to use the two-step form. Please contact B.O.B directly by email:
-          <!-- ⚙️ Replace this with the dedicated B.O.B pilot email before launch.
+          <!-- Replace with the final B.O.B email before deployment.
                Keep this address identical to the businessEmail constant in the JavaScript below. -->
-          <b><a href="mailto:REPLACE_WITH_PILOT_EMAIL">REPLACE_WITH_PILOT_EMAIL</a></b>
+          <b><a href="mailto:REPLACE_WITH_FINAL_BOB_EMAIL">REPLACE_WITH_FINAL_BOB_EMAIL</a></b>
         </div>
       </noscript>
       <!--
@@ -582,9 +583,9 @@
               <p class="err" id="e-email" role="alert"></p>
             </div>
             <div class="field">
-              <label for="f-wa">WhatsApp Number <span class="req" aria-hidden="true">*</span></label>
-              <input id="f-wa" name="WhatsApp Number" type="tel" required autocomplete="tel" inputmode="tel" placeholder="+49 176 12345678" aria-required="true" aria-describedby="h-wa e-wa">
-              <p class="hint" id="h-wa">Include your country code.</p>
+              <label for="f-wa">WhatsApp number <span class="opt">(required only if WhatsApp is selected)</span></label>
+              <input id="f-wa" name="WhatsApp Number" type="tel" autocomplete="tel" inputmode="tel" placeholder="+49 176 12345678" aria-required="false" aria-describedby="h-wa e-wa">
+              <p class="hint" id="h-wa">Include your country code. Required only if you choose WhatsApp as a contact method in Step 2.</p>
               <p class="err" id="e-wa" role="alert"></p>
             </div>
             <div class="field">
@@ -812,10 +813,10 @@
   document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
 
   // ---------- Contact details ----------
-  // ⚙️ CONFIGURATION: Replace this with the dedicated B.O.B pilot email before launch.
+  // ⚙️ CONFIGURATION: Replace with the final B.O.B email before deployment.
   // This is the single source of the B.O.B contact email. When you set it, also update
-  // the <noscript> block above, plus privacy.html and impressum.html.
-  const businessEmail = 'REPLACE_WITH_PILOT_EMAIL';
+  // the <noscript> block above, plus booking-details.html, privacy.html and impressum.html.
+  const businessEmail = 'REPLACE_WITH_FINAL_BOB_EMAIL';
   // ⚙️ Optional: add the founder's LinkedIn profile URL here, e.g. 'https://www.linkedin.com/in/your-profile'.
   // Leave empty ('') to keep the LinkedIn button hidden.
   const founderLinkedIn = '';
@@ -824,8 +825,8 @@
   var waDigits = ['49','176','8754','2242'].join('');
   var waPretty = '+49 176 ' + '8754' + '2242';
   function contactLinksHTML(){
-    return '<a href="https://wa.me/' + waDigits + '" target="_blank" rel="noopener">WhatsApp: ' + waPretty + '</a>'
-         + '<a href="mailto:' + encodeURIComponent(businessEmail).replace(/%40/,'@') + '">' + businessEmail + '</a>';
+    return '<a href="https://wa.me/' + waDigits + '" target="_blank" rel="noopener">Message B.O.B on WhatsApp (' + waPretty + ')</a>'
+         + '<a href="mailto:' + businessEmail + '">Email B.O.B</a>';
   }
 
   // ---------- Two-step form ----------
@@ -874,7 +875,12 @@
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)){ setError(el, 'That email address doesn\'t look right. Please check it.'); return false; }
     }
     if (el.id === 'f-wa'){
-      if (!v){ setError(el, 'Please enter your WhatsApp number.'); return false; }
+      // WhatsApp is required only when WhatsApp or Both is the preferred contact method.
+      if (!v){
+        if (waRequired()){ setError(el, 'A WhatsApp number is required for your chosen contact method. Please enter it with your country code.'); return false; }
+        setError(el, null); return true;
+      }
+      // If a number is entered voluntarily, validate its format in every case.
       // Accept spaces, brackets, hyphens and dots; require 7 to 15 digits overall.
       var cleaned = v.replace(/[\s().\-]/g, '');
       if (!/^\+?\d{7,15}$/.test(cleaned)){ setError(el, 'Please enter a valid WhatsApp number with your country code (e.g. +49 176 12345678).'); return false; }
@@ -937,9 +943,22 @@
     setError(pcmFirst(), null);
     return true;
   }
+  // ---------- Conditional WhatsApp requirement ----------
+  function waRequired(){
+    var c = form.querySelector('input[name="Preferred Contact Method"]:checked');
+    return !!(c && (c.value === 'WhatsApp' || c.value === 'Both WhatsApp and Email'));
+  }
+  function syncWaRequired(){
+    var wa = document.getElementById('f-wa');
+    wa.setAttribute('aria-required', waRequired() ? 'true' : 'false');
+    // Changing to Email removes a "number missing" error; a format error on an
+    // entered number stays until the number is corrected.
+    if (!waRequired() && !wa.value.trim()) setError(wa, null);
+  }
   form.querySelectorAll('input[name="Preferred Contact Method"]').forEach(function(r){
-    r.addEventListener('change', function(){ setError(pcmFirst(), null); });
+    r.addEventListener('change', function(){ setError(pcmFirst(), null); syncWaRequired(); });
   });
+  syncWaRequired();
 
   // ---------- Draft saving (sessionStorage: cleared when the tab closes) ----------
   var DRAFT_KEY = 'bobFormDraft';
@@ -1012,6 +1031,10 @@
     eSubmit.textContent = ''; eSubmit.style.display = 'none';
     if (!validateStep1()){ goStep(1); return; }
     if (!validatePcm()) return;
+    // WhatsApp is on Step 1 but only becomes required once a contact method is
+    // chosen on Step 2, so re-check it here and move focus back if needed.
+    var waEl = document.getElementById('f-wa');
+    if (!validateField(waEl)){ goStep(1, false); waEl.focus(); return; }
     if (!validateField(document.getElementById('f-consent'))){
       document.getElementById('f-consent').focus();
       return;

@@ -1,0 +1,32 @@
+B.O.B DEPLOYMENT CHECKLIST
+===========================
+1. Rename the final files correctly (index.html, booking-details.html, privacy.html, impressum.html).
+2. Replace REPLACE_WITH_FINAL_BOB_EMAIL everywhere (index.html x2, booking-details.html x2, privacy.html, impressum.html).
+3. Create the final B.O.B email account.
+4. Upload founder-photo.jpg.
+5. Upload favicon.svg.
+6. Upload social-preview.png.
+7. Upload index.html, privacy.html, impressum.html and booking-details.html.
+8. Confirm all files are in the same Vercel project.
+9. Create a separate Formspree form for confirmed booking details.
+10. Replace REPLACE_WITH_BOOKING_FORM_ENDPOINT in booking-details.html.
+11. Configure the public-inquiry autoresponse (formspree-inquiry-autoresponse.txt).
+12. Configure the confirmed-booking autoresponse (formspree-booking-autoresponse.txt).
+13. Submit a real inquiry-form test.
+14. Submit a real confirmed-booking-form test.
+15. Test Email-only contact without WhatsApp.
+16. Test WhatsApp contact with a valid number.
+17. Test WhatsApp contact with a missing number (submission must be blocked with a clear message).
+18. Verify that both success emails arrive.
+19. Check spam folders.
+20. Test both failure states (drafts must survive).
+21. Test mobile navigation (menu, Escape, tap outside, sticky CTA, 200% zoom).
+22. Test all Privacy Policy and Impressum links.
+23. Test the founder image (and the BB fallback with the photo removed).
+24. Test the social-preview image on the live domain.
+25. Verify the final postal address in privacy.html and impressum.html.
+26. Review the Privacy Policy and Impressum professionally.
+27. Confirm self-employment and business-registration requirements.
+28. Keep the homepage noindex during the private pilot.
+29. Keep booking-details.html permanently noindex.
+30. Remove homepage noindex only when the public launch is ready.

@@ -1,0 +1,36 @@
+FORMSPREE AUTORESPONSE — PUBLIC INQUIRY FORM
+=============================================
+
+SETUP
+1. Log in at formspree.io and open the INQUIRY form (ID: mvzezpwo — the form
+   used by index.html).
+2. Open that form's Workflow / Autoresponse / Rules settings.
+3. Enable the autoresponse. Formspree finds the student's address automatically
+   because the form field is named exactly "email".
+4. Paste the subject and body below.
+5. Send ONE real test submission (write "TEST" in the comments), confirm the
+   reply arrives (check spam too), then delete the test in the dashboard.
+
+Do not claim the autoresponse is active until it has been configured and
+tested. If the current Formspree plan does not include autoresponses, reply
+manually within 24 hours instead, as promised on the website.
+
+----------------------------------------------------------------------
+Subject: We received your B.O.B arrival inquiry
+
+Hi [First Name],
+
+Thank you for contacting B.O.B Arrival Support.
+
+Your inquiry has been received successfully. No payment has been taken, and your arrival date is not yet confirmed.
+
+I will contact you within 24 hours using your preferred contact method to understand your arrival plans, check availability and explain the next steps.
+
+Please do not send sensitive documents or your full accommodation address at this stage.
+
+Kind regards,
+
+Baljit
+B.O.B Arrival Support
+Personal arrival and settling-in support in Munich
+----------------------------------------------------------------------

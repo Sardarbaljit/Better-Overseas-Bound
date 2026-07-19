@@ -1,0 +1,34 @@
+FORMSPREE AUTORESPONSE — CONFIRMED-BOOKING FORM
+================================================
+
+SETUP
+1. First create the SEPARATE Formspree form for confirmed booking details
+   (it does not exist yet). Copy its endpoint URL.
+2. Replace REPLACE_WITH_BOOKING_FORM_ENDPOINT in booking-details.html with
+   that URL. Until then, the booking page deliberately refuses to submit.
+3. In that new form's Workflow / Autoresponse / Rules settings, enable the
+   autoresponse (the student field is named exactly "email") and paste the
+   subject and body below.
+4. Send ONE real test submission, confirm the reply arrives (check spam too),
+   then delete the test in the dashboard.
+
+Do not claim the autoresponse is active until it has been configured and
+tested.
+
+----------------------------------------------------------------------
+Subject: We received your final B.O.B arrival details
+
+Hi [First Name],
+
+Thank you. Your final arrival details have been received successfully.
+
+I will review the information and contact you to confirm the final airport meeting point, expected meeting time and Day 1 journey plan.
+
+Please let me know as soon as possible if your flight number, landing time, baggage or accommodation address changes.
+
+Kind regards,
+
+Baljit
+B.O.B Arrival Support
+Personal arrival and settling-in support in Munich
+----------------------------------------------------------------------

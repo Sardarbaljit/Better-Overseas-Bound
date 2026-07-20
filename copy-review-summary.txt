@@ -1,0 +1,79 @@
+B.O.B ARRIVAL SUPPORT — COPY REVIEW SUMMARY
+============================================
+
+THE NEW BRAND VOICE
+The site now speaks as the founder, in the first person, in calm British
+English. Sentences are short and concrete: they describe what happens on each
+day rather than making claims about how the service will feel. Promotional
+framing, sentimental storytelling and defensive over-explanation were removed.
+The voice is the same on the homepage, the booking page and in every system
+message, so the site reads as one person writing, not a marketing team.
+
+MAIN COPY PROBLEMS CORRECTED
+- The phrase "personal arrival and settling-in support" was used as the
+  description in the hero, meta tags, trust bar and footer. Each place now
+  describes the service in its own natural words.
+- The hero paragraph opened with a generic emotional claim ("Arriving in a new
+  country can feel overwhelming"). It now states what actually happens.
+- Repetition of "support", "personal", "essential", "guidance" and "practical"
+  across neighbouring sections was thinned out.
+- AI-flavoured phrases were removed: "Nothing is too small to ask", "built by
+  someone who's been in your seat", "the support I wish I had", "Those first
+  days shaped everything that came after", "Want to say hi right away?",
+  "Thanks!".
+- The founder section was cut from four storytelling paragraphs to three
+  factual ones and the quotation was rewritten to a single restrained line.
+- The long service-limitation paragraph in pricing was shortened and split
+  into a costs list plus one compact boundary paragraph.
+- FAQ answers now answer the question in the first sentence and stop sooner.
+  "How did my university know about B.O.B?" became "Does my university share
+  my information with B.O.B?" with a two-sentence answer.
+- Success and failure messages were rewritten professionally ("Inquiry
+  received" / "Your inquiry could not be sent").
+- Section labels are now consistently uppercase: HOW IT WORKS, PRICING,
+  ABOUT B.O.B, FAQ, PLAN YOUR ARRIVAL. No label above the hero.
+
+FINAL HERO HEADLINE
+Your first three days in Munich, made easier
+(Kept deliberately: it is concrete, mentions Munich, matches the social
+sharing image and the pitch deck, and no candidate replacement said more in
+fewer words.)
+
+FINAL HERO PARAGRAPH
+"B.O.B helps international students begin life in Munich. I meet you at the
+airport, help with your luggage, and travel with you by public transport to
+your accommodation. Over the following two days, we work through your SIM
+card, bank account and health insurance together."
+
+FINAL HERO BUTTONS
+Primary:   Plan My Arrival
+Secondary: View the Three-Day Plan
+
+FINAL FOUR TRUST STATEMENTS
+1. In-person welcome at Munich Airport
+2. Accompanied journey to your accommodation
+3. Founder arrived as an international student
+4. Inquiry details used only to respond
+
+SENTENCES STILL REQUIRING LEGAL REVIEW
+- The pricing boundary paragraph ("B.O.B offers help and general information,
+  not regulated advice…") and the matching FAQ answer "What is not included
+  in the service?" — a professional should confirm these disclaimers are
+  sufficient under German law.
+- The FAQ answer "Can I cancel after booking?" ("Nothing is binding before
+  that point.") — depends on the cancellation terms a professional still
+  needs to draft.
+- The whole Privacy Policy and Impressum remain templates pending
+  professional review, as marked in their HTML comments. The Impressum
+  retains the previously specified legal service description ("Personal
+  arrival and settling-in support for international students arriving in
+  Munich"), which is intentionally more formal than the marketing copy.
+
+FUNCTIONALITY CONFIRMATION
+No functionality was intentionally changed. Element IDs, form field names,
+the Formspree inquiry endpoint, the booking-endpoint placeholder and its
+submission guard, referral tracking, sessionStorage draft saving, conditional
+WhatsApp validation and all accessibility attributes are unchanged.
+JavaScript on both pages passes a syntax check, and an automated scan
+confirms all form IDs and field names are intact, €30 appears only in the
+pricing section and cost FAQ, and no banned phrases remain in public copy.

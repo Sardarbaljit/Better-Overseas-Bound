@@ -108,9 +108,9 @@
 <div class="wrap">
   <a class="logo" href="index.html"><span class="dot">B</span>B.O.B</a>
   <h1>Final arrival details</h1>
-  <p class="lead">This unlisted follow-up form collects the final details needed to plan your airport meeting and Day 1 journey. Complete it only after B.O.B has confirmed availability and sent you this link directly.</p>
-  <div class="gate-note"><b>Please note:</b> Complete this form only after B.O.B has confirmed availability and asked you to provide your final arrival details.</div>
-  <div class="why-note">The airport meeting cannot be finalised until B.O.B has the confirmed flight number, scheduled landing time, baggage information and destination address.</div>
+  <p class="lead">This unlisted follow-up form collects the final information needed to plan your airport meeting and the journey on day one. It is only for students whose availability has already been confirmed.</p>
+  <div class="gate-note"><b>Please note:</b> Complete this form only after B.O.B has confirmed availability and sent you this link directly.</div>
+  <div class="why-note">The airport meeting can only be fixed once I have your confirmed flight number, scheduled landing time, baggage details and destination address.</div>
 
   <div class="form-card">
     <noscript>
@@ -242,7 +242,7 @@
         </div>
         <div class="field full">
           <label for="b-msg">Relevant comments <span class="opt">(optional)</span></label>
-          <textarea id="b-msg" name="Relevant Comments" placeholder="Anything that helps plan your arrival, e.g. a heavy bag, mobility needs, or a travel companion."></textarea>
+          <textarea id="b-msg" name="Relevant Comments" placeholder="Anything that helps plan your arrival, such as a heavy bag, mobility needs or a travel companion."></textarea>
         </div>
         <div class="field full consent">
           <label class="check-opt">
@@ -252,7 +252,7 @@
           <p class="err" id="e-consent" role="alert"></p>
         </div>
       </div>
-      <p class="payment-note">This form is for students whose availability has already been confirmed. It does not create a new payment obligation; the service scope, price and cancellation information are confirmed separately before payment.</p>
+      <p class="payment-note">This form does not create a new payment obligation. The dates, price and cancellation terms are confirmed separately in writing before any payment.</p>
       <p class="err" id="e-submit" role="alert" style="text-align:center; margin-top:12px;"></p>
       <div style="margin-top:18px;">
         <button type="submit" class="btn btn-primary" id="submitBtn">Send My Final Arrival Details</button>
@@ -272,10 +272,10 @@
       <div class="check warn">
         <svg width="30" height="30" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 7v6" stroke="#fff" stroke-width="3" stroke-linecap="round"/><circle cx="12" cy="17" r="1.6" fill="#fff"/></svg>
       </div>
-      <h3>We couldn't send your final arrival details</h3>
-      <p>Your information was not submitted. Your answers remain saved in the current browser session. Please try again or contact B.O.B directly by email or WhatsApp.</p>
+      <h3>Your final arrival details could not be sent</h3>
+      <p>Nothing was submitted. Your answers remain saved in this browser session, so you can try again, or contact B.O.B directly by email or WhatsApp.</p>
       <div class="contact-lines" id="errContacts"></div>
-      <p class="note"><a href="#" id="retryLink">Or try the form again</a></p>
+      <p class="note"><a href="#" id="retryLink">Try the form again</a></p>
     </div>
   </div>
 
@@ -291,7 +291,7 @@
   var waDigits = ['49','176','8754','2242'].join('');
   var waPretty = '+49 176 ' + '8754' + '2242';
   function contactLinksHTML(){
-    return '<a href="https://wa.me/' + waDigits + '" target="_blank" rel="noopener">Message B.O.B on WhatsApp (' + waPretty + ')</a>'
+    return '<a href="https://wa.me/' + waDigits + '" target="_blank" rel="noopener">Contact B.O.B on WhatsApp (' + waPretty + ')</a>'
          + '<a href="mailto:' + businessEmail + '">Email B.O.B</a>';
   }
 

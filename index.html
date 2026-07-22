@@ -254,25 +254,29 @@
 
   /* ---------- FAQ ---------- */
   .faq{background:var(--bg);}
-  .faq-list{max-width:760px; margin:0 auto;}
+  .faq-list{
+    max-width:960px; margin:0 auto;
+    display:grid; grid-template-columns:1fr 1fr; gap:12px; align-items:start;
+  }
+  @media (max-width:760px){ .faq-list{grid-template-columns:1fr; max-width:640px;} }
   details{
-    background:#fff; border:1px solid var(--line); border-radius:16px;
-    padding:4px 24px; margin-bottom:12px; transition:box-shadow .25s var(--ease), border-color .25s;
+    background:#fff; border:1px solid var(--line); border-radius:14px;
+    padding:2px 20px; transition:box-shadow .25s var(--ease), border-color .25s;
   }
   details[open]{box-shadow:var(--shadow-sm); border-color:var(--line-mid);}
   summary{
-    font-weight:600; font-size:16.5px; cursor:pointer; list-style:none;
-    display:flex; justify-content:space-between; align-items:center; gap:16px;
-    padding:18px 0; min-height:32px;
+    font-weight:600; font-size:15.5px; cursor:pointer; list-style:none;
+    display:flex; justify-content:space-between; align-items:center; gap:14px;
+    padding:15px 0; min-height:28px;
   }
   summary::-webkit-details-marker{display:none;}
   summary::after{
-    content:""; flex:none; width:11px; height:11px; margin-right:2px;
+    content:""; flex:none; width:10px; height:10px; margin-right:2px;
     border-right:2px solid var(--blue); border-bottom:2px solid var(--blue);
     transform:rotate(45deg) translateY(-2px); transition:transform .25s var(--ease);
   }
   details[open] summary::after{transform:rotate(-135deg) translateY(-2px);}
-  details p{color:var(--ink-soft); font-size:15.5px; padding:0 0 20px; max-width:66ch;}
+  details p{color:var(--ink-soft); font-size:15px; padding:0 0 18px; max-width:60ch;}
   details a{color:var(--blue);}
 
   /* ---------- Contact / form ---------- */

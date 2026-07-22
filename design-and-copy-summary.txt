@@ -1,0 +1,110 @@
+B.O.B — DESIGN AND COPY SUMMARY
+================================
+
+NEW INTERFACE DIRECTION
+The site was rebuilt around clarity and restraint. Key changes:
+- A thin fixed navigation bar with a translucent, blurred background and one
+  clear call to action (Plan Your Arrival). The mobile menu is a simple full
+  width panel that closes on Escape, on outside click, and on link tap.
+- A focused hero with generous vertical space, a large headline on a controlled
+  line length, a shorter and narrower paragraph, and only two buttons. No label
+  sits above the hero.
+- Trust information is a single restrained row of four items with light check
+  marks, not heavy cards. It stacks cleanly to two columns, then one, on smaller
+  screens.
+- The three day service is presented as three large feature panels with big
+  gradient numbers 01, 02 and 03, each with a short heading and concise text,
+  in a clean vertical sequence that is easy to scan.
+- Pricing is a single panel with a large, easy to find €30, a short set of
+  included items, a compact external costs block, and a one line limitation
+  that links to the FAQs rather than dominating the panel.
+- The founder section is one photograph and three short paragraphs.
+- The FAQ is a refined accordion with generous spacing, large touch targets and
+  a rotating chevron.
+- The form keeps its two step structure with a progress bar, comfortable field
+  sizing and concise helper text.
+- Motion is limited to a subtle IntersectionObserver reveal, and it is disabled
+  under prefers-reduced-motion. Colours (blue and purple) are used selectively,
+  mostly on the logo, numbers, primary buttons and small accents.
+- System font stack only. No external fonts, frameworks, analytics or trackers.
+
+FINAL HERO HEADLINE
+Your first three days in Munich, made easier
+
+FINAL HERO PARAGRAPH
+B.O.B helps international students get started in Munich. I meet you at the
+airport, accompany you to your accommodation and help you organise a SIM card,
+banking and health insurance over the following days.
+
+FINAL NAVIGATION LABELS
+How It Works · Pricing · About B.O.B · FAQs · Plan Your Arrival
+
+FINAL HERO BUTTON LABELS
+Primary:   Plan Your Arrival
+Secondary: See What Is Included
+
+FINAL FOUR TRUST STATEMENTS
+1. Meet Baljit at Munich Airport
+2. Travel together to your accommodation
+3. Get help with key setup tasks
+4. Your information is used only to arrange the service
+
+FINAL FOUNDER COPY
+I moved to Munich as an international student and experienced how difficult the
+first few days can be when everything is unfamiliar. I created B.O.B to give new
+students clear, practical help from the moment they arrive.
+
+I live in the Munich area and provide the service personally. I accept a limited
+number of bookings during each intake so that every student receives proper
+attention.
+
+The service is currently available in English.
+
+(Employment history, the MBA reference, the team of 35, and the Hindi, Punjabi
+and Marathi mentions were all removed, as instructed. The founder photograph and
+its BB initials fallback are kept, along with an optional LinkedIn button.)
+
+FIELDS REMOVED FROM THE FORM
+- Preferred Language (the whole select and all its options). Because the field
+  is gone, the generic sessionStorage handler no longer stores it, and it was
+  also removed from the Privacy Policy's list of collected data. No other fields,
+  names or IDs changed.
+
+SERVICE LANGUAGE
+English is the only service language shown anywhere on the site. A new FAQ,
+"Which language is the service available in?", answers: "The service is
+currently available in English."
+
+REQUIRED FUNCTIONALITY — CONFIRMATION
+No required functionality was intentionally removed or changed. Preserved and
+verified: Formspree endpoint (mvzezpwo), all Formspree field names, hidden
+referral fields (Referral Source, Referral Campaign), the URL prefill parameters
+(university, city, intake, country, source, campaign), sessionStorage draft
+saving, two step validation, conditional WhatsApp requirement, success and
+failure handling, the retry option, the sticky mobile CTA logic, keyboard
+navigation, visible focus styles, reduced motion support, the founder photo
+fallback, the legal page links, the noindex setting, and the WhatsApp and email
+configuration. JavaScript on index.html and booking-details.html passes a syntax
+check. An automated scan confirms every form ID and field name is intact.
+
+BOOKING DETAILS PAGE
+Rewritten to match: heading "Confirm Your Arrival Details", an introduction that
+tells students to complete it only after B.O.B has confirmed availability and
+sent the link, and it is described as an unlisted follow up form (not private or
+secure). Buttons use the same pill styling. Fields and validation are unchanged.
+
+PLACEHOLDERS STILL TO REPLACE
+- REPLACE_WITH_BOOKING_FORM_ENDPOINT in booking-details.html — replace once you
+  create the separate Formspree form for confirmed booking details. Until then
+  the booking form deliberately refuses to submit and shows an owner facing note.
+- The social sharing image URL uses the live domain
+  (https://betteroverseasbound.de/social-preview.png); make sure social-preview.png
+  is uploaded to the site root.
+- No email placeholders remain: bob@betteroverseasbound.de is set throughout.
+
+ITEMS FOR PROFESSIONAL LEGAL REVIEW (unchanged from before)
+- The advice and scope disclaimers in the pricing panel and the "What is not
+  included" FAQ.
+- The cancellation wording ("Nothing is binding before that point.").
+- The Privacy Policy and Impressum as a whole. Neither page guarantees legal
+  compliance, and no registration, tax or VAT details were invented.

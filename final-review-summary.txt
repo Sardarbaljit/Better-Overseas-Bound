@@ -1,0 +1,129 @@
+B.O.B — FINAL REVIEW SUMMARY
+=============================
+
+FINAL COLOUR SYSTEM
+Neutral foundation with a single blue accent.
+  --ink #1D1D1F, --ink-soft #6E6E73, --ink-faint #86868B
+  --background #FFFFFF, --background-soft #F5F5F7, --border #D2D2D7
+  --blue #2563EB, --blue-dark #1D4ED8, --blue-soft #EFF4FF
+Primary buttons and the navigation button are solid blue (#2563EB, hover
+#1D4ED8). The hero headline is solid near black with no gradient. Day numbers,
+the accent details and links use solid blue. Section backgrounds alternate
+white and #F5F5F7, with the pricing panel on a dark tile.
+Purple now appears only in the small B.O.B logo icon and as one very faint
+hero background glow (about 3.5% opacity). It has been removed from buttons,
+the navigation, hero text, day markers, the progress area (now gone), the
+pricing decoration and all large backgrounds.
+
+FINAL HERO HEADLINE
+Your first three days in Munich, made easier
+
+FINAL HERO PARAGRAPH
+B.O.B helps international students get started in Munich. I meet you at Munich
+Airport, travel with you to your accommodation and, over the next two days,
+help you understand the steps for getting a SIM card, opening a bank account
+and arranging health insurance.
+
+FINAL NAVIGATION LABELS
+How It Works · Pricing · About B.O.B · FAQs · Plan Your Arrival
+
+FINAL TRUST STATEMENTS
+1. Meet Baljit at Munich Airport
+2. Travel together to your accommodation
+3. Get help with your first setup tasks
+4. Your information is used only to arrange the service
+
+FINAL DAY COPY
+Day 1 — Airport and Accommodation
+I meet you at Munich Airport, help you manage your luggage and travel with you
+to your accommodation by public transport. During the journey, I explain the
+available ticket options and how to use Munich's transport network.
+
+Day 2 — Phone and Everyday Setup
+We review SIM card options, the identification you may need and the steps
+involved in getting connected. I also help you understand which immediate tasks
+need attention after you arrive.
+
+Day 3 — Banking and Health Insurance
+I explain the usual application routes and documents for opening a bank account
+and arranging health insurance. You choose the providers, complete the
+applications and sign all agreements yourself.
+
+Outcome line below the panels:
+At the end of the service, you will have a clearer understanding of what has
+been completed and what still needs your attention.
+
+FINAL FOUNDER COPY
+I moved to Munich as an international student and saw how difficult the first
+few days can be when everything is unfamiliar. I created B.O.B to offer clear
+help from the moment a student arrives.
+I live in the Munich area and provide the service myself. I accept a limited
+number of bookings during each intake so I can give each student proper
+attention.
+The service is currently available in English.
+(No employment history, operations or client-service experience, team size,
+MBA or Munich Business School qualification, and no Hindi, Punjabi or Marathi
+references. Founder photo and BB fallback kept; optional LinkedIn button kept.)
+
+PUBLIC INQUIRY FORM — FIELDS RETAINED
+1. Full name (required)
+2. Email address (required, name="email")
+3. Approximate arrival date (required)
+4. Approximate arrival time (optional)
+5. University (optional, with suggestions)
+6. Preferred contact method (required): Email / WhatsApp / Email and WhatsApp
+7. WhatsApp number (required only when WhatsApp or Email and WhatsApp is chosen)
+8. Anything I should know? (optional)
+9. Privacy Policy acknowledgement (required)
+Plus hidden Referral Source and Referral Campaign, and the honeypot.
+Submit button: Check Availability.
+
+PUBLIC INQUIRY FORM — FIELDS REMOVED
+City of study, country travelling from, study intake, all baggage fields,
+accommodation area or postcode, airline, flight number, terminal, preferred
+language, the help-needed checklist, service selection, other service details.
+Nothing replaced them. These details live only in booking-details.html.
+The two-step structure, progress bar, step labels, Continue and Back buttons
+and their JavaScript were all removed.
+
+CONFIRMATION — THE FORM IS NOW ONE PAGE
+Yes. The public inquiry is a single page with no progress bar and no steps.
+Email-only submissions work without a WhatsApp number; choosing WhatsApp or
+Email and WhatsApp requires a valid number, with an inline message and focus on
+the field. JavaScript references only the fields that still exist.
+
+IMAGE TREATMENT
+Hero: munich.jpg in a wide rounded container (22px radius), subtle shadow, no
+overlay, cropped lower via object-position to favour the square and reduce sky.
+Loaded eagerly with fetchpriority high and width/height to limit layout shift.
+Day cards: transport.jpg, sim.jpg and banking.jpg all share one presentation —
+same 16:10 ratio, same corner radius, same cover crop, lazy loaded, with
+width/height set. Every image has a neutral grey gradient fallback if missing
+and an HTML comment reminding that only commercially licensed images may be
+published.
+
+IMAGES THAT SHOULD EVENTUALLY BE REPLACED
+transport.jpg and sim.jpg are temporary pilot images (darker and more dramatic
+than the hero) and should be replaced with brighter, more natural photographs.
+banking.jpg is acceptable for the pilot but may later be swapped for a cleaner
+banking setup image. Details are in image-guide.txt.
+
+CONFIRMATION — NO TEST DATA SUBMITTED
+No test submission was sent to Formspree at any point during this work.
+
+REMAINING SETUP PLACEHOLDERS
+- booking-details.html still contains REPLACE_WITH_BOOKING_FORM_ENDPOINT; it is
+  intentional and the booking form refuses to submit until a separate Formspree
+  form is created and the endpoint is pasted in.
+- The four photos must be saved as munich.jpg, transport.jpg, sim.jpg and
+  banking.jpg (and founder-photo.jpg) in the site root.
+- The homepage keeps <meta name="robots" content="noindex, nofollow"> for the
+  private pilot; remove it only at public launch. booking-details.html stays
+  noindex permanently.
+
+WORDING THAT STILL NEEDS PROFESSIONAL LEGAL REVIEW
+- The advice and scope disclaimers in the pricing panel and the "What is not
+  included in the service?" FAQ.
+- The cancellation wording ("Nothing is binding before that point.").
+- The Privacy Policy and Impressum as a whole. Neither page guarantees legal
+  compliance, and no VAT ID, tax number, registration or licence was invented.

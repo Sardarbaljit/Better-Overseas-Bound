@@ -1,34 +1,44 @@
 B.O.B — IMAGE GUIDE
 ====================
-The website now shows photos in the hero and the three day cards. Save each
-image with the exact filename below and upload it to the SAME folder as
-index.html (the repo root, next to founder-photo.jpg). Filenames are
-case sensitive and must match exactly.
+The website shows photos in the hero and the three day cards. Save each image
+with the exact filename below and upload it to the SAME folder as index.html
+(the repo root, next to founder-photo.jpg). Filenames are case sensitive.
 
-Until a file is added, that spot shows a soft blue/purple gradient placeholder,
-so the site never looks broken.
+Until a file is added, that spot shows a soft neutral grey placeholder, so the
+site never looks broken.
 
-FILENAME        WHICH PHOTO TO USE                              WHERE IT APPEARS
---------        ------------------                              ----------------
-munich.jpg      The aerial view of central Munich               Hero (large image
-                (Marienplatz, red rooftops, square)             under the headline)
-transport.jpg   The red DB trains at the Munich station         Day 1 card
-sim.jpg         The blue and red SIM card on black              Day 2 card
-banking.jpg     The euro coins on top of bank cards             Day 3 card
+FILENAME        WHICH PHOTO                                     WHERE IT APPEARS
+--------        -----------                                     ----------------
+munich.jpg      Aerial view of Marienplatz and central Munich   Hero (large image
+                                                                under the headline)
+transport.jpg   A red regional train at a Munich platform       Day 1 card
+sim.jpg         A mobile SIM card                               Day 2 card
+banking.jpg     Bank cards with a few euro coins               Day 3 card
 
-Optional spares you also sent, for later use:
-- The health insurance letter tiles on a calendar
-- The two silver cards with the black phone
-- The Allianz Arena stadium interior
+IMAGE NOTES AND FUTURE REPLACEMENTS
+- munich.jpg is the strongest image and is well suited to the hero. Keep it.
+  Crop towards Marienplatz and the historic centre, and reduce the amount of
+  empty sky. The layout already positions the crop lower using object-position.
+- transport.jpg and sim.jpg are TEMPORARY pilot images. They are darker and
+  more dramatic than the hero, so they sit slightly apart in style. Replace
+  them, when you can, with brighter, more natural photographs (for example, a
+  bright daytime tram or U-Bahn, and a clean, well lit SIM or phone setup).
+- banking.jpg is acceptable for the pilot but is a little busy. It may later be
+  replaced with a cleaner banking setup image (for example, a card and a laptop
+  or a simple desk scene). Crop towards the cards and only a few coins.
+- All three day images are shown at the same 16:10 ratio, the same corner
+  radius and the same crop behaviour, so they already look consistent as a set.
 
-PREPARING THE FILES (recommended, not required)
-- Resize munich.jpg to about 1800 px wide; the three card images to about
-  1000 px wide. This keeps the page fast.
-- Save as JPEG at roughly 80% quality. Aim for under ~350 KB each.
-- Free tools: squoosh.app (drag in, export) or any photo app's "export for web".
-- The hero image is shown at 16:8 and the card images at 16:10, cropped to fill.
-  Choose a crop where the main subject sits near the centre.
+RECOMMENDED DIMENSIONS AND COMPRESSION
+- munich.jpg: about 1960 px wide (shown at 16:8).
+- transport.jpg, sim.jpg, banking.jpg: about 1000 px wide (shown at 16:10).
+- Save as JPEG at roughly 80% quality. Aim for under about 300 KB each; the
+  hero can be a little larger. Free tool: squoosh.app (drag in, export).
+- Choose a crop where the main subject sits near the centre so it works on
+  mobile as well as desktop.
 
-RIGHTS
-Only upload photos you are allowed to use. If any came from a stock library,
-check its licence permits use on a live website.
+IMAGE RIGHTS (IMPORTANT)
+Only publish images that B.O.B has the right to use commercially. If any photo
+came from a stock library, check that its licence permits use on a live,
+business website. The HTML repeats this reminder in a comment beside every
+image reference.

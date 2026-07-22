@@ -207,11 +207,6 @@
   }
   @media (max-width:600px){.price-card{padding:38px 26px;}}
   .price-card > *{position:relative;}
-  .price-badge{
-    display:inline-block; font-size:12px; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
-    color:#DCE6FF; background:rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.16);
-    padding:7px 15px; border-radius:999px; margin-bottom:24px;
-  }
   .price-row{display:flex; align-items:baseline; gap:12px; margin-bottom:10px;}
   .price{font-size:70px; font-weight:700; letter-spacing:-0.045em; line-height:1; color:#fff;}
   .price small{font-size:18px; font-weight:500; color:#A1A1A6; letter-spacing:0;}
@@ -326,6 +321,12 @@
   @media (max-width:600px){.form-grid{grid-template-columns:1fr;}}
   .field{display:flex; flex-direction:column; gap:7px;}
   .field.full{grid-column:1 / -1;}
+  /* WhatsApp field: collapses smoothly when Email only is chosen. It stays in the
+     DOM (and is set to hidden once collapsed) so form and draft logic keep working. */
+  #waField{overflow:hidden; max-height:220px; opacity:1;
+    transition:max-height .28s var(--ease), opacity .2s var(--ease);}
+  #waField.collapsed{max-height:0; opacity:0;}
+  @media (prefers-reduced-motion:reduce){ #waField{transition:none;} }
   label{font-size:13.5px; font-weight:600;}
   label .req{color:var(--blue);}
   label .opt{font-weight:400; color:var(--ink-faint);}
@@ -440,7 +441,7 @@
 <header class="hero" id="home">
   <div class="wrap">
     <h1>Your first three days in Munich, <span class="grad">made easier</span></h1>
-    <p class="lead">B.O.B helps international students get started in Munich. I meet you at Munich Airport, travel with you to your accommodation and help you with the main tasks that follow, including your SIM card, bank account and health insurance.</p>
+    <p class="lead">B.O.B helps international students get started in Munich. I meet you at Munich Airport, accompany you to your accommodation and help you with the main tasks that follow, including your SIM card, bank account and health insurance.</p>
     <div class="hero-ctas">
       <a href="#contact" class="btn btn-primary btn-lg">Plan Your Arrival</a>
       <a href="#how" class="link-cta">See What Is Included</a>
@@ -483,7 +484,7 @@
         <!-- Only publish images that B.O.B has the right to use commercially. -->
         <div class="day-img"><img src="sim.jpg" alt="A mobile SIM card" loading="lazy" width="1000" height="625" onerror="this.style.display='none'"></div>
         <div class="day-body">
-          <h3>Phone and Everyday Setup</h3>
+          <h3>SIM Card and Initial Setup</h3>
           <p>We review SIM card options, the identification you may need and the steps involved in getting connected. I also help you understand which immediate tasks need attention after you arrive.</p>
         </div>
       </div>
@@ -504,7 +505,7 @@
         </div>
       </div>
     </div>
-    <p class="outcome reveal">The service is arranged around your arrival and completed across the agreed three day period.</p>
+    <p class="outcome reveal">The four areas are covered across the agreed three days, with the order adjusted to suit your arrival time and opening hours.</p>
   </div>
 </section>
 
@@ -516,11 +517,10 @@
       <h2>The Pilot Fee</h2>
     </div>
     <div class="price-card reveal">
-      <span class="price-badge">Introductory pilot price</span>
       <div class="price-row">
         <span class="price">€30</span>
       </div>
-      <p class="price-note">The introductory fee is €30 for the agreed three day service. No payment is collected through the inquiry form. I first confirm availability and the service details with you.</p>
+      <p class="price-note">The introductory fee is €30 for support across the agreed three days. No payment is collected through the inquiry form. I first confirm availability and the service details with you.</p>
       <ul class="price-list">
         <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#EEF3FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Meeting at Munich Airport</li>
         <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#EEF3FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Help managing your luggage</li>
@@ -528,7 +528,7 @@
         <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#EEF3FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Travel to your accommodation</li>
         <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#EEF3FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Help understanding SIM card options</li>
         <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#EEF3FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Information about banking and health insurance processes</li>
-        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#EEF3FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Help with questions during the agreed three day period</li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#EEF3FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Help with questions during the agreed three days</li>
       </ul>
       <div class="cost-note">
         <b>Costs charged by other providers are not included.</b> Students pay these directly:
@@ -562,7 +562,7 @@
         <img src="founder-photo.jpg" alt="Baljit Bhatti, founder of B.O.B" onerror="this.style.display='none'">
       </div>
       <div class="about-copy reveal">
-        <p>I moved to Munich as an international student and experienced the challenges of getting started in an unfamiliar city. I created B.O.B to offer clear help from the moment a student arrives.</p>
+        <p>When I moved to Munich as an international student, I had to work out many of the first practical steps on my own. I created B.O.B to make those first days clearer for new students.</p>
         <p>I live in the Munich area and provide the service myself. I accept a limited number of bookings during each intake so I can give each student proper attention.</p>
         <p>The service is currently available in English.</p>
         <div class="name">Baljit Bhatti</div>
@@ -584,7 +584,7 @@
     <div class="faq-compact reveal">
       <span class="eyebrow">Frequently Asked Questions</span>
       <h2>Common Questions</h2>
-      <p class="faq-intro">Find answers about pricing, airport meetings, luggage, cancellations and how your information is used.</p>
+      <p class="faq-intro">Find answers about the service, pricing, airport arrangements, luggage and cancellations.</p>
       <button type="button" class="btn btn-primary btn-lg" id="faqOpen" aria-haspopup="dialog">View All Questions</button>
     </div>
   </div>
@@ -720,7 +720,7 @@
               <option value="Ludwig Maximilian University of Munich"></option>
               <option value="Munich University of Applied Sciences"></option>
               <option value="Hochschule Macromedia Munich"></option>
-              <option value="International University Munich"></option>
+              <option value="IU International University of Applied Sciences, Munich"></option>
               <option value="Other"></option>
             </datalist>
           </div>
@@ -736,7 +736,7 @@
           <div class="field full" id="waField">
             <label for="f-wa">WhatsApp number</label>
             <input id="f-wa" name="WhatsApp Number" type="tel" autocomplete="tel" inputmode="tel" placeholder="+49 176 12345678" aria-required="false" aria-describedby="h-wa e-wa">
-            <p class="hint" id="h-wa">Include your country code. Required only if you choose WhatsApp as a contact method.</p>
+            <p class="hint" id="h-wa">Include your country code.</p>
             <p class="err" id="e-wa" role="alert"></p>
           </div>
           <div class="field full">
@@ -908,18 +908,37 @@
     var c = form.querySelector('input[name="Preferred Contact Method"]:checked');
     return !!(c && (c.value === 'WhatsApp' || c.value === 'Email and WhatsApp'));
   }
+  // Show or hide the WhatsApp field. The element stays in the DOM; once collapsed it
+  // is also set to hidden so it takes no space, cannot be focused and is not announced.
+  var waTimer = null;
+  var waAnimate = false;
+  function setWaVisible(show){
+    var waField = document.getElementById('waField');
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var instant = reduce || !waAnimate;
+    clearTimeout(waTimer);
+    if (show){
+      waField.hidden = false;
+      if (instant){ waField.classList.remove('collapsed'); return; }
+      waField.classList.add('collapsed');
+      requestAnimationFrame(function(){ waField.classList.remove('collapsed'); });
+    } else {
+      waField.classList.add('collapsed');
+      if (instant){ waField.hidden = true; return; }
+      waTimer = setTimeout(function(){ waField.hidden = true; }, 300);
+    }
+  }
   function syncWaRequired(){
     var wa = document.getElementById('f-wa');
-    var waField = document.getElementById('waField');
     var pcm = form.querySelector('input[name="Preferred Contact Method"]:checked');
-    wa.setAttribute('aria-required', waRequired() ? 'true' : 'false');
-    // The field is only shown when WhatsApp is part of the chosen contact method.
-    // Before a choice is made it stays visible so the form reads completely.
-    var emailOnly = !!(pcm && pcm.value === 'Email');
-    waField.hidden = emailOnly;
+    var required = waRequired();
+    wa.setAttribute('aria-required', required ? 'true' : 'false');
+    // Hidden only when Email is the chosen method. Before any choice is made the
+    // field stays visible so the form reads completely.
+    setWaVisible(!(pcm && pcm.value === 'Email'));
     // Selecting Email clears a "number missing" error; a format error on an
     // entered number stays until the number is corrected.
-    if (!waRequired() && !wa.value.trim()) setError(wa, null);
+    if (!required && !wa.value.trim()) setError(wa, null);
   }
   form.querySelectorAll('input[name="Preferred Contact Method"]').forEach(function(r){
     r.addEventListener('change', function(){ setError(pcmFirst(), null); syncWaRequired(); });
@@ -980,7 +999,8 @@
   }
   restoreDraft();      // saved entries first...
   applyUrlPrefill();   // ...then URL parameters override the matching fields
-  syncWaRequired();    // reflect a restored contact-method choice
+  syncWaRequired();    // reflect a restored contact-method choice without animating
+  waAnimate = true;    // animate only after the initial state is settled
 
   // ---------- Submit ----------
   var requiredIds = ['f-name','f-email','f-arrival'];
@@ -996,8 +1016,10 @@
     });
     if (!ok){ if (firstBad) firstBad.focus(); return; }
     if (!validatePcm()) return;
+    // Only validate WhatsApp when the field is visible, so a hidden field is
+    // never the reason a submission is blocked and focus never moves to it.
     var waEl = document.getElementById('f-wa');
-    if (!validateField(waEl)){ waEl.focus(); return; }
+    if (!document.getElementById('waField').hidden && !validateField(waEl)){ waEl.focus(); return; }
     if (!validateField(document.getElementById('f-consent'))){
       document.getElementById('f-consent').focus();
       return;

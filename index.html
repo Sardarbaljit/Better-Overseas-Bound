@@ -252,33 +252,68 @@
   }
   .li-btn:hover{background:var(--bg-soft); border-color:#D3D8E0;}
 
-  /* ---------- FAQ ---------- */
+  /* ---------- FAQ (compact) ---------- */
   .faq{background:var(--bg);}
-  .faq-list{
-    max-width:960px; margin:0 auto;
-    display:flex; gap:12px; align-items:flex-start;
+  .faq-compact{max-width:600px; margin:0 auto; text-align:center;}
+  .faq-intro{color:var(--ink-soft); font-size:18px; margin:14px auto 26px; max-width:52ch;}
+
+  /* ---------- FAQ modal ---------- */
+  .modal-backdrop{
+    position:fixed; inset:0; z-index:100; display:none;
+    align-items:center; justify-content:center; padding:24px;
+    background:rgba(0,0,0,.45); opacity:0; transition:opacity .25s var(--ease);
   }
-  .faq-col{flex:1; min-width:0; display:flex; flex-direction:column; gap:12px;}
-  @media (max-width:760px){ .faq-list{flex-direction:column; max-width:640px;} }
-  details{
-    background:#fff; border:1px solid var(--line); border-radius:14px;
-    padding:2px 20px; transition:box-shadow .25s var(--ease), border-color .25s;
+  .modal-backdrop.show{display:flex;}
+  .modal-backdrop.open{opacity:1;}
+  .modal{
+    background:#fff; border:1px solid var(--line); border-radius:20px;
+    width:100%; max-width:760px; max-height:80vh; display:flex; flex-direction:column;
+    box-shadow:0 24px 60px rgba(0,0,0,.22);
+    transform:translateY(14px); transition:transform .25s var(--ease);
   }
-  details[open]{box-shadow:var(--shadow-sm); border-color:var(--line-mid);}
-  summary{
-    font-weight:600; font-size:15px; cursor:pointer; list-style:none;
-    display:flex; justify-content:space-between; align-items:center; gap:14px;
-    padding:10px 0; min-height:52px;
+  .modal-backdrop.open .modal{transform:none;}
+  .modal-head{
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+    padding:22px 26px; border-bottom:1px solid var(--line); flex:none;
   }
-  summary::-webkit-details-marker{display:none;}
-  summary::after{
-    content:""; flex:none; width:10px; height:10px; margin-right:2px;
+  .modal-head h2{font-size:21px; letter-spacing:-0.02em;}
+  .modal-close{
+    flex:none; width:38px; height:38px; border-radius:50%; border:1px solid var(--line);
+    background:#fff; cursor:pointer; display:grid; place-items:center; color:var(--ink);
+    transition:background .2s;
+  }
+  .modal-close:hover{background:var(--bg-soft);}
+  .modal-close svg{width:18px; height:18px;}
+  .modal-body{overflow-y:auto; padding:6px 26px 22px; -webkit-overflow-scrolling:touch;}
+  .faq-item{border-bottom:1px solid var(--line);}
+  .faq-item:last-child{border-bottom:none;}
+  .faq-q{
+    width:100%; text-align:left; background:none; border:none; cursor:pointer; font-family:inherit;
+    color:var(--ink); font-weight:600; font-size:16px; line-height:1.4;
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+    padding:18px 2px; min-height:44px;
+  }
+  .faq-q .chev{
+    flex:none; width:11px; height:11px;
     border-right:2px solid var(--blue); border-bottom:2px solid var(--blue);
-    transform:rotate(45deg) translateY(-2px); transition:transform .25s var(--ease);
+    transform:rotate(45deg) translateY(-3px); transition:transform .25s var(--ease);
   }
-  details[open] summary::after{transform:rotate(-135deg) translateY(-2px);}
-  details p{color:var(--ink-soft); font-size:15px; padding:0 0 18px; max-width:60ch;}
-  details a{color:var(--blue);}
+  .faq-q[aria-expanded="true"] .chev{transform:rotate(-135deg) translateY(-1px);}
+  .faq-a{color:var(--ink-soft); font-size:15px; padding:0 2px 20px;}
+  .faq-a p{max-width:64ch;}
+  .faq-a a{color:var(--blue);}
+  @media (max-width:600px){
+    .modal-backdrop{padding:0;}
+    .modal{max-width:100%; width:100%; height:100%; max-height:100%; border-radius:0; border:none;}
+    .modal-head{padding:16px 18px;}
+    .modal-body{padding:4px 18px 24px;}
+    .faq-q{padding:16px 2px;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .modal-backdrop, .modal{transition:none;}
+  }
+  body.modal-open{overflow:hidden;}
+  body.modal-open .sticky-cta{display:none !important;}
 
   /* ---------- Contact / form ---------- */
   .contact{background:var(--bg-blue);}
@@ -541,69 +576,81 @@
   </div>
 </section>
 
-<!-- ================= FAQ ================= -->
+<!-- ================= FAQ (compact + modal) ================= -->
 <section class="faq" id="faq">
   <div class="wrap">
-    <div class="section-head center reveal">
+    <div class="faq-compact reveal">
       <span class="eyebrow">Frequently Asked Questions</span>
-      <h2>Questions About the Service</h2>
-    </div>
-    <div class="faq-list reveal">
-      <div class="faq-col">
-      <details>
-        <summary>What does the service cost?</summary>
-        <p>€30, paid once, for the three day service. This is an introductory price while B.O.B works with its first students. Costs charged by others, such as transport tickets, SIM cards, bank fees and insurance premiums, are paid by you directly. There are no subscriptions or automatic charges.</p>
-      </details>
-      <details>
-        <summary>What happens after I submit the form?</summary>
-        <p>Nothing is charged and nothing is booked yet. I check whether I am available for your arrival date and reply using your preferred contact method, normally within 24 hours. Before any payment, you receive written confirmation of the dates, the schedule, the price and the cancellation terms. Your exact flight and accommodation details are collected separately once availability is confirmed, and the airport meeting point is agreed before you travel.</p>
-      </details>
-      <details>
-        <summary>Which language is the service available in?</summary>
-        <p>The service is currently available in English.</p>
-      </details>
-      <details>
-        <summary>How will I recognise you at the airport?</summary>
-        <p>We agree the meeting point in advance and exchange contact details. I message you when I am at the agreed spot. If it helps, we can also arrange a short video call before you travel.</p>
-      </details>
-      <details>
-        <summary>Can a parent or family member join the introductory call?</summary>
-        <p>Yes. Parents and family members are welcome to join the call and ask their own questions.</p>
-      </details>
-      <details>
-        <summary>What happens if my flight is delayed?</summary>
-        <p>Tell me as soon as you can. Reasonable delays are usually manageable. A major schedule change may need a new meeting time, depending on availability.</p>
-      </details>
-      </div>
-      <div class="faq-col">
-      <details>
-        <summary>Can you help with my luggage?</summary>
-        <p>I help you manage your bags on the journey from the airport to your accommodation. B.O.B is not a porter service, so you need to be able to travel safely with what you bring. Let me know in advance how many bags you expect and whether any are unusually large or heavy.</p>
-      </details>
-      <details>
-        <summary>Can I cancel after booking?</summary>
-        <p>You receive the cancellation terms in writing before you pay, together with the confirmed dates and price. Nothing is binding before that point.</p>
-      </details>
-      <details>
-        <summary>Which areas do you cover?</summary>
-        <p>Arrivals in Munich. I live in the Munich area and the service is delivered in person, so I cannot yet accompany students in other cities. You are still welcome to write to me.</p>
-      </details>
-      <details>
-        <summary>Does my university share my information with B.O.B?</summary>
-        <p>No. Universities that mention B.O.B only pass on a link. I receive nothing about you until you contact me yourself.</p>
-      </details>
-      <details>
-        <summary>How is my information used?</summary>
-        <p>Only to answer your inquiry and organise the service you request. Your details are not sold and are not passed to universities or other organisations for their marketing. Form delivery runs through Formspree, and unfinished form drafts stay in your own browser until you close the tab. You can ask for deletion at any time. Full details are in the <a href="privacy.html">Privacy Policy</a>.</p>
-      </details>
-      <details>
-        <summary>What is not included in the service?</summary>
-        <p>Regulated advice and official procedures. I do not give legal, immigration, tax, financial or insurance advice, cannot guarantee the decisions of banks, insurers or authorities, and do not complete applications or sign contracts in your name. You choose your own providers throughout. Travel is by public transport; B.O.B is not a taxi or transfer service.</p>
-      </details>
-      </div>
+      <h2>Need More Information?</h2>
+      <p class="faq-intro">Find answers about pricing, airport meetings, luggage, cancellations and how your information is used.</p>
+      <button type="button" class="btn btn-primary btn-lg" id="faqOpen" aria-haspopup="dialog">View All Questions</button>
     </div>
   </div>
 </section>
+
+<!-- FAQ MODAL: all questions live here; opened by the button above. -->
+<div class="modal-backdrop" id="faqModal">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="faqModalTitle">
+    <div class="modal-head">
+      <h2 id="faqModalTitle">Frequently asked questions</h2>
+      <button type="button" class="modal-close" id="faqClose" aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="faq-acc">
+        <div class="faq-item">
+          <button type="button" class="faq-q" id="fq-1" aria-expanded="false" aria-controls="fa-1">What does the service cost?<span class="chev" aria-hidden="true"></span></button>
+          <div class="faq-a" id="fa-1" role="region" aria-labelledby="fq-1" hidden><p>€30, paid once, for the three day service. This is an introductory price while B.O.B works with its first students. Costs charged by others, such as transport tickets, SIM cards, bank fees and insurance premiums, are paid by you directly. There are no subscriptions or automatic charges.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" id="fq-2" aria-expanded="false" aria-controls="fa-2">What happens after I submit the form?<span class="chev" aria-hidden="true"></span></button>
+          <div class="faq-a" id="fa-2" role="region" aria-labelledby="fq-2" hidden><p>Nothing is charged and nothing is booked yet. I check whether I am available for your arrival date and reply using your preferred contact method, normally within 24 hours. Before any payment, you receive written confirmation of the dates, the schedule, the price and the cancellation terms. Your exact flight and accommodation details are collected separately once availability is confirmed, and the airport meeting point is agreed before you travel.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" id="fq-3" aria-expanded="false" aria-controls="fa-3">Which language is the service available in?<span class="chev" aria-hidden="true"></span></button>
+          <div class="faq-a" id="fa-3" role="region" aria-labelledby="fq-3" hidden><p>The service is currently available in English.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" id="fq-4" aria-expanded="false" aria-controls="fa-4">How will I recognise you at the airport?<span class="chev" aria-hidden="true"></span></button>
+          <div class="faq-a" id="fa-4" role="region" aria-labelledby="fq-4" hidden><p>We agree the meeting point in advance and exchange contact details. I message you when I am at the agreed spot. If it helps, we can also arrange a short video call before you travel.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" id="fq-5" aria-expanded="false" aria-controls="fa-5">Can a parent or family member join the introductory call?<span class="chev" aria-hidden="true"></span></button>
+          <div class="faq-a" id="fa-5" role="region" aria-labelledby="fq-5" hidden><p>Yes. Parents and family members are welcome to join the call and ask their own questions.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" id="fq-6" aria-expanded="false" aria-controls="fa-6">What happens if my flight is delayed?<span class="chev" aria-hidden="true"></span></button>
+          <div class="faq-a" id="fa-6" role="region" aria-labelledby="fq-6" hidden><p>Tell me as soon as you can. Reasonable delays are usually manageable. A major schedule change may need a new meeting time, depending on availability.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" id="fq-7" aria-expanded="false" aria-controls="fa-7">Can you help with my luggage?<span class="chev" aria-hidden="true"></span></button>
+          <div class="faq-a" id="fa-7" role="region" aria-labelledby="fq-7" hidden><p>I help you manage your bags on the journey from the airport to your accommodation. B.O.B is not a porter service, so you need to be able to travel safely with what you bring. Let me know in advance how many bags you expect and whether any are unusually large or heavy.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" id="fq-8" aria-expanded="false" aria-controls="fa-8">Can I cancel after booking?<span class="chev" aria-hidden="true"></span></button>
+          <div class="faq-a" id="fa-8" role="region" aria-labelledby="fq-8" hidden><p>You receive the cancellation terms in writing before you pay, together with the confirmed dates and price. Nothing is binding before that point.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" id="fq-9" aria-expanded="false" aria-controls="fa-9">Which areas do you cover?<span class="chev" aria-hidden="true"></span></button>
+          <div class="faq-a" id="fa-9" role="region" aria-labelledby="fq-9" hidden><p>Arrivals in Munich. I live in the Munich area and the service is delivered in person, so I cannot yet accompany students in other cities. You are still welcome to write to me.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" id="fq-10" aria-expanded="false" aria-controls="fa-10">Does my university share my information with B.O.B?<span class="chev" aria-hidden="true"></span></button>
+          <div class="faq-a" id="fa-10" role="region" aria-labelledby="fq-10" hidden><p>No. Universities that mention B.O.B only pass on a link. I receive nothing about you until you contact me yourself.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" id="fq-11" aria-expanded="false" aria-controls="fa-11">How is my information used?<span class="chev" aria-hidden="true"></span></button>
+          <div class="faq-a" id="fa-11" role="region" aria-labelledby="fq-11" hidden><p>Only to answer your inquiry and organise the service you request. Your details are not sold and are not passed to universities or other organisations for their marketing. Form delivery runs through Formspree, and unfinished form drafts stay in your own browser until you close the tab. You can ask for deletion at any time. Full details are in the <a href="privacy.html">Privacy Policy</a>.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" id="fq-12" aria-expanded="false" aria-controls="fa-12">What is not included in the service?<span class="chev" aria-hidden="true"></span></button>
+          <div class="faq-a" id="fa-12" role="region" aria-labelledby="fq-12" hidden><p>Regulated advice and official procedures. I do not give legal, immigration, tax, financial or insurance advice, cannot guarantee the decisions of banks, insurers or authorities, and do not complete applications or sign contracts in your name. You choose your own providers throughout. Travel is by public transport; B.O.B is not a taxi or transfer service.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- ================= CONTACT / FORM ================= -->
 <section class="contact" id="contact">
@@ -997,6 +1044,66 @@
     submitBtn.textContent = 'Check Availability';
     panelShown = false;
     updateSticky();
+  });
+
+  // ---------- FAQ modal ----------
+  var faqOpenBtn = document.getElementById('faqOpen');
+  var faqModal = document.getElementById('faqModal');
+  var faqCloseBtn = document.getElementById('faqClose');
+  var faqDialog = faqModal.querySelector('.modal');
+  var faqLastFocus = null;
+  var faqHideTimer = null;
+
+  function faqReduced(){ return window.matchMedia('(prefers-reduced-motion: reduce)').matches; }
+
+  function openFaq(){
+    faqLastFocus = document.activeElement;
+    clearTimeout(faqHideTimer);
+    faqModal.classList.add('show');
+    document.body.classList.add('modal-open');
+    // next frame so the opacity/transform transition runs
+    requestAnimationFrame(function(){ faqModal.classList.add('open'); });
+    faqCloseBtn.focus();
+    document.addEventListener('keydown', faqKeydown);
+  }
+  function closeFaq(){
+    faqModal.classList.remove('open');
+    document.body.classList.remove('modal-open');
+    document.removeEventListener('keydown', faqKeydown);
+    faqHideTimer = setTimeout(function(){ faqModal.classList.remove('show'); }, faqReduced() ? 0 : 250);
+    if (faqLastFocus && faqLastFocus.focus) faqLastFocus.focus();
+  }
+  function faqKeydown(e){
+    if (e.key === 'Escape'){ e.preventDefault(); closeFaq(); return; }
+    if (e.key === 'Tab'){
+      var f = Array.prototype.filter.call(
+        faqDialog.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'),
+        function(el){ return el.offsetParent !== null; }
+      );
+      if (!f.length) return;
+      var first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+    }
+  }
+  faqOpenBtn.addEventListener('click', openFaq);
+  faqCloseBtn.addEventListener('click', closeFaq);
+  // Backdrop click closes; clicks inside the dialog do not.
+  faqModal.addEventListener('click', function(e){ if (e.target === faqModal) closeFaq(); });
+
+  // Accordion: one answer open at a time.
+  faqDialog.querySelectorAll('.faq-q').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var isOpen = btn.getAttribute('aria-expanded') === 'true';
+      faqDialog.querySelectorAll('.faq-q').forEach(function(b){
+        b.setAttribute('aria-expanded', 'false');
+        document.getElementById(b.getAttribute('aria-controls')).hidden = true;
+      });
+      if (!isOpen){
+        btn.setAttribute('aria-expanded', 'true');
+        document.getElementById(btn.getAttribute('aria-controls')).hidden = false;
+      }
+    });
   });
 
   // ---------- Sticky mobile CTA ----------

@@ -256,9 +256,10 @@
   .faq{background:var(--bg);}
   .faq-list{
     max-width:960px; margin:0 auto;
-    display:grid; grid-template-columns:1fr 1fr; gap:12px; align-items:start;
+    display:flex; gap:12px; align-items:flex-start;
   }
-  @media (max-width:760px){ .faq-list{grid-template-columns:1fr; max-width:640px;} }
+  .faq-col{flex:1; min-width:0; display:flex; flex-direction:column; gap:12px;}
+  @media (max-width:760px){ .faq-list{flex-direction:column; max-width:640px;} }
   details{
     background:#fff; border:1px solid var(--line); border-radius:14px;
     padding:2px 20px; transition:box-shadow .25s var(--ease), border-color .25s;
@@ -548,6 +549,7 @@
       <h2>Questions About the Service</h2>
     </div>
     <div class="faq-list reveal">
+      <div class="faq-col">
       <details>
         <summary>What does the service cost?</summary>
         <p>€30, paid once, for the three day service. This is an introductory price while B.O.B works with its first students. Costs charged by others, such as transport tickets, SIM cards, bank fees and insurance premiums, are paid by you directly. There are no subscriptions or automatic charges.</p>
@@ -572,6 +574,8 @@
         <summary>What happens if my flight is delayed?</summary>
         <p>Tell me as soon as you can. Reasonable delays are usually manageable. A major schedule change may need a new meeting time, depending on availability.</p>
       </details>
+      </div>
+      <div class="faq-col">
       <details>
         <summary>Can you help with my luggage?</summary>
         <p>I help you manage your bags on the journey from the airport to your accommodation. B.O.B is not a porter service, so you need to be able to travel safely with what you bring. Let me know in advance how many bags you expect and whether any are unusually large or heavy.</p>
@@ -596,6 +600,7 @@
         <summary>What is not included in the service?</summary>
         <p>Regulated advice and official procedures. I do not give legal, immigration, tax, financial or insurance advice, cannot guarantee the decisions of banks, insurers or authorities, and do not complete applications or sign contracts in your name. You choose your own providers throughout. Travel is by public transport; B.O.B is not a taxi or transfer service.</p>
       </details>
+      </div>
     </div>
   </div>
 </section>

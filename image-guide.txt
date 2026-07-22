@@ -11,9 +11,11 @@ FILENAME        WHICH PHOTO                                     WHERE IT APPEARS
 --------        -----------                                     ----------------
 munich.jpg      Aerial view of Marienplatz and central Munich   Hero (large image
                                                                 under the headline)
-transport.jpg   A red regional train at a Munich platform       Day 1 card
-sim.jpg         A mobile SIM card                               Day 2 card
-banking.jpg     Bank cards with a few euro coins               Day 3 card
+transport.jpg   A red regional train at a Munich platform       Airport & Accommodation card
+sim.jpg         A mobile SIM card                               Phone & Everyday Setup card
+banking.jpg     Bank cards with a few euro coins               Banking card
+health.jpg      The health insurance letter tiles photo         Health Insurance card
+                (or any clean health insurance / documents image)
 
 IMAGE NOTES AND FUTURE REPLACEMENTS
 - munich.jpg is the strongest image and is well suited to the hero. Keep it.

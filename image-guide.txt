@@ -1,0 +1,34 @@
+B.O.B — IMAGE GUIDE
+====================
+The website now shows photos in the hero and the three day cards. Save each
+image with the exact filename below and upload it to the SAME folder as
+index.html (the repo root, next to founder-photo.jpg). Filenames are
+case sensitive and must match exactly.
+
+Until a file is added, that spot shows a soft blue/purple gradient placeholder,
+so the site never looks broken.
+
+FILENAME        WHICH PHOTO TO USE                              WHERE IT APPEARS
+--------        ------------------                              ----------------
+munich.jpg      The aerial view of central Munich               Hero (large image
+                (Marienplatz, red rooftops, square)             under the headline)
+transport.jpg   The red DB trains at the Munich station         Day 1 card
+sim.jpg         The blue and red SIM card on black              Day 2 card
+banking.jpg     The euro coins on top of bank cards             Day 3 card
+
+Optional spares you also sent, for later use:
+- The health insurance letter tiles on a calendar
+- The two silver cards with the black phone
+- The Allianz Arena stadium interior
+
+PREPARING THE FILES (recommended, not required)
+- Resize munich.jpg to about 1800 px wide; the three card images to about
+  1000 px wide. This keeps the page fast.
+- Save as JPEG at roughly 80% quality. Aim for under ~350 KB each.
+- Free tools: squoosh.app (drag in, export) or any photo app's "export for web".
+- The hero image is shown at 16:8 and the card images at 16:10, cropped to fill.
+  Choose a crop where the main subject sits near the centre.
+
+RIGHTS
+Only upload photos you are allowed to use. If any came from a stock library,
+check its licence permits use on a live website.

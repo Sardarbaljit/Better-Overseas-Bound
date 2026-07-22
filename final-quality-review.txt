@@ -1,0 +1,166 @@
+B.O.B — FINAL QUALITY REVIEW
+=============================
+
+ONE DELIBERATE DEVIATION FROM THE BRIEF
+The brief lists the first service card as "Airport and Accommodation". You asked
+me directly, in the message before the brief, to change it to "Airport to
+Accommodation". I kept your wording, because it describes the journey more
+accurately. Say the word and I will switch it back to "and".
+
+FINAL HERO HEADLINE
+Your first three days in Munich, made easier
+
+FINAL HERO PARAGRAPH
+B.O.B helps international students get started in Munich. I meet you at Munich
+Airport, travel with you to your accommodation and help you with the main tasks
+that follow, including your SIM card, bank account and health insurance.
+
+FINAL NAVIGATION LABELS
+How It Works · Pricing · About B.O.B · FAQs · Plan Your Arrival
+Hero actions: Plan Your Arrival (primary) and See What Is Included (scrolls to
+the service section, #how, not pricing).
+
+FINAL TRUST STATEMENTS
+1. Meet Baljit at Munich Airport
+2. Travel together to your accommodation
+3. Get help with the main setup tasks
+4. Your details are used only to arrange the service
+
+FINAL SERVICE SECTION
+Label: HOW IT WORKS
+Heading: What the Service Includes
+Introduction: The service is delivered across your first three days in Munich.
+The exact order may vary depending on your arrival time, opening hours and what
+needs to be completed first.
+
+FINAL FOUR SERVICE CARDS (no day labels anywhere)
+Airport to Accommodation — I meet you at Munich Airport, help you manage your
+luggage and travel with you to your accommodation by public transport. During
+the journey, I explain the ticket options and how to use Munich's transport
+network.
+
+Phone and Everyday Setup — We review SIM card options, the identification you
+may need and the steps involved in getting connected. I also help you understand
+which immediate tasks need attention after you arrive.
+
+Banking — I explain the usual routes and documents for opening a student bank
+account. You choose the provider, complete the application and sign any
+agreement yourself.
+
+Health Insurance — I explain how student health insurance usually works, which
+documents may be required and how to begin the application process. You choose
+the insurer, complete the application and sign any agreement yourself.
+
+FINAL THREE DAY TIMING NOTE (below the cards)
+The service is arranged around your arrival and completed across the agreed
+three day period.
+
+FINAL PRICING
+Label: PRICING · Heading: The Pilot Fee · Figure: €30
+Supporting copy: The introductory fee is €30 for the agreed three day service.
+No payment is collected through the inquiry form. I first confirm availability
+and the service details with you.
+Included: meeting at Munich Airport; help managing your luggage; public
+transport ticket explanation; travel to your accommodation; help understanding
+SIM card options; information about banking and health insurance processes;
+help with questions during the agreed three day period.
+External costs: "Costs charged by other providers are not included. Students pay
+these directly" — transport tickets, SIM and mobile plan, bank fees where
+applicable, insurance premiums, food and personal purchases, taxi or other
+external services.
+Limitation: B.O.B provides general information and practical help. It is not a
+taxi, transfer service or regulated legal, immigration, tax, financial or
+insurance adviser. More detail is in the FAQs.
+
+FINAL FOUNDER COPY
+I moved to Munich as an international student and experienced the challenges of
+getting started in an unfamiliar city. I created B.O.B to offer clear help from
+the moment a student arrives.
+I live in the Munich area and provide the service myself. I accept a limited
+number of bookings during each intake so I can give each student proper
+attention.
+The service is currently available in English.
+(Photo, BB initials fallback, name, role and the optional LinkedIn button are
+kept. No employment history, MBA, team size, other languages or endorsement.)
+
+FINAL FAQ
+Label: FREQUENTLY ASKED QUESTIONS · Heading: Common Questions
+Introduction: Find answers about pricing, airport meetings, luggage,
+cancellations and how your information is used.
+Button: View All Questions, opening the accessible modal. One column, one answer
+open at a time. All twelve answers were rewritten to the shortened wording in
+the brief, removing repetition of the main page.
+
+PUBLIC INQUIRY FIELDS RETAINED
+Full name (required), email address (required), approximate arrival date
+(required), approximate arrival time, university, preferred contact method
+(required), conditional WhatsApp number, additional information, Privacy Policy
+acknowledgement (required). Hidden Referral Source and Referral Campaign plus the
+honeypot are preserved. Heading "Start Your Inquiry", button "Check Availability".
+The message field is now labelled "Additional information".
+
+UNIVERSITY OPTIONS RETAINED
+Munich Business School, Technical University of Munich, Ludwig Maximilian
+University of Munich, Munich University of Applied Sciences, Hochschule
+Macromedia Munich, International University Munich, Other. The field remains free
+text and optional, so any other institution can still be typed.
+
+WHATSAPP LOGIC
+Email is always required. Choosing Email hides the WhatsApp field and clears any
+missing-number error, with aria-required false. Choosing WhatsApp or Email and
+WhatsApp shows the field, sets aria-required true, validates the number and moves
+focus to it when missing. Helper text: "Include your country code. Required only
+if you choose WhatsApp as a contact method."
+
+FINAL COLOUR SYSTEM
+--ink #1D1D1F, --ink-soft #6E6E73, --ink-faint #86868B, background #FFFFFF,
+soft background #F5F5F7, border #D2D2D7, blue #2563EB, blue hover #1D4ED8,
+soft blue #EFF4FF. Headings are solid near black, primary buttons solid blue.
+Purple survives only in the small logo icon and one very faint hero glow.
+
+IMAGE TREATMENT
+Hero munich.jpg: eager, fetchpriority high, width and height set, object-position
+tuned towards Marienplatz, restrained radius and shadow, no overlay.
+Four service images (transport, sim, banking, health): identical 16:10 ratio,
+identical radius, identical cover crop, lazy loaded with width and height, no
+overlays, filters or heavy shadows. founder-photo.jpg keeps the BB fallback.
+Alt text is factual and no company logos or partnerships are implied. The
+commercial rights comment sits beside every image.
+
+ACCESSIBILITY
+Modal uses role="dialog", aria-modal, aria-labelledby, focus moves to the close
+button, focus is trapped, Escape and backdrop close it, focus returns to the
+opening button, page scroll is locked and the sticky button is hidden while it is
+open. Hidden answers use the hidden attribute so they are not focusable. Each
+question is a real button with aria-expanded and aria-controls, and the dialog
+contains a single h2. Form fields use aria-required, aria-invalid and inline
+messages. Focus styles, keyboard navigation and reduced motion support are intact.
+
+CODE REMOVED OR SIMPLIFIED
+Deleted the two step form remnants (progress bar, step labels, fieldset and
+legend styles, Continue and Back buttons and their handlers), the unused .faq-list
+and .faq-col grid styles, the day number and day icon styles, and dead prefill
+logic for city, intake and country. URL prefill now handles only university,
+source and campaign, and the prefill notice appears only when the visible
+University field was filled. No references remain to removed fields.
+
+REMAINING SETUP PLACEHOLDERS
+- booking-details.html still contains REPLACE_WITH_BOOKING_FORM_ENDPOINT; the
+  page deliberately refuses to submit until a separate Formspree form exists.
+- The six images (munich, transport, sim, banking, health, founder-photo) plus
+  favicon.svg and social-preview.png must sit in the site root.
+- index.html keeps noindex, nofollow for the private pilot; remove only at public
+  launch. booking-details.html stays noindex permanently.
+
+ITEMS REQUIRING PROFESSIONAL LEGAL REVIEW
+- The pricing limitation paragraph and the "What is not included in the service?"
+  answer.
+- The cancellation wording in "Can I cancel after booking?".
+- The Privacy Policy and Impressum in full. No VAT ID, tax number, registration
+  or licence has been invented, and no page claims guaranteed legal compliance.
+
+CONFIRMATION
+No test submission was sent to Formspree at any point. JavaScript on both
+interactive pages passes a syntax check, all internal links resolve, no "Day"
+labels remain in visible copy, and no banned marketing phrases were found in any
+of the four pages.

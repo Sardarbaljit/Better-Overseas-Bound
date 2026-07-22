@@ -183,6 +183,14 @@
   .day-body{padding:26px 28px 30px;}
   .day h3{font-size:20px; margin-bottom:9px;}
   .day p{color:var(--ink-soft); font-size:15px;}
+  /* With five cards the last one sits alone on its row: centre it at the same
+     width as a single column so the group stays balanced. */
+  .day:nth-child(5):last-child{
+    grid-column:1 / -1; width:calc(50% - 10px); margin-left:auto; margin-right:auto;
+  }
+  @media (max-width:700px){
+    .day:nth-child(5):last-child{grid-column:auto; width:auto; margin-left:0; margin-right:0;}
+  }
   .outcome{
     margin-top:30px; text-align:center; color:var(--ink-soft); font-size:16px;
     max-width:60ch; margin-left:auto; margin-right:auto;

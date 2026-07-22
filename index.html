@@ -330,6 +330,17 @@
   @media (max-width:600px){.form-card{padding:28px 20px;}}
   .form-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
   @media (max-width:600px){.form-grid{grid-template-columns:1fr;}}
+  /* Grouping the fields into short labelled sections keeps the form scannable. */
+  .form-section{border-top:1px solid var(--line); padding-top:24px; margin-top:24px;}
+  .form-section:first-of-type{border-top:none; padding-top:0; margin-top:0;}
+  .form-legend{
+    font-size:11.5px; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--ink-faint); margin-bottom:16px;
+  }
+  /* Segmented control: three equal choices on one row instead of stacked boxes. */
+  .seg{grid-template-columns:repeat(3,1fr); gap:8px;}
+  .seg .check-opt{justify-content:center; text-align:center; padding:11px 8px; font-size:14px; min-height:46px;}
+  @media (max-width:520px){ .seg{grid-template-columns:1fr;} .seg .check-opt{justify-content:flex-start; text-align:left;} }
   .field{display:flex; flex-direction:column; gap:7px;}
   .field.full{grid-column:1 / -1;}
   /* WhatsApp field: collapses smoothly when Email only is chosen. It stays in the
@@ -367,11 +378,7 @@
   .consent .check-opt{align-items:flex-start; font-weight:400; font-size:13.5px; color:var(--ink-soft); line-height:1.5;}
   .consent .check-opt input{margin-top:3px;}
   .consent a{color:var(--blue);}
-  .payment-note{
-    background:var(--blue-soft); border:1px solid var(--blue-line); border-radius:12px;
-    padding:14px 16px; font-size:13.5px; color:var(--ink); margin-top:22px;
-  }
-  .form-nav{display:flex; gap:12px; margin-top:20px;}
+  .form-nav{display:flex; gap:12px; margin-top:26px;}
   .form-nav .btn{min-height:50px;}
   .form-nav .btn-primary{flex:1;}
   @media (max-width:600px){
@@ -708,76 +715,114 @@
         <!-- Honeypot anti-spam field (Formspree): invisible to people, filled only by bots -->
         <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 
-        <div class="form-grid">
-          <div class="field">
-            <label for="f-name">Full name <span class="req" aria-hidden="true">*</span></label>
-            <input id="f-name" name="Full Name" type="text" required autocomplete="name" placeholder="Your full name" aria-required="true" aria-describedby="e-name">
-            <p class="err" id="e-name" role="alert"></p>
-          </div>
-          <div class="field">
-            <label for="f-email">Email address <span class="req" aria-hidden="true">*</span></label>
-            <input id="f-email" name="email" type="email" required autocomplete="email" placeholder="you@example.com" aria-required="true" aria-describedby="e-email">
-            <p class="err" id="e-email" role="alert"></p>
-          </div>
-          <div class="field">
-            <label for="f-arrival">Approximate arrival date <span class="req" aria-hidden="true">*</span></label>
-            <input id="f-arrival" name="Approximate Arrival Date" type="date" required aria-required="true" aria-describedby="h-arrival e-arrival">
-            <p class="hint" id="h-arrival">You can update this later if your plans change.</p>
-            <p class="err" id="e-arrival" role="alert"></p>
-          </div>
-          <div class="field">
-            <label for="f-time">Approximate arrival time <span class="opt">(optional)</span></label>
-            <input id="f-time" name="Approximate Arrival Time" type="time" aria-describedby="h-time">
-            <p class="hint" id="h-time">An estimate is enough at this stage.</p>
-          </div>
-          <div class="field full">
-            <label for="f-uni">University <span class="opt">(optional)</span></label>
-            <input id="f-uni" name="University" type="text" list="uniList" autocomplete="off" placeholder="Start typing your university">
-            <!-- The service currently covers Munich, so only Munich institutions are suggested.
-                 The field stays free text, so any other university can still be typed in. -->
-            <datalist id="uniList">
-              <option value="Munich Business School"></option>
-              <option value="Technical University of Munich"></option>
-              <option value="Ludwig Maximilian University of Munich"></option>
-              <option value="Munich University of Applied Sciences"></option>
-              <option value="Hochschule Macromedia Munich"></option>
-              <option value="IU International University of Applied Sciences, Munich"></option>
-              <option value="Other"></option>
-            </datalist>
-          </div>
-          <div class="field full">
-            <label id="pcm-label">Preferred contact method <span class="req" aria-hidden="true">*</span></label>
-            <div class="check-grid" role="radiogroup" aria-labelledby="pcm-label" aria-describedby="e-pcm">
-              <label class="check-opt"><input type="radio" name="Preferred Contact Method" value="Email">Email</label>
-              <label class="check-opt"><input type="radio" name="Preferred Contact Method" value="WhatsApp">WhatsApp</label>
-              <label class="check-opt"><input type="radio" name="Preferred Contact Method" value="Email and WhatsApp">Email and WhatsApp</label>
+        <div class="form-section">
+          <div class="form-legend">About you</div>
+          <div class="form-grid">
+            <div class="field">
+              <label for="f-name">Full name <span class="req" aria-hidden="true">*</span></label>
+              <input id="f-name" name="Full Name" type="text" required autocomplete="name" placeholder="Your full name" aria-required="true" aria-describedby="e-name">
+              <p class="err" id="e-name" role="alert"></p>
             </div>
-            <p class="err" id="e-pcm" role="alert"></p>
-          </div>
-          <div class="field full" id="waField">
-            <label for="f-wa">WhatsApp number</label>
-            <input id="f-wa" name="WhatsApp Number" type="tel" autocomplete="tel" inputmode="tel" placeholder="+49 176 12345678" aria-required="false" aria-describedby="h-wa e-wa">
-            <p class="hint" id="h-wa">Include your country code.</p>
-            <p class="err" id="e-wa" role="alert"></p>
-          </div>
-          <div class="field full">
-            <label for="f-msg">Additional information <span class="opt">(optional)</span></label>
-            <textarea id="f-msg" name="Questions or Concerns" placeholder="Include any relevant information or questions about your arrival."></textarea>
-          </div>
-          <div class="field full consent">
-            <label class="check-opt">
-              <input type="checkbox" id="f-consent" name="Privacy Policy Acknowledgement" value="Acknowledged" required aria-required="true" aria-describedby="e-consent">
-              <span>I confirm that I have read the <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a> and understand how my information will be used to respond to my inquiry.</span>
-            </label>
-            <p class="err" id="e-consent" role="alert"></p>
+            <div class="field">
+              <label for="f-email">Email address <span class="req" aria-hidden="true">*</span></label>
+              <input id="f-email" name="email" type="email" required autocomplete="email" placeholder="you@example.com" aria-required="true" aria-describedby="e-email">
+              <p class="err" id="e-email" role="alert"></p>
+            </div>
+            <div class="field">
+              <label for="f-country">Country you are travelling from <span class="opt">(optional)</span></label>
+              <input id="f-country" name="Country Travelling From" type="text" list="countryList" autocomplete="country-name" placeholder="Start typing your country">
+              <datalist id="countryList">
+                <option value="India"></option><option value="China"></option><option value="Pakistan"></option>
+                <option value="Bangladesh"></option><option value="Nepal"></option><option value="Sri Lanka"></option>
+                <option value="Vietnam"></option><option value="Indonesia"></option><option value="Philippines"></option>
+                <option value="Thailand"></option><option value="South Korea"></option><option value="Japan"></option>
+                <option value="Taiwan"></option><option value="Iran"></option><option value="Turkey"></option>
+                <option value="Egypt"></option><option value="Jordan"></option><option value="Lebanon"></option>
+                <option value="Nigeria"></option><option value="Ghana"></option><option value="Kenya"></option>
+                <option value="Ethiopia"></option><option value="Morocco"></option><option value="Tunisia"></option>
+                <option value="Brazil"></option><option value="Mexico"></option><option value="Colombia"></option>
+                <option value="Chile"></option><option value="United States"></option><option value="Canada"></option>
+                <option value="United Kingdom"></option><option value="Ukraine"></option><option value="Serbia"></option>
+              </datalist>
+            </div>
+            <div class="field">
+              <label for="f-uni">University <span class="opt">(optional)</span></label>
+              <input id="f-uni" name="University" type="text" list="uniList" autocomplete="off" placeholder="Start typing your university">
+              <!-- The service currently covers Munich, so only Munich institutions are suggested.
+                   The field stays free text, so any other university can still be typed in. -->
+              <datalist id="uniList">
+                <option value="Munich Business School"></option>
+                <option value="Technical University of Munich"></option>
+                <option value="Ludwig Maximilian University of Munich"></option>
+                <option value="Munich University of Applied Sciences"></option>
+                <option value="Hochschule Macromedia Munich"></option>
+                <option value="IU International University of Applied Sciences, Munich"></option>
+                <option value="Other"></option>
+              </datalist>
+            </div>
           </div>
         </div>
-        <p class="payment-note">Submitting this form does not book anything and does not create a payment obligation. I check availability for your arrival date and reply with the next steps.</p>
+
+        <div class="form-section">
+          <div class="form-legend">Your arrival</div>
+          <div class="form-grid">
+            <div class="field">
+              <label for="f-arrival">Approximate arrival date <span class="req" aria-hidden="true">*</span></label>
+              <input id="f-arrival" name="Approximate Arrival Date" type="date" required aria-required="true" aria-describedby="h-arrival e-arrival">
+              <p class="hint" id="h-arrival">You can update this later if your plans change.</p>
+              <p class="err" id="e-arrival" role="alert"></p>
+            </div>
+            <div class="field">
+              <label for="f-time">Approximate arrival time <span class="opt">(optional)</span></label>
+              <input id="f-time" name="Approximate Arrival Time" type="time" aria-describedby="h-time">
+              <p class="hint" id="h-time">An estimate is enough at this stage.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <div class="form-legend">How should I reply?</div>
+          <div class="form-grid">
+            <div class="field full">
+              <label id="pcm-label">Preferred contact method <span class="req" aria-hidden="true">*</span></label>
+              <div class="check-grid seg" role="radiogroup" aria-labelledby="pcm-label" aria-describedby="e-pcm">
+                <label class="check-opt"><input type="radio" name="Preferred Contact Method" value="Email">Email</label>
+                <label class="check-opt"><input type="radio" name="Preferred Contact Method" value="WhatsApp">WhatsApp</label>
+                <label class="check-opt"><input type="radio" name="Preferred Contact Method" value="Email and WhatsApp">Both</label>
+              </div>
+              <p class="err" id="e-pcm" role="alert"></p>
+            </div>
+            <div class="field full" id="waField">
+              <label for="f-wa">WhatsApp number</label>
+              <input id="f-wa" name="WhatsApp Number" type="tel" autocomplete="tel" inputmode="tel" placeholder="+49 176 12345678" aria-required="false" aria-describedby="h-wa e-wa">
+              <p class="hint" id="h-wa">Include your country code.</p>
+              <p class="err" id="e-wa" role="alert"></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <div class="form-legend">Anything else</div>
+          <div class="form-grid">
+            <div class="field full">
+              <label for="f-msg">Additional information <span class="opt">(optional)</span></label>
+              <textarea id="f-msg" name="Questions or Concerns" placeholder="Include any relevant information or questions about your arrival."></textarea>
+            </div>
+            <div class="field full consent">
+              <label class="check-opt">
+                <input type="checkbox" id="f-consent" name="Privacy Policy Acknowledgement" value="Acknowledged" required aria-required="true" aria-describedby="e-consent">
+                <span>I confirm that I have read the <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a> and understand how my information will be used to respond to my inquiry.</span>
+              </label>
+              <p class="err" id="e-consent" role="alert"></p>
+            </div>
+          </div>
+        </div>
+
         <p class="err" id="e-submit" role="alert" style="text-align:center; margin-top:12px;"></p>
         <div class="form-nav">
           <button type="submit" class="btn btn-primary btn-lg" id="submitBtn">Check Availability</button>
         </div>
-        <p class="form-foot-note">Universities never send me your details. Contact always starts with you.</p>
+        <p class="form-foot-note">No payment is taken and nothing is booked at this stage. Universities never send me your details.</p>
       </form>
 
       <div class="success" id="successBox" role="status">

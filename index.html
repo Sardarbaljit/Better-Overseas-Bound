@@ -200,7 +200,12 @@
   .price-row{display:flex; align-items:baseline; gap:12px; margin-bottom:10px;}
   .price{font-size:70px; font-weight:700; letter-spacing:-0.045em; line-height:1; color:#fff;}
   .price small{font-size:18px; font-weight:500; color:#A1A1A6; letter-spacing:0;}
-  .price-note{color:#C7C7CC; font-size:16px; margin-bottom:30px; max-width:56ch;}
+  .price-note{color:#C7C7CC; font-size:16px; margin-bottom:16px; max-width:56ch;}
+  .pay-note{
+    background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); border-radius:14px;
+    padding:14px 16px; font-size:14.5px; color:#C7C7CC; margin-bottom:28px; max-width:56ch;
+  }
+  .pay-note b{color:#fff; font-weight:600;}
   .price-list{list-style:none; display:grid; gap:14px; margin-bottom:28px;}
   .price-list li{display:flex; gap:12px; align-items:flex-start; font-size:16px; color:#F5F5F7;}
   .price-list svg{flex:none; margin-top:3px;}
@@ -422,7 +427,7 @@
       <a href="#pricing">Pricing</a>
       <a href="#about">About B.O.B</a>
       <a href="#faq">FAQs</a>
-      <a href="#contact" class="nav-cta">Plan Your Arrival</a>
+      <a href="#contact" class="nav-cta">Request Arrival Support</a>
     </div>
   </div>
 </nav>
@@ -430,10 +435,10 @@
 <!-- ================= HERO ================= -->
 <header class="hero" id="home">
   <div class="wrap">
-    <h1>Your first three days in Munich, <span class="grad">made easier</span></h1>
-    <p class="lead">I meet you at Munich Airport, travel with you to your accommodation and help with the practical tasks that follow.</p>
+    <h1>Land in Munich with <span class="grad">someone waiting for you</span></h1>
+    <p class="lead">Moving abroad is exciting, but the first days can be a lot to handle alone. I meet you at Munich Airport, travel with you to your accommodation and help with the practical steps that follow.</p>
     <div class="hero-ctas">
-      <a href="#contact" class="btn btn-primary btn-lg">Plan Your Arrival</a>
+      <a href="#contact" class="btn btn-primary btn-lg">Request Arrival Support</a>
       <a href="#how" class="link-cta">See What Is Included</a>
     </div>
     <!-- HERO IMAGE: save a wide Munich photo as munich.jpg next to this file.
@@ -488,8 +493,17 @@
           <p>I explain how student health insurance usually works, which documents may be required and how to begin the application process. You choose the insurer, complete the application and sign any agreement yourself.</p>
         </div>
       </div>
+      <div class="day reveal">
+        <!-- Only publish images that B.O.B has the right to use commercially.
+             Save the city registration photo as registration.jpg beside this file. -->
+        <div class="day-img"><img src="registration.jpg" alt="Munich city registration paperwork" loading="lazy" width="1000" height="625" onerror="this.style.display='none'"></div>
+        <div class="day-body">
+          <h3>City Registration</h3>
+          <p>I explain how city registration works, which documents you need and how to look for an appointment. Appointments in Munich are limited and are often booked well in advance, so registration may take place after the three days. You attend the appointment and complete the registration yourself.</p>
+        </div>
+      </div>
     </div>
-    <p class="outcome reveal">The four areas are covered across the agreed three days, with the order adjusted to suit your arrival time and opening hours.</p>
+    <p class="outcome reveal">These areas are covered across the agreed three days, with the order adjusted to suit your arrival time and opening hours. Some appointments, such as city registration, may fall outside the three days depending on availability.</p>
   </div>
 </section>
 
@@ -505,6 +519,7 @@
         <span class="price">€30</span>
       </div>
       <p class="price-note">The introductory fee is €30 for support across the agreed three days. No payment is collected through the inquiry form. I first confirm availability and the service details with you.</p>
+      <p class="pay-note"><b>You pay when we meet in Munich</b>, in cash or by PayPal. Nothing is paid through this website, and no card or bank details are ever requested.</p>
       <ul class="price-list">
         <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#EEF3FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Meeting at Munich Airport</li>
         <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#EEF3FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Help managing your luggage</li>
@@ -512,6 +527,7 @@
         <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#EEF3FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Travel to your accommodation</li>
         <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#EEF3FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Help understanding SIM card options</li>
         <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#EEF3FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Information about banking and health insurance processes</li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#EEF3FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Guidance on city registration and finding an appointment</li>
         <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#EEF3FF"/><path d="M17 9l-6.5 6.5L7 12" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Help with questions during the agreed three days</li>
       </ul>
       <div class="cost-note">
@@ -526,7 +542,7 @@
         </ul>
       </div>
       <p class="limit-note">B.O.B provides general information and practical help. It is not a taxi, transfer service or regulated legal, immigration, tax, financial or insurance adviser. More detail is in the <a href="#faq">FAQs</a>.</p>
-      <a href="#contact" class="btn btn-primary btn-lg" style="width:100%;">Plan Your Arrival</a>
+      <a href="#contact" class="btn btn-primary btn-lg" style="width:100%;">Request Arrival Support</a>
     </div>
   </div>
 </section>
@@ -546,9 +562,9 @@
         <img src="founder-photo.jpg" alt="Baljit Bhatti, founder of B.O.B" onerror="this.style.display='none'">
       </div>
       <div class="about-copy reveal">
-        <p>When I moved to Munich as an international student, I had to work out many of the first practical steps on my own. I created B.O.B to make those first days clearer for new students.</p>
-        <p>I live in the Munich area and provide the service myself. I accept a limited number of bookings during each intake so I can give each student proper attention.</p>
-        <p>The service is currently available in English.</p>
+        <p>When I moved to Munich as an international student, I quickly realised that the hardest part was not getting accepted to university, it was everything that came after. From German bureaucracy to finding accommodation and settling into a new city, I had to work it all out on my own.</p>
+        <p>That is why I created B.O.B. My goal is to make those first days in Munich easier and less stressful for international students. I am based in Munich, I support every student personally, and I accept only a limited number of bookings each intake so that everyone receives dedicated, one to one guidance.</p>
+        <p>I look forward to welcoming you to Munich and helping you start this new chapter. The service is currently available in English.</p>
         <div class="name">Baljit Bhatti</div>
         <div class="role">Founder, B.O.B</div>
         <!-- ⚙️ FOUNDER LINKEDIN (optional): set the founderLinkedIn constant in the JavaScript
@@ -642,9 +658,9 @@
 <section class="contact" id="contact">
   <div class="wrap">
     <div class="section-head center reveal">
-      <span class="eyebrow">Plan Your Arrival</span>
-      <h2>Start Your Inquiry</h2>
-      <p>Share a few details so I can check availability for your arrival. No payment is collected at this stage.</p>
+      <span class="eyebrow">Request Arrival Support</span>
+      <h2>Book a Consultation</h2>
+      <p>Tell me a little about your arrival in Munich. I will personally review your request and get back to you with availability and the next steps. No payment or commitment is required at this stage.</p>
     </div>
 
     <div class="form-card reveal">
@@ -765,7 +781,7 @@
   </div>
 </section>
 
-<a class="sticky-cta" id="stickyCta" href="#contact">Plan Your Arrival</a>
+<a class="sticky-cta" id="stickyCta" href="#contact">Request Arrival Support</a>
 
 <footer>
   <div class="wrap foot-inner">

@@ -1,0 +1,85 @@
+B.O.B — CHANGE SUMMARY
+=======================
+Goal: make the service understandable within the first few seconds.
+
+TWO DECISIONS YOU CONFIRMED
+- Kept your recent headline "Welcome to Munich. Let's get you started." and the
+  button label "Request Arrival Support", rather than reverting to the older
+  wording the brief listed.
+- Kept the five service cards, including City Registration. The new quick-overview
+  journey deliberately covers only the five core stages and does not include city
+  registration, exactly as the brief asked.
+
+HERO COPY — UPDATED
+Paragraph now reads: "I meet you at Munich Airport, accompany you to your
+accommodation and help you understand the main practical tasks involved in
+getting started, including public transport, your SIM card, banking and health
+insurance." The headline and both buttons are unchanged; the secondary button
+now scrolls to the new journey (#journey).
+
+VISUAL SERVICE JOURNEY — ADDED
+A new section sits directly below the hero and above the detailed cards.
+Heading: "From Arrival to Getting Started".
+Introduction: "A clear overview of how B.O.B supports you during your first days
+in Munich."
+FIVE STAGES, each with an inline line-SVG icon (no emoji, no icon library):
+1. Meet at Munich Airport — I meet you at the agreed location when you arrive.
+2. Travel to Your Accommodation — We travel together by public transport and I
+   explain the ticket options.
+3. SIM Card and Connectivity — We review SIM card options and the steps needed to
+   get connected.
+4. Banking Process — I explain the usual documents and account opening process.
+5. Health Insurance Process — I explain how student health insurance works and how
+   to begin the application.
+The descriptions stay short; the fuller detail lives in the cards below.
+
+DESKTOP JOURNEY BEHAVIOUR
+Five equal stages in one horizontal row, icons in consistent rounded containers,
+a thin grey connecting line behind the icon row and a restrained blue progress
+line that draws left to right. Calm, not busy; the section is quieter than the
+hero.
+
+MOBILE JOURNEY BEHAVIOUR
+Below 760px the row becomes a vertical timeline: icon on the left, text on the
+right, a thin vertical line linking the icons, comfortable spacing, no horizontal
+scrolling.
+
+ANIMATION BEHAVIOUR
+Plays once when the section enters the viewport. Each stage fades in with a small
+upward movement, staggered by roughly 0.1s, and the connecting line reveals
+progressively. After it completes every stage stays visible. No looping,
+bouncing, pulsing, rotating, parallax or video.
+
+REDUCED MOTION
+Under prefers-reduced-motion all stages and the full line show immediately with
+no movement. A <noscript> fallback also shows the whole journey (and other
+revealed content) when JavaScript is unavailable, so the overview is always
+readable.
+
+SERVICE CARD HIERARCHY — CHANGED
+Each of the five cards now has a short bold summary line between the heading and
+the paragraph, in a slightly stronger weight than the body but lighter than the
+heading:
+- Airport to Accommodation: Meet at Munich Airport and travel together to your
+  accommodation.
+- SIM Card and Initial Setup: Understand your SIM card options and get connected.
+- Banking: Understand the usual documents and account opening process.
+- City Registration: Understand how registration works and how to find an
+  appointment.
+- Health Insurance: Understand student health insurance and how to begin the
+  application.
+No icons were added to the cards; they already use images.
+
+CONFIRMATIONS
+- No testimonials, reviews, ratings, stars, student photos, quotes, "trusted by"
+  claims, student counts, university endorsements or logos were added.
+- City registration was not added to the journey and is not presented as an
+  official procedure handled by B.O.B.
+- No external library, framework, font or video was added; only HTML, CSS and a
+  small IntersectionObserver in plain JavaScript.
+- No required functionality was intentionally removed. Navigation, mobile menu,
+  anchors, pricing, founder, FAQ modal, inquiry form, Formspree endpoint,
+  SessionStorage, referral tracking, conditional WhatsApp logic, success and
+  failure states, the sticky mobile button, legal links, image paths, reduced
+  motion support and the noindex setting are all preserved.
+- JavaScript passes a syntax check and no test submission was sent.
